@@ -1,0 +1,11 @@
+app/tmp/*
+app/tmp/cache
+app/tmp/logs
+composer.phar
+vendors/*
+test/
+vendor/
+.idea/
+.git/
+app/Config/paypal_ipn_config.php
+LICENSE

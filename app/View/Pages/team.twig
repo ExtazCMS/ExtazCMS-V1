@@ -1,0 +1,76 @@
+{% do _this.assign('title', 'L\'équipe') %}
+<script>
+$(document).ready(function(){
+    $(".confirm").confirm({
+        text: "Voulez vous vraiment supprimer ce membre de l'équipe ?",
+        title: "Confirmation",
+        confirmButton: "Oui",
+        cancelButton: "Non"
+    });
+});
+</script>
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row magazine-page">
+        <!-- Begin Content -->
+        <div class="col-md-9">
+            {% if count > 0 %}
+                {% for d in data %}
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <span class="overlay-zoom">  
+                                    <center>
+                                        {% set user_avatar %}http://cravatar.eu/helmhead/{{ d['Team']['username'] }}/110.png{% endset %}
+                                        {{ _this.Html.image(user_avatar, {'alt': 'Avatar', 'style': 'margin-top: 5px'}) }}
+                                    </center>
+                                </span>                                              
+                            </a>            
+                            <div class="caption">
+                                <center>
+                                    {% if role > 1 %}
+                                        <a href="{{ _this.Html.url({'controller': 'pages', 'action': 'delete_member', 'id': d['Team']['id'], 'admin': true}) }}" class="btn btn-default btn-u-xs confirm">
+                                            <font color="red">
+                                                <i class="fa fa-trash-o"></i>
+                                            </font>
+                                        </a>
+                                    {% endif %}
+                                    {% if d['Team']['facebook_url'] is not empty %}
+                                        <a href="{{ d.Team.facebook_url }}" target="_blank" class="btn btn-default btn-u-xs">
+                                            <font color="#3498DB">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </font>
+                                        </a>
+                                    {% endif %}
+                                    {% if d['Team']['twitter_url'] is not empty %}
+                                        <a href="{{ d.Team.twitter_url }}" target="_blank" class="btn btn-default btn-u-xs">
+                                            <font color="#27D7E7">
+                                                <i class="fa fa-twitter"></i>
+                                            </font>
+                                        </a>
+                                    {% endif %}
+                                    {% if d['Team']['youtube_url'] is not empty %}
+                                        <a href="{{ d.Team.youtube_url }}" target="_blank" class="btn btn-default btn-u-xs">
+                                            <font color="#CC0000">
+                                                <i class="fa fa-youtube-square"></i>
+                                            </font>
+                                        </a>
+                                    {% endif %}
+                                    <h3>
+                                        <a class="hover-effect" href="#">
+                                            {{ d['Team']['username'] }}
+                                        </a>
+                                    </h3>
+                                    <span class="member-label member-label-{{ d['Team']['color'] }}">{{ d['Team']['rank'] }}</span>
+                                </center>                           
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+			{% endif %}
+        </div>
+        <!-- End Content -->
+        {{ _this.element('sidebar') }}
+    </div>
+</div><!--/container-->     
+<!-- End Content Part -->

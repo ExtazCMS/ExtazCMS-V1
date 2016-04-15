@@ -1,0 +1,20 @@
+{% set title %}Réglement du serveur {{ name_server }}{% endset %}
+{% do _this.assign('title', title) %}
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row magazine-page">
+        <!-- Begin Content -->
+        <div class="col-md-9">
+	        {% if rules is not empty %}
+				{{ rules }}
+	       	{% else %}
+				<div class="alert alert-info">
+					<i class="fa fa-info-circle"></i> "Le réglement n'a pas encore été rédigé!"
+				</div>
+	       	{% endif %}
+        </div>
+        <!-- End Content -->
+        {{ _this.element('sidebar') }}
+    </div>
+</div><!--/container-->     
+<!-- End Content Part -->

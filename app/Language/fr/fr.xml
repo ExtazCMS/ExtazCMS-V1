@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<file>
+    <page>
+        <!-- To do -->
+    </page>
+
+    <header>
+        <message_1>IP du serveur</message_1>
+    </header>
+
+    <sidebar>
+        <module_1>
+            <!-- Connected -->
+            <message_1>Accéder à l'administration</message_1>
+            <message_2>Vous avez {tokens} {site_money}</message_2>
+            <message_3>Vous avez {tickets} ticket ouverts</message_3>
+            <message_4>Accéder a mon profil</message_4>
+            <message_5>Recharger</message_5>
+            <message_6>Déconnexion</message_6>
+
+            <!-- Disconnected -->
+            <message_7>Inscription</message_7>
+            <message_8>Connexion</message_8>
+
+        </module_1>
+
+        <module_2>
+            <message_1>Joueurs connectés</message_1>
+        </module_2>
+
+        <module_3>
+            <message_1>Serveur hors ligne</message_1>
+            <message_2>Serveur en ligne</message_2>
+        </module_3>
+    </sidebar>
+
+    <footer>
+       <message_1>{extaz} © 2015 Clyese Systems - Tous droits réservés</message_1>
+    </footer>
+</file>

@@ -1,0 +1,49 @@
+{% do _this.assign('title', 'Contact') %}
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row magazine-page">
+        <!-- Begin Content -->
+        <div class="col-md-9">
+            {{ _this.Form.create('Pages', {'action': 'contact', 'class': 'sky-form', 'inputDefaults': {'error': false}}) }}
+                <div class="reg-header">  
+                    <header>Contactez nous</header>
+                </div>
+                <fieldset>
+                    <section>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ _this.Form.input('username', {'type': 'text', 'value': username, 'class': 'form-control', 'label': false, 'disabled': 'disabled'}) }}
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            {{ _this.Form.input('email', {'type': 'text', 'value': email, 'class': 'form-control', 'label': false, 'disabled': 'disabled'}) }}
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-comment"></i></span>
+                            {{ _this.Form.input('subject', {'type': 'text', 'placeholder': 'Sujet du message', 'class': 'form-control', 'label': false}) }}
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        {{ _this.Form.textarea('message', {'type': 'text', 'placeholder': 'Votre message', 'class': 'form-control', 'rows': 5, 'cols': 5, 'required': 'required', 'label': false}) }}
+                    </section>
+                </fieldset>
+                <footer>
+                    <input name="captcha" class="btn-u pull-right" type="Submit" value="Envoyer le message">      
+                </footer>
+            {{ _this.Form.end }}
+        </div>
+        <!-- End Content -->
+        {{ _this.element('sidebar') }}
+    </div>
+</div><!--/container-->     
+<!-- End Content Part -->
