@@ -34,3 +34,5 @@
 * 2015-2015 => MrSaooty (http://extaz-cms.com)
 
 `ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
+
+* Il est interdit de revendre ExtazCMS
