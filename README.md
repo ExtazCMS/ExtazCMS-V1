@@ -10,9 +10,10 @@
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
 ##L'équipe
-* __TristanCode__ - Développeur en Chef et Dirigeant. 
-* __Lyes__ - Dirigeant, Marketing/Communication, Correcteur et Designer.
-* __Khran__ - Développeur et Support Technique.
+* __Lyes__        - Dirigeant, Marketing/Communication, Correcteur et Designer.
+* __TristanCode__ - Vice dirigeant et développeur en Chef.
+* __Khran__       - Développeur et Support Technique.
+* __Litarvan__    - Développeur
 
 ##Changelog
 * V1.12 ("Fenix") - 9 Avril 2016 - ExtazCMS
@@ -29,7 +30,7 @@
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
 ##Sources
-* 2015-2016 => TristanCode/Lyes (http://extaz-cms.fr)
+* 2015-2016 => Clyese Systems, par TristanCode & Lyes (http://extaz-cms.fr)
 * 2015-2015 => MrSaooty (http://extaz-cms.com)
 
 `ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
