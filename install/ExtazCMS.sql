@@ -526,7 +526,7 @@ INSERT INTO `extaz_updates` (`id`, `updater`, `ip`, `name`, `version`, `type`, `
 (3, 'tristancode', '::1', 'White Dwarf', '1.10', 'NORMAL', '2015-10-18 08:35:00'),
 (4, 'tristancode', '::1', 'White Dwarf', '1.10#6', 'PATCH', '2015-10-18 14:24:00'),
 (5, 'tristancode', '::1', 'Addendum', '1.11', 'NORMAL', '2015-12-01 12:25:00'),
-(6, 'Khran', '::1', 'Fenix', '1.12', 'NORMAL', '2016-04-09 08:30:00');
+(6, 'Khran', '::1', 'Phénix', '1.12', 'NORMAL', '2016-04-09 08:30:00');
 
 -- --------------------------------------------------------
 
