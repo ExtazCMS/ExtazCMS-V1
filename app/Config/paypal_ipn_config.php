@@ -24,7 +24,6 @@ class PaypalIpnConfig {
 		'encrypt'       => false,                           // Set to true to enable encryption
 	);
 
-
 /***********
  * Test settings to test with using a sandbox paypal account.
  */

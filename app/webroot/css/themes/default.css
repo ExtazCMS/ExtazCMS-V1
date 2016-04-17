@@ -1,11 +1,11 @@
-f/*
+f/* 
 * Version: 1.4
 * Default Color 	  : #72c02c;
 * Default Hover Color : #5fb611;
 */
 
-a:focus,
-a:hover,
+a:focus, 
+a:hover, 
 a:active {
 	color: #72c02c;
 }
@@ -14,8 +14,8 @@ a:active {
 	color: #72c02c;
 }
 
-a.read-more:hover {
-	color:#72c02c;
+a.read-more:hover { 
+	color:#72c02c; 
 }
 
 .linked:hover {
@@ -31,7 +31,7 @@ a.read-more:hover {
 
 /*Navbar Toggle*/
 .navbar-toggle,
-.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:hover, 
 .navbar-default .navbar-toggle:focus {
 	background: #72c02c;
 }
@@ -71,9 +71,9 @@ a.read-more:hover {
 	}
 
 	/*Dropdown Menu*/
-	.header .dropdown-menu {
-		border-top: solid 2px #72c02c;
-	}
+	.header .dropdown-menu { 
+		border-top: solid 2px #72c02c; 
+	}	
 }
 
 /*Search Box*/
@@ -111,9 +111,9 @@ a.read-more:hover {
 	.header-v1 .navbar-default .navbar-nav > .open > a,
 	.header-v1 .navbar-default .navbar-nav > .open > a:hover,
 	.header-v1 .navbar-default .navbar-nav > .open > a:focus {
-		background: #72c02c;
+		background: #72c02c;		
 	}
-}
+}	
 
 /*Sliders
 ------------------------------------*/
@@ -153,13 +153,13 @@ a.read-more:hover {
 /*Service
 ------------------------------------*/
 .service .service-icon {
-	color:#72c02c;
+	color:#72c02c;	
 }
 
 /*Service Blocks*/
-.service-alternative .service:hover {
+.service-alternative .service:hover { 
 	background:#72c02c;
-}
+} 
 
 /*Thumbnail (Recent Work)
 ------------------------------------*/
@@ -189,15 +189,15 @@ a.read-more:hover {
 /*Typography
 ------------------------------------*/
 /*Heading*/
-.headline h2,
-.headline h3,
+.headline h2, 
+.headline h3, 
 .headline h4 {
 	border-bottom:2px solid #72c02c;
 }
 
 /*Blockquote*/
 blockquote:hover {
-	border-left-color:#72c02c;
+	border-left-color:#72c02c; 
 }
 
 .hero {
@@ -226,18 +226,18 @@ blockquote:hover {
 
 /*Blog Posts
 ------------------------------------*/
-.posts .dl-horizontal a:hover {
-	color:#72c02c;
+.posts .dl-horizontal a:hover { 
+	color:#72c02c; 
 }
 
 .posts .dl-horizontal:hover dt img,
-.posts .dl-horizontal:hover dd a {
+.posts .dl-horizontal:hover dd a { 
 	color: #72c02c;
 	border-color: #72c02c !important;
 }
 
 /*Post Comment*/
-.post-comment h3,
+.post-comment h3, 
 .blog-item .media h3,
 .blog-item .media h4.media-heading span a {
 	color: #72c02c;
@@ -246,18 +246,18 @@ blockquote:hover {
 /*Tabs
 ------------------------------------*/
 /*Tabs v1*/
-.tab-v1 .nav-tabs {
-	border-bottom: solid 2px #72c02c;
+.tab-v1 .nav-tabs { 
+	border-bottom: solid 2px #72c02c; 	
 }
 
-.tab-v1 .nav-tabs > .active > a,
-.tab-v1 .nav-tabs > .active > a:hover,
-.tab-v1 .nav-tabs > .active > a:focus {
-	background: #72c02c;
+.tab-v1 .nav-tabs > .active > a, 
+.tab-v1 .nav-tabs > .active > a:hover, 
+.tab-v1 .nav-tabs > .active > a:focus { 
+	background: #72c02c; 
 }
 
-.tab-v1 .nav-tabs > li > a:hover {
-	background: #72c02c;
+.tab-v1 .nav-tabs > li > a:hover { 
+	background: #72c02c; 
 }
 
 /*Tabs v2*/
@@ -275,11 +275,11 @@ blockquote:hover {
 /*Accardion
 ------------------------------------*/
 .acc-home a.active,
-.acc-home a.accordion-toggle:hover {
-	color:#72c02c;
+.acc-home a.accordion-toggle:hover { 
+	color:#72c02c; 
 }
-.acc-home .collapse.in {
-	border-bottom:solid 1px #72c02c;
+.acc-home .collapse.in { 
+	border-bottom:solid 1px #72c02c; 
 }
 
 /*Testimonials
@@ -332,7 +332,7 @@ blockquote:hover {
 	background:#fbfef2;
 	border-bottom:solid 1px #f5f9e7;
 }
-
+	
 /*Pricing Content*/
 .pricing-content li {
 	border-bottom:solid 1px #f5f9e7;
@@ -365,15 +365,15 @@ blockquote:hover {
 ------------------------------------*/
 /*Right Sidebar*/
 .who li i,
-.who li:hover i,
-.who li:hover a {
-	color:#72c02c;
+.who li:hover i, 
+.who li:hover a { 
+	color:#72c02c; 
 }
 
 /*Privacy Page
 ------------------------------------*/
 .privacy a:hover {
-	color:#72c02c;
+	color:#72c02c; 
 }
 
 /*Portfolio Page
@@ -419,10 +419,10 @@ ul.blog-tags a:hover {
 /*Blog Latest Tweets*/
 .blog-twitter .blog-twitter-inner:hover {
 	border-color: #72c02c;
-	border-top-color: #72c02c;
+	border-top-color: #72c02c;	
 }
 .blog-twitter .blog-twitter-inner:hover:after {
-	border-top-color: #72c02c;
+	border-top-color: #72c02c;	
 }
 
 .blog-twitter .blog-twitter-inner a {
@@ -449,7 +449,7 @@ ul.blog-tags a:hover {
 
 /*Icons Page
 ------------------------------------*/
-.icon-page li:hover {
+.icon-page li:hover { 
 	color:#72c02c;
 }
 
@@ -502,12 +502,12 @@ ul.blog-tags a:hover {
 }
 
 /*Font Awesome Icon Page Style*/
-.fa-icons li:hover {
+.fa-icons li:hover { 
    color: #72c02c;
 }
 
 .fa-icons li:hover i {
-   background: #72c02c;
+   background: #72c02c; 
 }
 
 /*GLYPHICONS Icons Page Style*/
@@ -518,11 +518,11 @@ ul.blog-tags a:hover {
 /*Navigation
 ------------------------------------*/
 /*Pagination*/
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
 .pagination > .active > span:focus {
    background-color: #72c02c;
    border-color: #72c02c;
@@ -530,14 +530,14 @@ ul.blog-tags a:hover {
 
 .pagination li a:hover {
    background: #5fb611;
-   border-color: #5fb611;
+   border-color: #5fb611;   
 }
 
 /*Pager*/
-.pager li > a:hover,
+.pager li > a:hover, 
 .pager li > a:focus {
    background: #5fb611;
-   border-color: #5fb611;
+   border-color: #5fb611;   
 }
 
 /*Registration and Login Page v2

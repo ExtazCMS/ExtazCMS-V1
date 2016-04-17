@@ -1,0 +1,10 @@
+Pour que le site n'ai pas automatiquement accès
+au dossier, pensez a mettre un .htaccess avec:
+
+<IfModule mod_rewrite.c>
+   RewriteEngine off
+</IfModule>
+
+
+Si vous modifiez un fichier .twig, vous devez supprimer le contenue du dossier "app/Plugin/TwigView/tmp/views/"
+

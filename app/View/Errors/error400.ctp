@@ -1,5 +1,5 @@
 <?php
-echo $this->assign('title', 'Erreur 404');
+echo $this->assign('title', 'Erreur');
 if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))){
     $this->layout = 'default';
 }

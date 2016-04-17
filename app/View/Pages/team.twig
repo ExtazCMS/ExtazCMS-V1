@@ -67,7 +67,13 @@ $(document).ready(function(){
                         </div>
                     </div>
                 {% endfor %}
-			{% endif %}
+            {% else %}
+            <div class="servive-block servive-block-default">
+                <i class="icon-custom icon-color-dark rounded-x fa fa-info-circle"></i>
+                <h2 class="heading-md">Aucun résultat</h2>
+                <p>Aucun membre de l'équipe n'a été ajouté</p>                        
+            </div>
+            {% endif %}
         </div>
         <!-- End Content -->
         {{ _this.element('sidebar') }}

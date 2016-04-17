@@ -35,11 +35,9 @@
                 <fieldset>
                     <section>
                         {{ _this.Form.textarea('message', {'type': 'text', 'placeholder': 'Votre message', 'class': 'form-control', 'rows': 5, 'cols': 5, 'required': 'required', 'label': false}) }}
-                    </section>
+                     <input name="captcha" class="btn-u pull-right" type="Submit" value="Envoyer le message">      
+                </section>
                 </fieldset>
-                <footer>
-                    <input name="captcha" class="btn-u pull-right" type="Submit" value="Envoyer le message">      
-                </footer>
             {{ _this.Form.end }}
         </div>
         <!-- End Content -->

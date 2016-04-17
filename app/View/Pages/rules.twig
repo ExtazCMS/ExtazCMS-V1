@@ -1,4 +1,4 @@
-{% set title %}Réglement du serveur {{ name_server }}{% endset %}
+{% set title %}Règlement du serveur {% endset %}
 {% do _this.assign('title', title) %}
 <!--=== Content Part ===-->
 <div class="container content">
@@ -8,9 +8,11 @@
 	        {% if rules is not empty %}
 				{{ rules }}
 	       	{% else %}
-				<div class="alert alert-info">
-					<i class="fa fa-info-circle"></i> "Le réglement n'a pas encore été rédigé!"
-				</div>
+				<div class="servive-block servive-block-default">
+	                <i class="icon-custom icon-color-dark rounded-x fa fa-info-circle"></i>
+	                <h2 class="heading-md">Aucun résultat</h2>
+	                <p>Le réglement n'a pas encore été rédigé</p>                        
+	            </div>
 	       	{% endif %}
         </div>
         <!-- End Content -->

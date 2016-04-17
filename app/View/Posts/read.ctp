@@ -140,11 +140,9 @@ $(document).ready(function(){
 							<section>
 								<?php echo $this->Form->input('post_id', array('type' => 'hidden', 'value' => $this->params['id'], 'label' => false)); ?>
 								<?php echo $this->Form->textarea('comment', array('type' => 'text', 'placeholder' => 'Partagez votre avis', 'class' => 'form-control', 'rows' => '5', 'cols' => '5', 'label' => false)); ?>
-							</section>
-						</fieldset>
-						<footer>
 							<button class="btn-u pull-right" type="submit">Envoyer</button>      
-						</footer>
+						</section>
+						</fieldset>
 					<?php echo $this->Form->end(); ?>
 					<br>
 				<?php } else { ?>
@@ -167,11 +165,9 @@ $(document).ready(function(){
 								<section>
 									<?php echo $this->Form->input('post_id', array('type' => 'hidden', 'value' => $this->params['id'], 'label' => false)); ?>
 									<?php echo $this->Form->textarea('comment', array('type' => 'text', 'placeholder' => 'Partagez votre avis', 'class' => 'form-control', 'rows' => '5', 'cols' => '5', 'label' => false)); ?>
-								</section>
-							</fieldset>
-							<footer>
 								<button class="btn-u pull-right" type="submit">Envoyer</button>      
-							</footer>
+							</section>
+							</fieldset>
 						<?php echo $this->Form->end(); ?>
 						<br>
 					<?php } else { ?>

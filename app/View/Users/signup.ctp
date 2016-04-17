@@ -57,7 +57,7 @@
                     </section>
                 </fieldset>
                 <footer>
-                <input name="captcha" class="btn-u pull-right" type="Submit" value="Confirmer l'inscription">
+                    <input name="captcha" class="btn-u pull-right" type="Submit" value="Confirmer l'inscription">
                 </footer>
             <?php echo $this->Form->end(); ?>
         </div>
