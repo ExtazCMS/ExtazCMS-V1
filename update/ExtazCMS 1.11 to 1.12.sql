@@ -10,7 +10,7 @@ ADD `user_id` int(11) NOT NULL;
 --
 
 INSERT INTO `extaz_updates` (`id`, `updater`, `ip`, `name`, `version`, `type`, `created`) VALUES
-(6, 'Khran', '::1', 'Fenix', '1.12', 'NORMAL', '2016-04-15 19:30:00');
+(6, 'Khran', '::1', 'Phénix', '1.12', 'NORMAL', '2016-04-15 19:30:00');
 
 --
 -- Structure de la table `extaz_informations`
