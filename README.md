@@ -5,6 +5,7 @@
 
 ##Conditions
 * Il est interdit de retirer la mention `propulsé par ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
+* Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
 
 ##Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
@@ -34,5 +35,3 @@
 * 2015-2015 => MrSaooty (http://extaz-cms.com)
 
 `ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
-
-* Il est interdit de revendre ExtazCMS
