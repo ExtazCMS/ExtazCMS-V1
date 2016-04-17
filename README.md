@@ -5,17 +5,19 @@
 
 ##Conditions
 * Il est interdit de retirer la mention `propulsé par ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
+* Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
 
 ##Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
 ##L'équipe
-* __TristanCode__ - Développeur en Chef et Dirigeant. 
-* __Lyes__ - Dirigeant, Marketing/Communication, Correcteur et Designer.
-* __Khran__ - Développeur et Support Technique.
+* __Lyes__        - Dirigeant, Marketing/Communication, Correcteur et Designer.
+* __TristanCode__ - Vice dirigeant et développeur en Chef.
+* __Khran__       - Développeur et Support Technique.
+* __Litarvan__    - Développeur
 
 ##Changelog
-* V1.12 ("Fenix") - 9 Avril 2016 - ExtazCMS
+* V1.12 ("Phénix") - 9 Avril 2016 - ExtazCMS
 * V1.11 ("Addendum") - 1 Decembre 2015 - ExtazCMS
 * V1.10 ("White Dwarf") - 18 Octobre 2015 - ExtazCMS
 * V1.9 ("Nebula") - 31 Août 2015 - ExtazCMS
@@ -29,7 +31,7 @@
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
 ##Sources
-* 2015-2016 => TristanCode/Lyes (http://extaz-cms.fr)
+* 2015-2016 => Clyese Systems, par TristanCode & Lyes (http://extaz-cms.fr)
 * 2015-2015 => MrSaooty (http://extaz-cms.com)
 
 `ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
