@@ -182,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
   `theme_color_main` varchar(7) NOT NULL,
   `use_faq` int(11) DEFAULT NULL,
   `tax_percent` int(11) DEFAULT NULL,
+  `theme` varchar(255) DEFAULT 'defaut',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

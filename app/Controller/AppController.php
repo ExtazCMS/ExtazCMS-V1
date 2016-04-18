@@ -140,6 +140,7 @@ class AppController extends Controller {
 		$this->set('votes_command',         $this->config['votes_command']);
 		$this->set('votes_ladder_limit',    $this->config['votes_ladder_limit']);
 		$this->set('customs_buttons_title', $this->config['customs_buttons_title']);
+		$this->set('theme', 				$this->config['theme']);
 		// Le reste
 		$this->set('connected', $this->Auth->user());
 		$this->connected = $this->Auth->user();

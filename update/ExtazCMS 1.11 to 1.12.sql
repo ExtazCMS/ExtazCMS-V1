@@ -31,6 +31,7 @@ ADD `votes_time_3` int(11) DEFAULT NULL,
 ADD `votes_time_4` int(11) DEFAULT NULL,
 ADD `votes_time_5` int(11) DEFAULT NULL,
 ADD `tax_percent` int(11) DEFAULT NULL,
+ADD `theme` varchar(255) DEFAULT 'defaut',
 MODIFY `customs_buttons_title` varchar(255) DEFAULT NULL;
 
 

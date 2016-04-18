@@ -10,12 +10,12 @@
     <meta name="description" content="Site web du serveur <?= $name_server; ?>, propulsé par ExtazCMS Reloaded">
     <meta name="author" content="TristanCode">
 	
-    <link rel="stylesheet" type="text/css" href="./theme/actuality/css/style.css">
-	<link rel="stylesheet" type="text/css" href="./theme/actuality/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="./theme/actuality/css/nav.css">
-	<link rel="stylesheet" type="text/css" href="./theme/actuality/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="./theme/actuality/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="./theme/actuality/css/blog.css">
+    <link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/theme/<?php echo $theme ?>/css/blog.css">
     <?php
     // Favicon
     echo $this->Html->meta('favicon.png', $logo_url, array('type' => 'icon'));
