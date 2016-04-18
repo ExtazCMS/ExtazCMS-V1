@@ -15,8 +15,8 @@ class UpdateController extends AppController {
                 if ($this->version != $this->last_version) {
                     $new_file = 'ExtazCMS.zip';
 
-                    $file = "http://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/file.zip";
-                    $sql  = file_get_contents("http://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/sql.txt");
+                    $file = "https://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/file.zip";
+                    $sql  = file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/sql.txt");
 
                     $db = ConnectionManager::getDataSource('default');
                     $db->rawQuery($sql);
@@ -35,9 +35,9 @@ class UpdateController extends AppController {
                             $this->Update->create;
                             $this->Update->saveField('updater', $updater);
                             $this->Update->saveField('ip', $ip);
-                            $this->Update->saveField('name', file_get_contents("http://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/name.txt"));
+                            $this->Update->saveField('name', file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/name.txt"));
                             $this->Update->saveField('version', $this->next_version);
-                            $this->Update->saveField('type', file_get_contents("http://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/type.txt"));
+                            $this->Update->saveField('type', file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/type.txt"));
                             $this->Update->clear();
 
 							// On déclare la dossier cible qui doit être vidé

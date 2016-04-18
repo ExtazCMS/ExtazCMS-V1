@@ -46,7 +46,7 @@
                         echo $this->Form->create('Update', ['inputDefaults' => ['error' => false]]);
                         echo '<button class="btn btn-w-m btn-danger btn-sm" type="submit"><i class="fa fa-wrench"></i> Mise à jour auto</button>';
                         echo $this->Form->end();
-                        echo '<a class="btn btn-w-m btn-success btn-sm" href="http://extaz-cms.fr/updates/updates/ExtazCMS_'.$next_version.'.zip"><i class="fa fa-wrench"></i> Télécharger la mise à jour</a></div>';
+                        echo '<a class="btn btn-w-m btn-success btn-sm" href="https://extaz-cms.fr/updates/updates/ExtazCMS_'.$next_version.'.zip"><i class="fa fa-wrench"></i> Télécharger la mise à jour</a></div>';
                     }
                 ?>
 			</div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <?php echo file_get_contents("http://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html"); ?>
+                        <?php echo file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html"); ?>
                      </div>
                 </div>
             </div>

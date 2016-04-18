@@ -65,8 +65,8 @@ class AppController extends Controller {
 		// On transmet les données
 		// ExtazCMS
 		$version = file_get_contents(ROOT . "/version.txt");
-		$next_version = file_get_contents("http://extaz-cms.fr/updates/nversion.txt");
-		$last_version = file_get_contents("http://extaz-cms.fr/updates/version.txt");
+		$next_version = file_get_contents("https://extaz-cms.fr/updates/nversion.txt");
+		$last_version = file_get_contents("https://extaz-cms.fr/updates/version.txt");
 		$this->version = $version;
 		$this->next_version = $next_version;
 		$this->last_version = $last_version;
