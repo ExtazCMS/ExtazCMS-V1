@@ -88,16 +88,7 @@ $(document).ready(function(){
                                     <?php echo $this->Form->input('password_confirmation', array('type' => 'password', 'placeholder' => 'Confirmation', 'class' => 'form-control', 'label' => 'Mot de passe')); ?>
                                 </section>
                             </fieldset>
-                            <!--
-							<fieldset>
-                                <section>
-                                    Acceptez-vous de recevoir des email ?
-                                    <label class="toggle pull-right">
-                                        <input type="checkbox" name="allow_email" <?php if($allow_email == 1) echo 'checked="checked"'; ?>><i></i>
-                                    </label>
-                                </section>
-                            </fieldset>
-							-->
+
                             <footer>
                                 <button class="btn-u pull-right" type="submit">Enregistrer les modifications</button>
                             </footer>
@@ -135,6 +126,7 @@ $(document).ready(function(){
                                     <?php echo $this->Form->input('nb_tokens', array('type' => 'number', 'class' => 'form-control', 'placeholder' => 'Vous avez '.$tokens.' '.$site_money, 'label' => 'Nombre de '.$site_money.' à envoyer', 'required' => 'required')); ?>
                                 </section>
                             </fieldset>
+
                             <footer>
                                 <button class="btn-u pull-right" type="submit">Envoyer</button>
                             </footer>

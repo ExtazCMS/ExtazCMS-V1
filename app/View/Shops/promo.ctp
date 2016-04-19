@@ -206,7 +206,7 @@ else{
         <!-- Begin Content -->
         <div class="col-md-12">
             <?php if($ban ==0){
-            if($nb_items == 0){ ?>
+			if($nb_items == 0){ ?>
             <div class="servive-block servive-block-default">
                 <i class="icon-custom icon-color-dark rounded-x fa fa-info-circle"></i>
                 <h2 class="heading-md">Aucun résultat</h2>

@@ -4,58 +4,56 @@
     <div class="row">
         <div class="col-md-12">
         	{% if not connected %}
-                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ Mon compte</h3>
-						</div>
-						{{ _this.Form.create('User', {'action': 'login'}) }}
-						<div class="input-group">
-                            <center>{{ _this.Form.input('username', {'type': 'text', 'placeholder': 'Pseudo', 'class': 'login-widget', 'label': false, 'required': 'required'}) }}<center>
-                        </div>
+                <div class="tag-box tag-box-v4">
+                	{{ _this.Form.create('User', {'action': 'login'}) }}
                         <div class="input-group">
-                            <center>{{ _this.Form.input('password', {'type': 'password', 'placeholder': 'Mot de passe', 'class': 'password-widget', 'label': false, 'required': 'required'}) }}</center>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ _this.Form.input('username', {'type': 'text', 'placeholder': 'Pseudo', 'class': 'form-control input-sm', 'label': false, 'required': 'required'}) }}
                         </div>
-								<br>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="pull-left">										
-                                        <button type="submit" class="reg-button" style="margin-left: 50px;">
-                                        </button>
-                                        </div>
-                                        <div class="pull-right">
-                                        <button type="submit" class="login-button" style="margin-left: 5px;">
-                                        </button>
-                                        </div>
-                                    </div>
-                                </div>
-						{{ _this.Form.end }}
-					</div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            {{ _this.Form.input('password', {'type': 'password', 'placeholder': 'Mot de passe', 'class': 'form-control input-sm', 'label': false, 'required': 'required'}) }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ _this.Html.url({'controller': 'users', 'action': 'signup'}) }}" class="btn-u btn-u-dark btn-u-xs width100" type="submit"><i class="fa fa-user-plus"></i> Inscription</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn-u btn-u btn-u-xs pull-right width100" type="submit"><i class="fa fa-sign-in"></i> Connexion</button>
+                            </div>
+                        </div>                  
+                    {{ _this.Form.end }}
+                </div>
             {% else %}
-                    <div class="layout">
-						<div id="ribbon_info">
-                            <a href="{{ _this.Html.url({'controller': 'users', 'action': 'account', '?': {'tab': 'avatar'}}) }}">
-                            {{ _this.Html.image(avatar, {'height': 32, 'width': 32, 'alt': 'Avatar', 'class': 'avatar-rounded', 'style': 'margin-top:-4px;margin-left:-7px;'}) }}
+                <div class="tag-box tag-box-v4">
+                   <p class="lead">
+				   {% if ban != 1 %}
+                        <a href="{{ _this.Html.url({'controller': 'users', 'action': 'account', '?': {'tab': 'avatar'}}) }}">
+				    {% endif %}
+                            {{ _this.Html.image(avatar, {'height': 32, 'width': 32, 'alt': 'Avatar', 'class': 'avatar-rounded', 'style': 'margin-top:-4px;'}) }}
                         </a>
                    		{{ username }}
-						</div>
-                   </p>
-                   <p>
                         <br>
 						{% if ban == 1 %}
-						<font color="#F50C0C"><center>Compte banni !</center></font>
 						<br>
+						<font color="#F50C0C"><center>Compte banni !</center></font>
     					{% endif %}
+                   </p>
+                   <hr>
+                   <p>
                    		{% if role > 0 %}
                             <font color="#555"><i class="fa fa-angle-double-right"></i></font>
                             <a href="{{ _this.Html.url({'controller': 'pages', 'action': 'stats', 'admin': true}) }}">
-                                Accèder à l'administration
+                                Accéder à l'administration
                             </a>
                             <br>
                         {% endif %}
 						{% if ban != 1 %}
                         {% if use_store == 1 %}
                             <font color="#555"><i class="fa fa-angle-double-right"></i></font>
-                            <a href="{{ _this.Html.url({'controller': 'shops', 'action': 'reload'}) }}">
+                            <a href="{{ _this.Html.url({'controller': 'shops', 'action': 'index'}) }}">
                                 Vous avez <span class="open-sans">{{ tokens|number_format(0, ' ', ' ') }}</span> {{ site_money }}
                             </a>
                             <br>
@@ -73,7 +71,7 @@
 							{% if tickets > 1 %}
 								Vous avez <span class="open-sans">{{ tickets }}</span> tickets ouverts
 							{% else %}
-								Vous avez <span class="open-sans">{{ tickets }}</span> ticket ouverts
+								Vous avez <span class="open-sans">{{ tickets }}</span> ticket ouvert
 							{% endif %}
                         </a>
                         <br>
@@ -86,7 +84,7 @@
                     </p>
                     <hr>
                     {% if use_store == 1 %}
-                        <a href="{{ _this.Html.url({'controller': 'shops', 'action': 'reload'}) }}" class="btn-u btn-brd-hover btn-u-orange btn-u-xs" data-original-title="Acheter des {{ site_money }}" data-toggle="tooltip" data-placement="bottom" type="submit"><i class="fa fa-shopping-cart"></i> Recharger</a>
+                        <a href="{{ _this.Html.url({'controller': 'shops', 'action': 'reload'}) }}" class="tooltips btn-u btn-brd-hover btn-u-orange btn-u-xs" data-original-title="Acheter des {{ site_money }}" data-toggle="tooltip" data-placement="bottom" type="submit"><i class="fa fa-shopping-cart"></i> Recharger</a>
                         <a href="{{ _this.Html.url({'controller': 'users', 'action': 'logout'}) }}" class="btn-u btn-brd-hover btn-u-dark btn-u-xs pull-right" type="submit"><i class="fa fa-sign-out"></i> Déconnexion</a>
                     {% else %}
                         <a href="{{ _this.Html.url({'controller': 'users', 'action': 'account'}) }}" class="btn-u btn-brd-hover btn-u btn-u-xs" type="submit"><i class="fa fa-user"></i> Mon profil</a>
@@ -97,19 +95,18 @@
         </div>
     </div>
     <!-- End Member -->
-	    <br>
+
     <!-- Players -->
-                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ Statistiques</font></h3>
-						</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tag-box tag-box-v4">
                             {% if api.call('server.bukkit.version')[0]['result'] == 'success' %}
                                 {% set players = count_players %}
                                 {% set max_players = api.call('players.online.limit')[0]['success'] %}
                                 {% set pourcent = players * 100 / max_players %}
                                     <br />
 									<center>
-                                        <span class="open-sans"><i class="fa fa-users"></i> Joueurs connectés : {{ players }}/{{ max_players }}</span>
+                                        <i class="fa fa-users"></i> Joueurs connectés : <span class="open-sans">{{ players }}/{{ max_players }}</span>
                                     </center>
                                     <div class="progress progress-u progress-sm">
                                         <div class="progress-bar progress-bar-dark" role="progressbar" aria-valuenow="{{ players }}" aria-valuemin="0" aria-valuemax="{{ max_players }}" style="width: {{ pourcent }}%">
@@ -128,21 +125,25 @@
                             {% for player in online_players %}
                                 <li style="list-style: none; margin-top: 5px">
                                     <font color="#555"><i class="fa fa-angle-double-right"></i></font>{% set user_avatar %}http://cravatar.eu/helmavatar/{{ player }}/20.png{% endset %}
-                                    {{ _this.Html.image(user_avatar, {'alt': 'Avatar'}) }} <font color="#BA0000">{{ player }}</font>
+                                    {{ _this.Html.image(user_avatar, {'alt': 'Avatar'}) }} {{ player }}
                                 </li>
                             {% endfor %}
-					</div>
+            </div>
+        </div>
+    </div> 
     <!-- End Players -->
-	    <br>
+
     <!-- Information -->
-	                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ Etat du serveur</font></h3>
-						</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tag-box tag-box-v4">
+                <div id="testimonials-3" class="carousel slide testimonials testimonials-v1" style="margin-top: -10px;">
+                    <div class="carousel-inner">
+                        <div class="item active">
                         	{% if api.call('server.bukkit.version')[0]['result'] == 'success' %}
                                 <div class="testimonial-info center">
                                     <span class="testimonial-author">
-                                        <font color="green"><i class="fa fa-shield"></i> Serveur en ligne</font>
+                                        <i class="fa fa-shield"></i> Serveur en ligne
                                         <br>
                                         <span class="text-muted">
                                             <small>{{ api.call('server.bukkit.version')[0]['success'] }}</small>
@@ -160,51 +161,83 @@
                                     </span>
                                 </div>
                            	{% endif %}
-						</div>
-    <!-- End Information -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Donation Information -->
+
 	{% if use_store == 1 and use_donation_ladder == 1 and nb_donator > 0 %}
-	    <br>
     <!-- Donation Ladder -->
-	                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ Remerciements</font></h3>
-						</div>
-								<br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tag-box tag-box-v4">
+                <div id="testimonials-3" class="carousel slide testimonials testimonials-v1">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="testimonial-info">
                             	{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<font color="#4a4a4a"> </span> {{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}  | Meilleur donateur</font>
-								<br>
-								<br>
-								{{ _this.Html.image(last_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<font color="#4a4a4a"> </span> {{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}  | Dernier donateur</font>
-						</div>
+                                <span class="testimonial-author">
+                                	{{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}
+                                    <br>
+                                    <span class="text-muted">
+                                        <small>Meilleur donateur</small>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-info">
+                            	{{ _this.Html.image(last_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
+                                <span class="testimonial-author">
+                                	{{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}
+                                    <br>
+                                    <span class="text-muted">
+                                        <small>Dernier donateur</small>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Donation Ladder -->
     {% endif %}
+	
     {% if widgets is not empty %}
-	    <br>
         <!-- Custom Widgets -->
-	                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ Widgets</font></h3>
-						</div>
-						{% for widget in widgets %}
+        {% for widget in widgets %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tag-box tag-box-v4">
                         {{ widget['Widget']['content'] }}
-						{% endfor %}   
-						</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}    
         <!-- End Custom Widgets -->
     {% endif %}
+
 	{% if buttons is not empty %}
-	    <br>
         <!-- Custom Buttons -->
-	                    <div class="layout">
-						<div id="ribbon_info">
-                            <h3 style="margin-top: 2px;margin-left: -25px;"><font color="#FFFFFF">☛ {{ customs_buttons_title }}</font></h3>
-						</div>
-						<center>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tag-box tag-box-v4">
+                    <center>
+                    	{% if customs_buttons_title is not empty %}
+							<p style="margin-bottom: -10px;">{{ customs_buttons_title }}<p><br>
+                    	{% endif %}
                     	{% for button in buttons %}
 							<a href="{{ button['Button']['url'] }}" target="_blank" class="btn-u btn-u-{{ button['Button']['color'] }} btn-u-xs" style="margin-bottom: 3px;margin-top: 3px" type="button"><i class="fa fa-{{ button['Button']['icon'] }}"></i> {{ button['Button']['content'] }}</a>
                     	{% endfor %}
-						</center>
-						</div>
+                    </center>
+                </div>
+            </div>
+        </div>
         <!-- End Custom Buttons -->
     {% endif %}
 </div>

@@ -73,7 +73,7 @@ $(document).ready(function(){
                         <br>
                     </section>
                 </fieldset>
-                <div class="footer_login">
+                <footer class="footer_login">
                     <div class="row">
                         <div class="col-md-4">
                             <label class="checkbox">
@@ -84,14 +84,14 @@ $(document).ready(function(){
                             <button class="btn-u pull-right" type="submit">Se connecter</button>                        
                         </div>
                     </div>
-                </div>
-                <div class="footer_create_account" style="display:none;">
+                </footer>
+                <footer class="footer_create_account" style="display:none;">
                     <div class="row">
                         <div class="col-md-12">
                             <a href="#" class="btn-u pull-right" type="submit" id="link_create_account">Poursuivre mon inscription</a>                        
                         </div>
                     </div>
-                </div>
+                </footer>
             <?php echo $this->Form->end(); ?>
         </div>
     </div><!--/row-->

@@ -6,7 +6,7 @@ if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))){
 ?>
 <!--=== Content Part ===-->
 <div class="container content">     
-    <!--Error Block-->
+    <!-- Error Block-->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="error-v1">
@@ -19,6 +19,6 @@ if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))){
             </div>
         </div>
     </div>
-    <!--End Error Block-->
+    <!-- End Error Block-->
 </div>  
 <!--=== End Content Part ===-->

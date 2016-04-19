@@ -59,9 +59,11 @@ $(function() {
                 <fieldset id="message">
                     <section>
                         <?php echo $this->Form->textarea('message', ['placeholder' => 'Votre question/message', 'class' => 'form-control', 'rows' => 5, 'cols' => 5]); ?>
-                    <button class="btn btn-u pull-right" type="submit">Envoyer</button>
                     </section>
                 </fieldset>
+                <footer>
+                    <button class="btn btn-u pull-right" type="submit">Envoyer</button>
+                </footer>
             <?php echo $this->Form->end(); ?>
         </div>
         <!-- End Content -->

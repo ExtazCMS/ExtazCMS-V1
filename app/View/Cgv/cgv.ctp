@@ -4,9 +4,8 @@
     <div class="row magazine-page">
         <!-- Begin Content -->
         <div class="col-md-9">
-			<?php if(!empty($cgvandcgu)){ ?>
-				<h1 style="text-align:center"><strong><u>CGV/CGU</u></strong></h1><p>&nbsp;</p>
-				<?php echo $cgvandcgu ?><br />
+			<?php if(!empty($cgvandcgu)){
+				echo $cgvandcgu ?><br />
 				<?php if($connected){
 					if($cgvcgu == 0) { ?>
 						<center>
@@ -28,7 +27,6 @@
 				</div>
 			<?php } ?>
         </div>
-		<br>
         <?php echo $this->element('sidebar'); ?>
     </div>
 </div><!--/container-->     

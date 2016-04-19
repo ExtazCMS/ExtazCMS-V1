@@ -142,7 +142,7 @@ if($connected){
 								} else {
 									echo 'NON';
 								} ?>
-							</div>
+                            </div>
                             <?php if($use_economy == 1 && $use_server_money = 1 && $i['Shop']['price_money_server'] > -1){ ?>
                                 <?php echo $this->Form->create('Shop', ['action' => 'buy']); ?>
                                     <?php echo $this->Form->input('id', ['type' => 'hidden', 'value' => $i['Shop']['id']]); ?>
@@ -212,7 +212,7 @@ else{
         <!-- Begin Content -->
         <div class="col-md-12">
             <?php if($ban == 0){
-            if($nb_items == 0){ ?>
+			if($nb_items == 0){ ?>
             <div class="servive-block servive-block-default">
                 <i class="icon-custom icon-color-dark rounded-x fa fa-info-circle"></i>
                 <h2 class="heading-md">Aucun résultat</h2>
