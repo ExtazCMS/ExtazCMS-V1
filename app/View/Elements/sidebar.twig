@@ -214,7 +214,21 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="tag-box tag-box-v4">
-                        {{ widget['Widget']['content'] }}
+						<div id="testimonials-3" class="carousel slide testimonials testimonials-v1" style="margin-top: -10px;">
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="testimonial-info center">
+										<span class="testimonial-author">
+											<i class="fa fa-star"></i> {{ widget['Widget']['name'] }}
+											<br><br>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<span class="text-muted">
+							{{ widget['Widget']['content'] }}
+						</span>
                     </div>
                 </div>
             </div>

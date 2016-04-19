@@ -164,7 +164,7 @@ if(isset($_GET['debug'])) {
 
 				<?php } else { ?>
 					
-					<center><img class="img-responsive" src="./banner.jpg" alt="Default banner"></center><br />	
+					<center><img class="img-responsive" src="./banner.png" alt="Default banner"></center><br />	
 					
 				<?php } ?>	
 

@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
   `votes_reward` int(11) DEFAULT NULL,
   `votes_command` text,
   `votes_ladder_limit` int(11) DEFAULT NULL,
-  `customs_buttons_title` varchar(255) DEFAULT NULL,
+  `customs_buttons_title` int(11) DEFAULT NULL,
   `theme_color_main` varchar(7) NOT NULL,
   `use_faq` int(11) DEFAULT NULL,
   `tax_percent` int(11) DEFAULT NULL,
@@ -190,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
 --
 
 INSERT INTO `extaz_informations` (`id`, `debug`, `name_server`, `ip_server`, `port_server`, `money_server`, `jsonapi_ip`, `jsonapi_port`, `jsonapi_username`, `jsonapi_password`, `jsonapi_salt`, `site_money`, `starpass_idp`, `starpass_idd`, `starpass_tokens`, `paypal_price`, `paypal_tokens`, `paypal_email`, `contact_email`, `logo_url`, `url_site`, `banner_url`, `use_store`, `use_paypal`, `use_starpass`, `use_economy`, `use_server_money`, `use_team`, `use_contact`, `use_rules`, `use_donation_ladder`, `use_slider`, `use_votes`, `use_votes_ladder`, `use_igchat`, `happy_hour`, `happy_hour_bonus`, `rules`, `cgvandcgu`, `background`, `chat_prefix`, `chat_nb_messages`, `analytics`, `maintenance`, `votes_url_1`, `votes_url_2`, `votes_url_3`, `votes_url_4`, `votes_url_5`, `votes_description`, `votes_time_1`, `votes_time_2`, `votes_time_3`, `votes_time_4`, `votes_time_5`, `votes_reward`, `votes_command`, `votes_ladder_limit`, `customs_buttons_title`, `theme_color_main`, `use_faq`, `tax_percent`) VALUES
-(1, 0, 'ExtazCMS', 'mc.domaine.com', 25565, 'Token', 'localhost', 20059, 'admin', 'changeme', '', 'euros', NULL, NULL, 25, 3, 25, '', 'contact@domain.com', '', 'http://www.domain.com', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 25, '', '', '2.jpg', 'Web', 1, '', 0, '', '', '', '', '', 'Votez pour notre serveur !', 1440, 1440, 1440, 1440, 1440, 0, 'give %player% minecraft:diamond 1&&&broadcast %player% a voté pour le serveur', 15, 0, '#00000', 0, 0);
+(1, 0, 'ExtazCMS', 'mc.domaine.com', 25565, 'Token', 'localhost', 20059, 'admin', 'changeme', '', 'euros', NULL, NULL, 25, 3, 25, '', 'contact@domain.com', '', 'http://www.domain.com', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 25, '', '', '2.jpg', 'Web', 1, '', 0, '', '', '', '', '', 'Votez pour notre serveur !', 1440, 1440, 1440, 1440, 1440, 0, 'give %player% minecraft:diamond 1&&&broadcast %player% a voté pour le serveur', 15, 'Mes boutons', '#00000', 0, 0);
 
 -- --------------------------------------------------------
 

@@ -45,7 +45,7 @@ $(document).ready(function(){
 							<fieldset>
 								<section>
 				                	<button type="submit" class="btn btn-default btn-sm">
-			                			<img src="<?php echo $url_site; ?>/img/bouton_paypal.png"></img>
+			                			<img src="./img/bouton_paypal.png"></img>
 			                		</button><br>
 								</section>
 							</fieldset>
@@ -114,7 +114,7 @@ $(document).ready(function(){
 							<fieldset>
 								<section>
 				                	<button type="submit" class="btn btn-default btn-sm">
-			                			<img src="<?php echo $url_site; ?>/img/bouton_paypal.png"></img>
+			                			<img src="./img/bouton_paypal.png"></img>
 			                		</button><br>
 								</section>
 							</fieldset>
