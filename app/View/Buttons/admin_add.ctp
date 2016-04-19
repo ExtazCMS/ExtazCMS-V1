@@ -1,13 +1,39 @@
-<?php $this->assign('title', 'Modifier un bouton'); ?>
+<?php $this->assign('title', 'Créer un bouton'); ?>
 <script type="text/javascript">
 $(function() {
+    $('#data-table').dataTable({
+        "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "Tout"]],
+        "order": [],
+        language: {
+            processing:     "Traitement en cours...",
+            search:         "Rechercher&nbsp;:",
+            lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+            info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+            infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+            infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+            infoPostFix:    "",
+            loadingRecords: "Chargement en cours...",
+            zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+            emptyTable:     "Aucune donnée disponible dans le tableau",
+            paginate: {
+                first:      "Premier",
+                previous:   "Pr&eacute;c&eacute;dent",
+                next:       "Suivant",
+                last:       "Dernier"
+            },
+            aria: {
+                sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                sortDescending: ": activer pour trier la colonne par ordre décroissant"
+            }
+        }
+    });
     $('#ButtonsContent').keyup(function(){
         var content = $('#ButtonsContent').val();
         var icon = $('#ButtonsIcon').val();
         if(content == ''){
             content = 'Votre texte ici';
         }
-        if(icon == -1){
+        if(icon == null){
             $('#apercu').html('<i class="fa fa-question-circle"></i> ' + ' ' + content);
         }
         else{
@@ -18,16 +44,16 @@ $(function() {
         var content = $('#ButtonsContent').val();
         var icon = $('#ButtonsIcon').val();
         if(content == ''){
-            $('#apercu').html('<i class="fa fa-' + icon + '"></i> ' + 'Texte à afficher');
+            $('#apercu').html('<i class="fa fa-' + icon + '"></i> ' + 'Votre texte ici').hide().fadeIn(500);
         }
         else{
-            $('#apercu').html('<i class="fa fa-' + icon + '"></i> ' + ' ' + content);
+            $('#apercu').html('<i class="fa fa-' + icon + '"></i> ' + ' ' + content).hide().fadeIn(500);
         }
     });
     $('#ButtonsColor').change(function(){
         var color = $('#ButtonsColor').val();
         $('#apercu').attr('class', '');
-        $('#apercu').addClass('btn-u btn-u-' + color + ' btn-u-lg');
+        $('#apercu').addClass('btn-u btn-u-' + color + ' btn-u-lg').hide().fadeIn(500);
     });
     $(".confirm").confirm({
         text: "Voulez vous vraiment supprimer ce bouton ?",
@@ -40,20 +66,16 @@ $(function() {
     });
 });
 </script>
-
 <div class="wrapper wrapper-content">
     <div class="animated fadeInRightBig">
         <div class="row">
             <div class="col-md-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Modifier un bouton dans la sidebar</h5>
+                        <h5>Ajouter un bouton dans la sidebar</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a href="<?php echo $this->Html->url(['controller' => 'buttons', 'action' => 'index']); ?>">
-                                <i class="fa fa-bars"></i>
                             </a>
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
@@ -63,17 +85,17 @@ $(function() {
                     <div class="ibox-content">
                         <?php echo $this->Form->create('Buttons', ['inputDefaults' => ['error' => false]]); ?>
                             <div class="form-group">
-                                <?php echo $this->Form->input('content', array('type' => 'text', 'value' => $data['Button']['content'], 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
+                                <?php echo $this->Form->input('content', array('type' => 'text', 'placeholder' => 'Texte à afficher', 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
                             </div>
                             <div class="form-group">
-                                <?php echo $this->Form->input('url', array('type' => 'url', 'value' => $data['Button']['url'], 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
+                                <?php echo $this->Form->input('url', array('type' => 'url', 'placeholder' => 'Adresse URL', 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
                             </div>
                             <div class="form-group">
-                                <?php echo $this->Form->input('order', array('type' => 'number', 'value' => $data['Button']['order'], 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
+                                <?php echo $this->Form->input('order', array('type' => 'number', 'placeholder' => 'Ordre d\'affichage (ex: 1, 2, 3)', 'class' => 'form-control', 'label' => false, 'required' => 'required')); ?>
                             </div>
                             <div class="form-group">
                                 <select name="data[Buttons][icon]" class="select" id="ButtonsIcon">
-                                    <option value="<?php echo $data['Button']['icon']; ?>">Icône du bouton</option>
+                                    <option value="-1">Icône du bouton</option>
                                     <option value="bars"> Liste</option>
                                     <option value="check">Check</option>
                                     <option value="comment-o">Commentaire</option>
@@ -121,7 +143,7 @@ $(function() {
                             </div>
                             <hr>
                             <button class="btn btn-w-m btn-primary pull-right" type="submit"><i class="fa fa-check"></i> Confirmer</button>
-                            <a href="<?php echo $this->Html->url(['controller' => 'buttons', 'action' => 'delete', $data['Button']['id'], 'admin' => true]); ?>" class="btn btn-danger confirm"><i class="fa fa-trash-o"></i> Supprimer</a>
+                            <a href="<?php echo $this->Html->url(['controller' => 'buttons', 'action' => 'index']); ?>" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Annuler</a>
                         <?php echo $this->Form->end(); ?>
                     </div>
                 </div>
@@ -141,7 +163,7 @@ $(function() {
                     </div>
                     <div class="ibox-content">
                         <center>
-                            <button id="apercu" class="btn-u btn-u-<?php echo $data['Button']['color']; ?> btn-u-lg" type="button"><i class="fa fa-<?php echo $data['Button']['icon']; ?>"></i> <?php echo $data['Button']['content']; ?></button>
+                            <button id="apercu" class="btn-u btn-u-dark btn-u-lg" type="button"><i class="fa fa-question-circle"></i> Votre texte ici</button>
                         </center>
                     </div>
                 </div>

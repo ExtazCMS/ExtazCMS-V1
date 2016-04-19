@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
   `votes_reward` int(11) DEFAULT NULL,
   `votes_command` text,
   `votes_ladder_limit` int(11) DEFAULT NULL,
-  `customs_buttons_title` int(11) DEFAULT NULL,
+  `customs_buttons_title` varchar(255) DEFAULT NULL,
   `theme_color_main` varchar(7) NOT NULL,
   `use_faq` int(11) DEFAULT NULL,
   `tax_percent` int(11) DEFAULT NULL,
