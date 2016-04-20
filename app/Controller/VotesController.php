@@ -141,22 +141,22 @@ Class VotesController extends AppController{
 			// Si on n'a jamais voté ou si le temps nécessaire avant un nouveau vote s'est écoulé
 			if($nb_votes == 0 OR $time >= $next_vote){
 			
-			//On récupère les valeur des autre votes
+				//On récupère les valeur des autre votes
 			
-			$vote_2 = $vote['Vote']['next_vote_2'];
-			$vote_3 = $vote['Vote']['next_vote_3'];
-			$vote_4 = $vote['Vote']['next_vote_4'];
-			$vote_5 = $vote['Vote']['next_vote_5'];
+				$vote_2 = $vote['Vote']['next_vote_2'];
+				$vote_3 = $vote['Vote']['next_vote_3'];
+				$vote_4 = $vote['Vote']['next_vote_4'];
+				$vote_5 = $vote['Vote']['next_vote_5'];
 			
-					// On enregistre le nouveau vote
-					$this->Vote->create;
-					$this->Vote->saveField('user_id', $this->Auth->user('id'));
-					$this->Vote->saveField('ip', $_SERVER['REMOTE_ADDR']);
-					$this->Vote->saveField('next_vote_1', $time_to_vote_in_seconds);
-					$this->Vote->saveField('next_vote_2', $vote_2);
-					$this->Vote->saveField('next_vote_3', $vote_3);
-					$this->Vote->saveField('next_vote_4', $vote_4);
-					$this->Vote->saveField('next_vote_5', $vote_5);
+				// On enregistre le nouveau vote
+				$this->Vote->create;
+				$this->Vote->saveField('user_id', $this->Auth->user('id'));
+				$this->Vote->saveField('ip', $_SERVER['REMOTE_ADDR']);
+				$this->Vote->saveField('next_vote_1', $time_to_vote_in_seconds);
+				$this->Vote->saveField('next_vote_2', $vote_2);
+				$this->Vote->saveField('next_vote_3', $vote_3);
+				$this->Vote->saveField('next_vote_4', $vote_4);
+				$this->Vote->saveField('next_vote_5', $vote_5);
 
 				// On l'ajoute dans la table users
 				$this->User->id = $this->Auth->user('id');
@@ -175,35 +175,6 @@ Class VotesController extends AppController{
 					$this->User->id = $this->Auth->user('id');
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
-				}
-				
-				// JSONAPI
-				$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
-				// On test si le joueur est en ligne
-				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), $online_players[0]['success']);
-				// Si l'utilisateur est connecté en jeu
-				if($player_is_online){
-					// S'il y a une/des commande(s) à exécuter
-					if(!empty($this->config['votes_command'])){
-						// On exécute la/les commande(s)
-						$command = str_replace('%player%', $this->Auth->user('username'), $this->config['votes_command']);
-						if(strstr($this->config['votes_command'], '&&&')){
-							$new_command = explode('&&&', $command);
-							foreach($new_command as $command){
-								$command = trim($command);
-								$api->call('server.run_command', [$command]);
-							}
-						}
-						else{
-							$api->call('server.run_command', [$command]);
-						}
-					}
-				} else {
-					//On récupère le nombre de récompense déjà acquise
-					$new_reward_count = $user['User']['reward'] + 1;
-					//On enregistre le nouveau nombre de récompense disponible
-					$this->User->saveField('reward', $new_reward_count);
 				}
 
 				// On redirige vers la page de vote
@@ -284,35 +255,6 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
-				
-				// JSONAPI
-				$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
-				// On test si le joueur est en ligne
-				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), $online_players[0]['success']);
-				// Si l'utilisateur est connecté en jeu
-				if($player_is_online){
-					// S'il y a une/des commande(s) à exécuter
-					if(!empty($this->config['votes_command'])){
-						// On exécute la/les commande(s)
-						$command = str_replace('%player%', $this->Auth->user('username'), $this->config['votes_command']);
-						if(strstr($this->config['votes_command'], '&&&')){
-							$new_command = explode('&&&', $command);
-							foreach($new_command as $command){
-								$command = trim($command);
-								$api->call('server.run_command', [$command]);
-							}
-						}
-						else{
-							$api->call('server.run_command', [$command]);
-						}
-					}
-				} else {
-					//On récupère le nombre de récompense déjà acquise
-					$new_reward_count = $user['User']['reward'] + 1;
-					//On enregistre le nouveau nombre de récompense disponible
-					$this->User->saveField('reward', $new_reward_count);
-				}
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -391,35 +333,7 @@ Class VotesController extends AppController{
 					$this->User->id = $this->Auth->user('id');
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
-				}
-				
-				// JSONAPI
-				$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
-				// On test si le joueur est en ligne
-				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), $online_players[0]['success']);
-				// Si l'utilisateur est connecté en jeu
-				if($player_is_online){
-					// S'il y a une/des commande(s) à exécuter
-					if(!empty($this->config['votes_command'])){
-						// On exécute la/les commande(s)
-						$command = str_replace('%player%', $this->Auth->user('username'), $this->config['votes_command']);
-						if(strstr($this->config['votes_command'], '&&&')){
-							$new_command = explode('&&&', $command);
-							foreach($new_command as $command){
-								$command = trim($command);
-								$api->call('server.run_command', [$command]);
-							}
-						}
-						else{
-							$api->call('server.run_command', [$command]);
-						}
-					}
-				} else {
-					//On récupère le nombre de récompense déjà acquise
-					$new_reward_count = $user['User']['reward'] + 1;
-					//On enregistre le nouveau nombre de récompense disponible
-					$this->User->saveField('reward', $new_reward_count);
+				}$this->User->saveField('reward', $new_reward_count);
 				}
 
 				// On redirige vers la page de vote
@@ -500,35 +414,6 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
-				
-				// JSONAPI
-				$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
-				// On test si le joueur est en ligne
-				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), $online_players[0]['success']);
-				// Si l'utilisateur est connecté en jeu
-				if($player_is_online){
-					// S'il y a une/des commande(s) à exécuter
-					if(!empty($this->config['votes_command'])){
-						// On exécute la/les commande(s)
-						$command = str_replace('%player%', $this->Auth->user('username'), $this->config['votes_command']);
-						if(strstr($this->config['votes_command'], '&&&')){
-							$new_command = explode('&&&', $command);
-							foreach($new_command as $command){
-								$command = trim($command);
-								$api->call('server.run_command', [$command]);
-							}
-						}
-						else{
-							$api->call('server.run_command', [$command]);
-						}
-					}
-				} else {
-					//On récupère le nombre de récompense déjà acquise
-					$new_reward_count = $user['User']['reward'] + 1;
-					//On enregistre le nouveau nombre de récompense disponible
-					$this->User->saveField('reward', $new_reward_count);
-				}
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -607,35 +492,6 @@ Class VotesController extends AppController{
 					$this->User->id = $this->Auth->user('id');
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
-				}
-				
-				// JSONAPI
-				$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
-				// On test si le joueur est en ligne
-				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), $online_players[0]['success']);
-				// Si l'utilisateur est connecté en jeu
-				if($player_is_online){
-					// S'il y a une/des commande(s) à exécuter
-					if(!empty($this->config['votes_command'])){
-						// On exécute la/les commande(s)
-						$command = str_replace('%player%', $this->Auth->user('username'), $this->config['votes_command']);
-						if(strstr($this->config['votes_command'], '&&&')){
-							$new_command = explode('&&&', $command);
-							foreach($new_command as $command){
-								$command = trim($command);
-								$api->call('server.run_command', [$command]);
-							}
-						}
-						else{
-							$api->call('server.run_command', [$command]);
-						}
-					}
-				} else {
-					//On récupère le nombre de récompense déjà acquise
-					$new_reward_count = $user['User']['reward'] + 1;
-					//On enregistre le nouveau nombre de récompense disponible
-					$this->User->saveField('reward', $new_reward_count);
 				}
 
 				// On redirige vers la page de vote
