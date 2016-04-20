@@ -176,6 +176,11 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
+				
+				//On récupère le nombre de récompense déjà acquise
+				$new_reward_count = $user['User']['reward'] + 1;
+				//On enregistre le nouveau nombre de récompense disponible
+				$this->User->saveField('reward', $new_reward_count);
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -255,6 +260,11 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
+				
+				//On récupère le nombre de récompense déjà acquise
+				$new_reward_count = $user['User']['reward'] + 1;
+				//On enregistre le nouveau nombre de récompense disponible
+				$this->User->saveField('reward', $new_reward_count);
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -299,12 +309,11 @@ Class VotesController extends AppController{
 			// Si on n'a jamais voté ou si le temps nécessaire avant un nouveau vote s'est écoulé
 			if($nb_votes == 0 OR $time >= $next_vote){
 			
-			//On récupère les valeur des autre votes
-			
-			$vote_2 = $vote['Vote']['next_vote_2'];
-			$vote_1 = $vote['Vote']['next_vote_1'];
-			$vote_4 = $vote['Vote']['next_vote_4'];
-			$vote_5 = $vote['Vote']['next_vote_5'];
+					//On récupère les valeur des autre votes
+					$vote_2 = $vote['Vote']['next_vote_2'];
+					$vote_1 = $vote['Vote']['next_vote_1'];
+					$vote_4 = $vote['Vote']['next_vote_4'];
+					$vote_5 = $vote['Vote']['next_vote_5'];
 			
 					// On enregistre le nouveau vote
 					$this->Vote->create;
@@ -333,8 +342,13 @@ Class VotesController extends AppController{
 					$this->User->id = $this->Auth->user('id');
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
-				}$this->User->saveField('reward', $new_reward_count);
+					$this->User->saveField('reward', $new_reward_count);
 				}
+				
+				//On récupère le nombre de récompense déjà acquise
+				$new_reward_count = $user['User']['reward'] + 1;
+				//On enregistre le nouveau nombre de récompense disponible
+				$this->User->saveField('reward', $new_reward_count);
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -414,6 +428,11 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
+				
+				//On récupère le nombre de récompense déjà acquise
+				$new_reward_count = $user['User']['reward'] + 1;
+				//On enregistre le nouveau nombre de récompense disponible
+				$this->User->saveField('reward', $new_reward_count);
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
@@ -493,6 +512,11 @@ Class VotesController extends AppController{
 					$this->User->saveField('tokens', $new_user_tokens);
 					$this->Vote->saveField('reward', $this->config['votes_reward']);
 				}
+				
+				//On récupère le nombre de récompense déjà acquise
+				$new_reward_count = $user['User']['reward'] + 1;
+				//On enregistre le nouveau nombre de récompense disponible
+				$this->User->saveField('reward', $new_reward_count);
 
 				// On redirige vers la page de vote
 				$this->Session->setFlash("Merci d'avoir voté !", 'success');
