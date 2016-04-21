@@ -17,6 +17,7 @@
 * __Litarvan__    - Développeur
 
 ##Changelog
+* V1.12.1 ("Phénix patch 1") - 22 Avril 2016 - ExtazCMS
 * V1.12 ("Phénix") - 9 Avril 2016 - ExtazCMS
 * V1.11 ("Addendum") - 1 Decembre 2015 - ExtazCMS
 * V1.10 ("White Dwarf") - 18 Octobre 2015 - ExtazCMS
