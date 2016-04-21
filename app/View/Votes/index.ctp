@@ -24,29 +24,9 @@
 									</div>
 									<p><h2><?php echo $votes_description; ?></h2></p>
 									<hr>
-									<table>
-										<tbody>
-											<tr>
-												<td>
-												<center>VOTE 1</center>
-												</td>
-												<td>
-												<center>VOTE 2</center>
-												</td>
-												<td>
-												<center>VOTE 3</center>
-												</td>
-												<td>
-												<center>VOTE 4</center>
-												</td>
-												<td>
-												<center>VOTE 5</center>
-												</td></tr>
-											<tr>
 												<?php if(!empty($votes_url_1)){ ?>
-													<td>
 														<?php if($time_to_vote_in_minutes_1 > 0){ ?>
-															<a class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
+															<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
 															<?php if($time_to_vote_in_seconds_1 > 3600){
 																if($time_to_vote_in_hours_1 > 1){
 																	echo $time_to_vote_in_hours_1; ?> heures
@@ -68,25 +48,23 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a href="<?php echo $votes_url_1; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote1" target="_blank" onclick="setTimeout(vote111, 1000); setTimeout(vote1111, 15000); setTimeout(vote1, 15000); setTimeout(vote11, 1000)"><center>Voter sur<br />ce site</center></a>
-															<div id="recompense1att">
-																<a class="btn-u btn-u-yellow btn-u-lg">
-																	<center>En attente de<br />validation</center>
+														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_1; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote1" target="_blank" onclick="setTimeout(vote111, 1000); setTimeout(vote1111, 15000); setTimeout(vote1, 15000); setTimeout(vote11, 1000)"><center>Voter sur le<br />site 1</center></a>
+															<strong id="recompense1att">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
+																	<center>En attente<br />de validation</center>
 																</a>
-															</div>
-															<div id="recompense1">
-																<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote1']); ?>" class="btn-u btn-u-green btn-u-lg">
+															</strong>
+															<strong id="recompense1">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote1']); ?>" class="btn-u btn-u-green btn-u-lg">
 																	
 																	<center>Confirmer<br />le vote</center>
 																</a>
-															</div>
+															</strong>
 														<?php } ?>
-													</td>
 												<?php } ?>
 												<?php if(!empty($votes_url_2)){ ?>
-													<td>
 														<?php if($time_to_vote_in_minutes_2 > 0){ ?>
-															<a class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
+															<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
 															<?php if($time_to_vote_in_seconds_2 > 3600){
 																if($time_to_vote_in_hours_2 > 1){
 																	echo $time_to_vote_in_hours_2; ?> heures
@@ -108,24 +86,22 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a href="<?php echo $votes_url_2; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote2" target="_blank" onclick="setTimeout(vote222, 1000); setTimeout(vote2222, 15000); setTimeout(vote2, 15000); setTimeout(vote22, 1000)"><center>Voter sur<br />ce site</center></a>
-															<div id="recompense2att">
-																<a class="btn-u btn-u-yellow btn-u-lg">
-																	<center>En attente de<br />validation</center>
+														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_2; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote2" target="_blank" onclick="setTimeout(vote222, 1000); setTimeout(vote2222, 15000); setTimeout(vote2, 15000); setTimeout(vote22, 1000)"><center>Voter sur le<br />site 2</center></a>
+															<strong id="recompense2att">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
+																	<center>En attente<br />de validation</center>
 																</a>
-															</div>
-															<div id="recompense2">
-																<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote2']); ?>" class="btn-u btn-u-green btn-u-lg">
+															</strong>
+															<strong id="recompense2">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote2']); ?>" class="btn-u btn-u-green btn-u-lg">
 																	<center>Confirmer<br />le vote</center>
 																</a>
-															</div>
+															</strong>
 														<?php } ?>
-													</td>
 												<?php } ?>
 												<?php if(!empty($votes_url_3)){ ?>
-													<td>
 														<?php if($time_to_vote_in_minutes_3 > 0){ ?>
-															<a class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
+															<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
 															<?php if($time_to_vote_in_seconds_3 > 3600){
 																if($time_to_vote_in_hours_3 > 1){
 																	echo $time_to_vote_in_hours_3; ?> heures
@@ -147,24 +123,22 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a href="<?php echo $votes_url_3; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote3" target="_blank" onclick="setTimeout(vote333, 1000); setTimeout(vote3333, 15000); setTimeout(vote3, 15000); setTimeout(vote33, 1000)"><center>Voter sur<br />ce site</center></a>
-															<div id="recompense3att">
-																<a class="btn-u btn-u-yellow btn-u-lg">
-																	<center>En attente de<br />validation</center>
+														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_3; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote3" target="_blank" onclick="setTimeout(vote333, 1000); setTimeout(vote3333, 15000); setTimeout(vote3, 15000); setTimeout(vote33, 1000)"><center>Voter sur le<br />site 3</center></a>
+															<strong id="recompense3att">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
+																	<center>En attente<br />de validation</center>
 																</a>
-															</div>
-															<div id="recompense3">
-																<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote3']); ?>" class="btn-u btn-u-green btn-u-lg">
+															</strong>
+															<strong id="recompense3">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote3']); ?>" class="btn-u btn-u-green btn-u-lg">
 																	<center>Confirmer<br />le vote</center>
 																</a>
-															</div>
+															</strong>
 														<?php } ?>
-													</td>
 												<?php } ?>
 												<?php if(!empty($votes_url_4)){ ?>
-													<td>
 														<?php if($time_to_vote_in_minutes_4 > 0){ ?>
-															<a class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
+															<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
 															<?php if($time_to_vote_in_seconds_4 > 3600){
 																if($time_to_vote_in_hours_4 > 1){
 																	echo $time_to_vote_in_hours_4; ?> heures
@@ -186,24 +160,22 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a href="<?php echo $votes_url_4; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote4" target="_blank" onclick="setTimeout(vote444, 1000); setTimeout(vote4444, 15000); setTimeout(vote4, 15000); setTimeout(vote44, 1000)"><center>Voter sur<br />ce site</center></a>
-															<div id="recompense4att">
-																<a class="btn-u btn-u-yellow btn-u-lg">
-																	<center>En attente de<br />validation</center>
+														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_4; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote4" target="_blank" onclick="setTimeout(vote444, 1000); setTimeout(vote4444, 15000); setTimeout(vote4, 15000); setTimeout(vote44, 1000)"><center>Voter sur le<br />site 4</center></a>
+															<strong id="recompense4att">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
+																	<center>En attente<br />de validation</center>
 																</a>
-															</div>
-															<div id="recompense4">
-																<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote4']); ?>" class="btn-u btn-u-green btn-u-lg">
+															</strong>
+															<strong id="recompense4">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote4']); ?>" class="btn-u btn-u-green btn-u-lg">
 																	<center>Confirmer<br />le vote</center>
 																</a>
-															</div>
+															</strong>
 														<?php } ?>
-													</td>
 												<?php } ?>
 												<?php if(!empty($votes_url_5)){ ?>
-													<td>
 														<?php if($time_to_vote_in_minutes_5 > 0){ ?>
-															<a class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
+															<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-red btn-u-lg"><center>Dispo dans<br />
 															<?php if($time_to_vote_in_seconds_5 > 3600){
 																if($time_to_vote_in_hours_5 > 1){
 																	echo $time_to_vote_in_hours_5; ?> heures
@@ -225,27 +197,23 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a href="<?php echo $votes_url_5; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote5" target="_blank" onclick="setTimeout(vote555, 1000); setTimeout(vote5555, 15000); setTimeout(vote5, 15000); setTimeout(vote55, 1000)"><center>Voter sur<br />ce site</center></a>
-															<div id="recompense5att">
-																<a class="btn-u btn-u-yellow btn-u-lg">
-																	<center>En attente de<br />validation</center>
+														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_5; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote5" target="_blank" onclick="setTimeout(vote555, 1000); setTimeout(vote5555, 15000); setTimeout(vote5, 15000); setTimeout(vote55, 1000)"><center>Voter sur le<br />site 5</center></a>
+															<strong id="recompense5att">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
+																	<center>En attente<br />de validation</center>
 																</a>
-															</div>
-															<div id="recompense5">
-																<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote5']); ?>" class="btn-u btn-u-green btn-u-lg">
+															</strong>
+															<strong id="recompense5">
+																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'vote5']); ?>" class="btn-u btn-u-green btn-u-lg">
 																	<center>Confirmer<br />le vote</center>
 																</a>
-															</div>
+															</strong>
 														<?php } ?>
-													</td>
 												<?php } ?>
-											</tr>
-										</tbody>
-									</table>
 									<br />
 									<br />
 									<a href="<?php echo $this->Html->url(['controller' => 'votes', 'action' => 'reward']); ?>" class="btn-u btn-u-dark btn-u-lg">
-										Réclamer une récompense stockée. <?php echo $reward; if($reward < 1){?> disponible !<?php } else { ?> disponibles !<?php } ?>
+										Réclamer une récompense stockée.<br /><?php echo $reward; if($reward < 1){?> disponible !<?php } else { ?> disponibles !<?php } ?>
 									</a>
 									<br />
 									<br />
