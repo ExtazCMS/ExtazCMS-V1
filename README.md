@@ -1,6 +1,6 @@
 ![logo 1](http://extaz-cms.fr/images/logo.png)
 
-![logo 2](http://forum.ironcraft.fr/uploads/monthly_2015_10/logo.png.d3dc9bbe6e06f0f094bcad42af1dd7c0.png)
+![logo 2](https://clyese-systems.com/img/logo.png)
 
 
 ##Conditions
