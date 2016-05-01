@@ -11,10 +11,12 @@
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
 ##L'équipe
-* __Lyes__        - Dirigeant, Marketing/Communication, Correcteur et Designer.
-* __TristanCode__ - Vice dirigeant et développeur en Chef.
-* __Khran__       - Développeur et Support Technique.
-* __Litarvan__    - Développeur
+* __Lyes__         - Dirigeant, Marketing/Communication, Correcteur et Designer.
+* __TristanCode__  - Développeur en Chef.
+* __Khran__        - Développeur Web.
+* __Mazette__      - Développeur Web.
+* __Litarvan__     - Développeur Web et Java.
+* __David Duarte__ - Développeur Java.
 
 ##Changelog
 * V1.12 ("Phénix") - 9 Avril 2016 - ExtazCMS
