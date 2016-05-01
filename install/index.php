@@ -59,7 +59,7 @@ $alert = new Alert();
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">
-            ExtazCMS 1.11
+            ExtazCMS 1.12.2
         </div>
     </div>
 </div>
