@@ -20,7 +20,6 @@
 
 App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
-App::uses('AYAH', 'Lib/AYAH');
 App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
 
@@ -445,7 +444,7 @@ class PagesController extends AppController {
 			$this->set('ticketsHier', $this->Support->find('count', ['conditions' => ['Support.created >' => $hier, 'Support.created <' => $today]]));
 			$this->set('reponsesHier', $this->supportComments->find('count', ['conditions' => ['supportComments.created >' => $hier, 'supportComments.created <' => $today]]));
 		}
-		elseif($this->Auth->user('role') > 0){
+		elseif($this->Auth->user('role') == 1){
 			return $this->redirect(['controller' => 'pages', 'action' => 'manage_tickets']);
 		}
 		else{
@@ -773,9 +772,8 @@ class PagesController extends AppController {
 					$subject = $this->request->data['Pages']['subject'];
 					$message = $this->request->data['Pages']['message'];
 					if (!empty($subject) && !empty($message)) {
-						$name_server = strtolower(preg_replace('/\s/', '', $name_server));
 						$Email = new CakeEmail();
-						$Email->from(array('admin@' . $name_server . '.com' => $name_server));
+						$Email->from(array($email => $username .' de '.$name_server));
 						$Email->to($contact_email);
 						$Email->subject($subject);
 						$Email->send($username . ' (' . $email . ') a envoyé : ' . $message);
