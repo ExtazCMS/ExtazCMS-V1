@@ -562,7 +562,7 @@ INSERT INTO `extaz_updates` (`id`, `updater`, `ip`, `name`, `version`, `type`, `
 (7, 'ExtazCMS', '::1', 'Phénix patch 1', '1.12.1', 'PATCH', '2016-04-22 00:45:00'),
 (8, 'ExtazCMS', '::1', 'Phénix patch 2', '1.12.2', 'PATCH', '2016-05-01 15:30:00'),
 (9, 'ExtazCMS', '::1', 'Phénix patch 3', '1.12.3', 'PATCH', '2016-05-03 02:10:00'),
-(10, 'ExtazCMS', '::1', 'Soepe', '1.13', 'FINAL', '2016-06-24 18:00:00');
+(10, 'ExtazCMS', '::1', 'Saepe', '1.13', 'FINAL', '2016-06-24 18:00:00');
 
 -- --------------------------------------------------------
 
