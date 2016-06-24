@@ -8,3 +8,7 @@ au dossier, pensez a mettre un .htaccess avec:
 
 Si vous modifiez un fichier .twig, vous devez supprimer le contenue du dossier "app/Plugin/TwigView/tmp/views/"
 
+Les fichiers suivant ne sont pas nécessaire au bon fonctionnement du CMS:
+- ASTUCE.txt
+- LICENSE
+- README.md

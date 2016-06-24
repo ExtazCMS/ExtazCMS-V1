@@ -41,13 +41,26 @@ $(document).ready(function(){
                                                 <i class="fa fa-facebook-square"></i>
                                             </font>
                                         </a>
-                                    {% endif %}
+                                    {% else %}
+										<a class="btn btn-default btn-u-xs">
+                                            <font color="#d9cdcb">
+                                                <i class="fa fa-twitter"></i>
+                                            </font>
+										 </a>
+									{% endif %}
+
                                     {% if d['Team']['twitter_url'] is not empty %}
                                         <a href="{{ d.Team.twitter_url }}" target="_blank" class="btn btn-default btn-u-xs">
                                             <font color="#27D7E7">
                                                 <i class="fa fa-twitter"></i>
                                             </font>
                                         </a>
+									{% else %}
+										 <a class="btn btn-default btn-u-xs">
+                                            <font color="#d9cdcb">
+                                                <i class="fa fa-twitter"></i>
+                                            </font>
+										 </a>
                                     {% endif %}
                                     {% if d['Team']['youtube_url'] is not empty %}
                                         <a href="{{ d.Team.youtube_url }}" target="_blank" class="btn btn-default btn-u-xs">
@@ -55,13 +68,20 @@ $(document).ready(function(){
                                                 <i class="fa fa-youtube-square"></i>
                                             </font>
                                         </a>
-                                    {% endif %}
-                                    <h3>
+                                    {% else %}
+									<a class="btn btn-default btn-u-xs">
+                                            <font color="#d9cdcb">
+                                                <i class="fa fa-youtube-square"></i>
+                                            </font>
+										 </a>
+									{% endif %}
+									 <h3>
                                         <a class="hover-effect" href="#">
-                                            {{ d['Team']['username'] }}
+                                            {{ d['Team']['dname'] }}
                                         </a>
                                     </h3>
                                     <span class="member-label member-label-{{ d['Team']['color'] }}">{{ d['Team']['rank'] }}</span>
+									
                                 </center>                           
                             </div>
                         </div>

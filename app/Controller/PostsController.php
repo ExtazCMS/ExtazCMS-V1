@@ -32,6 +32,7 @@ class PostsController extends AppController{
 				$this->set('lasts_posts', $this->Post->find('all', array('conditions' => array('Post.visible' => 1, 'Post.draft' => 0), 'order' => array('Post.posted' => 'DESC'))));
 				$this->set('liked', $this->Like->find('all', array('conditions' => array('Like.id_article' => $id, 'Like.ip' => $_SERVER['REMOTE_ADDR']))));
 				$this->set('nb_likes', $this->Like->find('count', array('conditions' => array('Like.id_article' => $id))));
+				
 			}
 			// Si l'article ciblé n'existe pas, erreur 404
 			else{
@@ -47,6 +48,7 @@ class PostsController extends AppController{
 				$this->set('lasts_posts', $this->Post->find('all', array('conditions' => array('Post.visible' => 1, 'Post.draft' => 0), 'order' => array('Post.posted' => 'DESC'))));
 				$this->set('liked', $this->Like->find('all', array('conditions' => array('Like.id_article' => $id, 'Like.ip' => $_SERVER['REMOTE_ADDR']))));
 				$this->set('nb_likes', $this->Like->find('count', array('conditions' => array('Like.id_article' => $id))));
+				
 			}
 			// Si l'article ciblé n'existe pas, erreur 404
 			else{
@@ -195,7 +197,7 @@ class PostsController extends AppController{
 				// On rend l'article invisible
 				$this->Post->saveField('locked', 1);
 				$this->Session->setFlash('Article vérrouillé !', 'toastr_success');
-				return $this->redirect(['controller' => 'posts', 'action' => 'list', 'admin' => true]);
+				return $this->redirect($this->referer());
 			}
 			// Si l'article n'existe pas
 			else{				
@@ -218,7 +220,7 @@ class PostsController extends AppController{
 				// On rend l'article invisible
 				$this->Post->saveField('locked', 0);
 				$this->Session->setFlash('Article dévérrouillé !', 'toastr_success');
-				return $this->redirect(['controller' => 'posts', 'action' => 'list', 'admin' => true]);
+				return $this->redirect($this->referer());
 			}
 			// Si l'article n'existe pas
 			else{				
@@ -241,7 +243,7 @@ class PostsController extends AppController{
 				// On rend l'article invisible
 				$this->Post->saveField('visible', 0);
 				$this->Session->setFlash('Article supprimé !', 'toastr_success');
-				return $this->redirect(['controller' => 'posts', 'action' => 'list', 'admin' => true]);
+				return $this->redirect($this->referer());
 			}
 			// Si l'article n'existe pas
 			else{

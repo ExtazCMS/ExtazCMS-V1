@@ -17,27 +17,23 @@ $(document).ready(function(){
 
     var nb_likes = <?php echo $nb_likes; ?>;
 
-    $('#like').on('click', function(){
-        $('#chargement').show();
+    $('#like').click(function(){
         $('#like').hide();
+        $('#dislike').fadeIn(500);
+        nb_likes++;
+        $('#dislike').html('<font color="red"><i class="fa fa-heart"></i></font>J\'aime (' + nb_likes + ')');	
         var id = '<?php echo $this->params['pass'][1]; ?>';
-        $.post('<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'like']); ?>', {id: id}, function(){
-            $('#chargement').hide();
-            $('#dislike').fadeIn();
-            nb_likes++;
-            $('#dislike').html('<font color="red"><i class="fa fa-heart"></i></font> <span class="open-sans">J\'aime (' + nb_likes + ')</span>');
+        $.post('<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'like']); ?>', {id: id}, function(){  
         });
     });
 
-    $('#dislike').on('click', function(){
-        $('#chargement').show();
+    $('#dislike').click(function(){
         $('#dislike').hide();
+        $('#like').fadeIn(500);
+		nb_likes--;
+        $('#like').html('<i class="fa fa-heart"></i> J\'aime (' + nb_likes + ')');	
         var id = '<?php echo $this->params['pass'][1]; ?>';
-        $.post('<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'like']); ?>', {id: id}, function(){
-            $('#chargement').hide();
-            $('#like').fadeIn();
-            nb_likes--;
-            $('#like').html('<i class="fa fa-heart"></i> J\'aime (' + nb_likes + ')');
+        $.post('<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'like']); ?>', {id: id}, function(){     
         });
     });
 });
@@ -108,9 +104,10 @@ $(document).ready(function(){
                                 <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'edit', $post['Post']['id'], 'admin' => true]); ?>">
                                     <font color="#777777"><i class="fa fa-pencil"></i> Editer</font>
                                 </a>
-                                <a class="confirm btn btn-default btn-xs" href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'delete', $post['Post']['id'], 'admin' => true]); ?>">
+                                <a class="confirm btn btn-default btn-xs" href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'lock', $post['Post']['id'], 'admin' => true]); ?>">
                                     <font color="red"><i class="fa fa-times"></i> Supprimer</font>
                                 </a>
+								
                             </div>
                         </div>
                         <div class="col-md-8">

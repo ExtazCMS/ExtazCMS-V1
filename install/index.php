@@ -4,6 +4,13 @@
  * Coded by TristanCode
  * Created: 10/13/15 at 10:34 AM
  */
+ 
+define('APP_DIR', 'app');
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(__FILE__));
+define('WEBROOT_DIR', 'webroot');
+define('WWW_ROOT', ROOT . DS . APP_DIR . DS . WEBROOT_DIR . DS);
+
 class Alert {
     public function danger($message) {
         return '<div class="ui negative message"><p>'.$message.'</p></div>';
@@ -19,7 +26,7 @@ $alert = new Alert();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Installation de ExtazCMS 1.12.3</title>
+    <title>Installation de ExtazCMS 1.13</title>
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -59,7 +66,7 @@ $alert = new Alert();
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">
-            ExtazCMS 1.12.2
+            ExtazCMS 1.13
         </div>
     </div>
 </div>
@@ -98,9 +105,9 @@ $alert = new Alert();
                 ?>
             </tr>
             <tr>
-                <td>Version PHP > 5.4.0</td>
+                <td>Version PHP > 5.5.0</td>
                 <?php
-                    if(version_compare(PHP_VERSION, "5.4.0", ">")) {
+                    if(version_compare(PHP_VERSION, "5.5.0", ">")) {
                         echo "<td class='positive'>Approuvé</td>";
                     } else {
                         echo "<td class='negative'>Désapprouvé</td>";
@@ -154,7 +161,7 @@ $alert = new Alert();
             if($sql_error == true) {
                 echo $alert->danger("Erreur MySQL!");
             } else {
-                $dbFile= fopen("../app/Config/database.php", "w");
+                $pathdb= '../app/Config/database.php';
 
                 $databaseStructure = "<?php
 class DATABASE_CONFIG {
@@ -169,11 +176,10 @@ class DATABASE_CONFIG {
         'encoding' => 'utf8',
     );
 }";
-                fwrite($dbFile, $databaseStructure);
-                fclose($dbFile);
+                file_put_contents($pathdb, $databaseStructure);
                 $sql = file_get_contents("ExtazCMS.sql");
-                $pdo->exec($sql);
-                echo $alert->success("Votre base de données a bien été installée, supprimer le fichier /install/.");
+                $pdo->query($sql);
+                echo $alert->success("Votre base de données a bien été installée, supprimer le fichier /install/.<br>");
                 $done = true;
 
             }
@@ -181,6 +187,7 @@ class DATABASE_CONFIG {
     }
 
     if($step == 1 && $done != true) { ?>
+	<?php if(!file_exists('../app/Config/database.php')){ ?>
         <div id="bdd">
             <form class="ui form" action="<?= $_SERVER["PHP_SELF"]; ?>" method="post">
                 <div class="field">
@@ -199,9 +206,22 @@ class DATABASE_CONFIG {
                     <label>Mot de pass de l'utilsateur SQL</label>
                     <input type="text" name="sql_pass" placeholder="Mot de pass de l'utilsateur SQL">
                 </div>
+				
                 <button class="ui button" type="submit" name="post1">Installer la BDD.</button>
+			</form>
+		</div>
+				<?php } else { ?>
+		<center>		
+		<div id="bdd">
+            <form class="ui form" action="<?= $_SERVER["PHP_SELF"]; ?>">	
+				<div class="field">
+				 <label>Votre Base De données est déjà installée</label>
+				 <a href="/">Me diriger vers mon site.</a>
+				</div>
             </form>
         </div>
+		</center>
+		<?php } ?>
     <?php } ?>
 
     <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?= date("Y"); ?> Clyese Systems - Tous droits réservés</a></small>

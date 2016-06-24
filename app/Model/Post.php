@@ -19,7 +19,7 @@ class Post extends AppModel{
 	    ),
 	    'cat' => array(
             'between' => array(
-                'rule'    => array('between', 2, 10),
+                'rule'    => array('between', 2, 20),
                 'message' => 'Entre 2 et 10 caractères'
             )
         ),

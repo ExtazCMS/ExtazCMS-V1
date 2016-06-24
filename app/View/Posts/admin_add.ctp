@@ -1,14 +1,17 @@
 <?php $this->assign('title', 'Rédiger un article'); ?>
 <script type="text/javascript">
 function verif(evt) {
-    var keyCode = evt.which ? evt.which : evt.keyCode;
-    var accept = 'abcdefghijklmnopqrstuvwxyz0123456789-';
-    if(accept.indexOf(String.fromCharCode(keyCode)) >= 0){
-        return true;
-    }
-    else{
-        return false;
-    }
+ var keyCode = evt.which ? evt.which : evt.keyCode;
+ var accept = 'abcdefghijklmnopqrstuvwxyz-';
+ 
+	if(evt.which == 8 || evt.which == 0 || accept.indexOf(String.fromCharCode(keyCode)) >= 0 ) {
+
+	return true; 
+	}else{
+	evt.preventDefault();
+	return false;
+	}
+ 
 }
 $(document).ready(function(){
     $(window).load(function(){

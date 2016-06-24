@@ -8,6 +8,7 @@ define('ROOT', dirname(__FILE__));
 define('WEBROOT_DIR', 'webroot');
 define('WWW_ROOT', ROOT . DS . APP_DIR . DS . WEBROOT_DIR . DS);
 
+
 /**
  * This only needs to be changed if the "cake" directory is located
  * outside of the distributed structure.

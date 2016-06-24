@@ -68,7 +68,7 @@ $(document).ready(function(){
                         <?php foreach($data as $d){ ?>
                         <tr>
                             <td><?php echo $d['Widget']['id']; ?></td>
-                            <td><?php echo $d['User']['dname']; ?></td>
+                            <td><?php echo $d['User']['username']; ?></td>
                             <td><?php echo $d['Widget']['name']; ?></td>
                             <td><?php echo $d['Widget']['order']; ?></td>
                             <td><?php echo $this->Time->format('d/m/Y à H:i', $d['Widget']['created']); ?></td>

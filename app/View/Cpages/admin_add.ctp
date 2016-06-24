@@ -66,6 +66,12 @@ $(document).ready(function(){
                                     <?php echo $this->Form->textarea('content', array('type' => 'textarea', 'rows' => '5', 'cols' => '5', 'class' => 'ckeditor', 'label' => false)); ?>
                                 </div>
                             </div>
+							<div class="row">
+                                <div class="col-md-12">
+                                    <hr>
+                                    <button class="btn btn-w-m btn-primary pull-right pull-right" type="submit"><i class="fa fa-plus"></i> Ajouter</button>
+                                </div>
+                            </div>
                         <?php echo $this->Form->end(); ?>
                     </div>
                 </div>

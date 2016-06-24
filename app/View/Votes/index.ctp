@@ -48,7 +48,7 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_1; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote1" target="_blank" onclick="setTimeout(vote111, 1000); setTimeout(vote1111, 15000); setTimeout(vote1, 15000); setTimeout(vote11, 1000)"><center>Voter sur le<br />site 1</center></a>
+														<a style="width:150px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_1; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote1" target="_blank" onclick="setTimeout(vote111, 1000); setTimeout(vote1111, 15000); setTimeout(vote1, 15000); setTimeout(vote11, 1000)"><center>Voter sur<br /><?php echo $votes_name_1; ?></center></a>
 															<strong id="recompense1att">
 																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
 																	<center>En attente<br />de validation</center>
@@ -86,7 +86,7 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_2; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote2" target="_blank" onclick="setTimeout(vote222, 1000); setTimeout(vote2222, 15000); setTimeout(vote2, 15000); setTimeout(vote22, 1000)"><center>Voter sur le<br />site 2</center></a>
+														<a style="width:150px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_2; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote2" target="_blank" onclick="setTimeout(vote222, 1000); setTimeout(vote2222, 15000); setTimeout(vote2, 15000); setTimeout(vote22, 1000)"><center>Voter sur<br /><?php echo $votes_name_2; ?></center></a>
 															<strong id="recompense2att">
 																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
 																	<center>En attente<br />de validation</center>
@@ -123,7 +123,7 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_3; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote3" target="_blank" onclick="setTimeout(vote333, 1000); setTimeout(vote3333, 15000); setTimeout(vote3, 15000); setTimeout(vote33, 1000)"><center>Voter sur le<br />site 3</center></a>
+														<a style="width:150px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_3; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote3" target="_blank" onclick="setTimeout(vote333, 1000); setTimeout(vote3333, 15000); setTimeout(vote3, 15000); setTimeout(vote33, 1000)"><center>Voter sur<br /><?php echo $votes_name_3; ?></center></a>
 															<strong id="recompense3att">
 																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
 																	<center>En attente<br />de validation</center>
@@ -160,7 +160,7 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_4; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote4" target="_blank" onclick="setTimeout(vote444, 1000); setTimeout(vote4444, 15000); setTimeout(vote4, 15000); setTimeout(vote44, 1000)"><center>Voter sur le<br />site 4</center></a>
+														<a style="width:150px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_4; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote4" target="_blank" onclick="setTimeout(vote444, 1000); setTimeout(vote4444, 15000); setTimeout(vote4, 15000); setTimeout(vote44, 1000)"><center>Voter sur<br /><?php echo $votes_name_4; ?></center></a>
 															<strong id="recompense4att">
 																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
 																	<center>En attente<br />de validation</center>
@@ -197,7 +197,7 @@
 															} ?>
 															</center></a>
 														<?php } else { ?>
-														<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_5; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote5" target="_blank" onclick="setTimeout(vote555, 1000); setTimeout(vote5555, 15000); setTimeout(vote5, 15000); setTimeout(vote55, 1000)"><center>Voter sur le<br />site 5</center></a>
+														<a style="width:150px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" href="<?php echo $votes_url_5; ?>" class="btn-u btn-u-dark btn-u-lg" id="vote5" target="_blank" onclick="setTimeout(vote555, 1000); setTimeout(vote5555, 15000); setTimeout(vote5, 15000); setTimeout(vote55, 1000)"><center>Voter sur<br /><?php echo $votes_name_5; ?></center></a>
 															<strong id="recompense5att">
 																<a style="width:120px;height:70px;padding-left: 0px;padding-right: 0px;padding-top: 10px;padding-bottom: 10px;" class="btn-u btn-u-yellow btn-u-lg">
 																	<center>En attente<br />de validation</center>

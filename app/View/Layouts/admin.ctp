@@ -294,12 +294,13 @@
         <!-- Autocomplete -->
         <?php echo $this->Html->script('jquery.autocomplete'); ?>
         
-        <!-- SelectBoxIt -->
-        <?php echo $this->Html->script('admin/jquery.selectBoxIt'); ?>
+       
 
         <!-- Dropzone -->
         <?php echo $this->Html->script('admin/dropzone'); ?>
 
         <script src="//cdn.ckeditor.com/4.5.1/full/ckeditor.js"></script>
+
     </body>
 </html>
+</script>

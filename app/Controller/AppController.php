@@ -86,7 +86,6 @@ class AppController extends Controller {
 		$this->set('jsonapi_salt',          $this->config['jsonapi_salt']);
 		$this->set('name_server',           $this->config['name_server']);
 		$this->set('server_ip',             $this->config['ip_server']);
-		$this->set('needonline',            $this->config['needonline']);
 		$this->set('server_port',           $this->config['port_server']);
 		$this->set('money_server',          $this->config['money_server']);
 		$this->set('site_money',            $this->config['site_money']);
@@ -110,11 +109,6 @@ class AppController extends Controller {
 		$this->set('use_donation_ladder',   $this->config['use_donation_ladder']);
 		$this->set('use_slider',            $this->config['use_slider']);
 		$this->set('use_votes',             $this->config['use_votes']);
-		$this->set('use_votes_1',           $this->config['use_votes_1']);
-		$this->set('use_votes_2',           $this->config['use_votes_2']);
-		$this->set('use_votes_3',           $this->config['use_votes_3']);
-		$this->set('use_votes_4',           $this->config['use_votes_4']);
-		$this->set('use_votes_5',           $this->config['use_votes_5']);
 		$this->set('use_votes_ladder',      $this->config['use_votes_ladder']);
 		$this->set('happy_hour',            $this->config['happy_hour']);
 		$this->set('happy_hour_bonus',      $this->config['happy_hour_bonus']);
@@ -136,6 +130,11 @@ class AppController extends Controller {
 		$this->set('votes_time_3',          $this->config['votes_time_3']);
 		$this->set('votes_time_4',          $this->config['votes_time_4']);
 		$this->set('votes_time_5',          $this->config['votes_time_5']);
+		$this->set('votes_name_1',          $this->config['votes_name_1']);
+		$this->set('votes_name_2',          $this->config['votes_name_2']);
+		$this->set('votes_name_3',          $this->config['votes_name_3']);
+		$this->set('votes_name_4',          $this->config['votes_name_4']);
+		$this->set('votes_name_5',          $this->config['votes_name_5']);
 		$this->set('votes_reward',          $this->config['votes_reward']);
 		$this->set('votes_command',         $this->config['votes_command']);
 		$this->set('votes_ladder_limit',    $this->config['votes_ladder_limit']);

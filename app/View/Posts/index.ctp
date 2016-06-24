@@ -14,10 +14,11 @@ $(document).ready(function(){
     <div class="row magazine-page">
         <div class="col-md-9">
             <!-- Begin Content -->
-            <?php if($use_slider == 1 && $nb_posts >= 3){ ?>
+            <?php if(($use_slider == 1 && $nb_posts >= 3) || $nb_posts == 1){ ?>
             <div class="carousel slide carousel-v1 margin-bottom-40 hidden-sm hidden-xs" id="myCarousel-1">
                 <div class="carousel-inner">
-                    <?php for ($i=0; $i < 3; $i++){ ?>
+					 <?php if($nb_posts > 1){ ?>
+					 <?php for ($i=0; $i < 3; $i++){ ?>
                         <?php if($i == 0){ ?>
                         <div class="item active">
                         <?php } else { ?>
@@ -46,8 +47,40 @@ $(document).ready(function(){
                             </div>
                         </div>
                     <?php } ?>
+				 <?php } else { ?>	
+					<?php for ($i=0; $i < 1; $i++){ ?>
+                        <?php if($i == 0){ ?>
+                        <div class="item active">
+                        <?php } else { ?>
+                        <div class="item">
+                        <?php } ?>
+                            <?php
+                            if(filter_var($slider[$i]['Post']['img'], FILTER_VALIDATE_URL)){
+                                echo '<img class="img-slider" src="'.$slider[$i]['Post']['img'].'">';
+                            }
+                            else{
+                                echo '<img class="img-slider" src="'.$this->webroot.'img/posts/'.$slider[$i]['Post']['img'].'">';
+                            }
+                            ?>
+                            <div class="carousel-caption">
+                                <p>
+                                    <?php
+                                    $content = '<h3><font color="white">'.$slider[$i]['Post']['title'].'</font></h3>'.html_entity_decode(strip_tags($slider[$i]['Post']['content']));
+                                    if(mb_strlen($content) > 400){
+                                        echo mb_substr($content, 0, 400).'... <a href="'.$this->Html->url(['controller' => 'posts', 'action' => 'read', 'slug' => $slider[$i]['Post']['slug'], 'id' => $slider[$i]['Post']['id']]).'">Lire</a>';
+                                    }
+                                    else{
+                                        echo $content.' <a href="'.$this->Html->url(['controller' => 'posts', 'action' => 'read', 'slug' => $slider[$i]['Post']['slug'], 'id' => $slider[$i]['Post']['id']]).'">Lire</a>';;
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php } ?>
+				<?php } ?>	
+					
                 </div>
-                
+                <?php if($nb_posts > 1){ ?>
                 <div class="carousel-arrow">
                     <a data-slide="prev" href="#myCarousel-1" class="left carousel-control">
                         <i class="fa fa-angle-left"></i>
@@ -56,8 +89,10 @@ $(document).ready(function(){
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </div>
+				<?php } ?>
             </div>
             <?php } ?>
+			<?php if($nb_posts > 1){ ?>
             <?php $a = -1; ?>
             <?php $b = 5; ?>
             <?php while($a < $b){ ?>
@@ -169,7 +204,7 @@ $(document).ready(function(){
             </div>
             <!-- End Post -->
             <?php } ?>
-
+			 <?php } ?>
             <!--Pagination-->
             <div class="text-center">
                 <ul class="pagination">
