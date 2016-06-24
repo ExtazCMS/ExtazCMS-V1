@@ -13,10 +13,7 @@
 ##L'équipe
 * __Lyes__         - Dirigeant, Marketing/Communication, Correcteur et Designer.
 * __Mazette__      - Développeur en chef.
-* __TristanCode__  - Développeur Web.
 * __Khran__        - Développeur Web.
-* __Litarvan__     - Développeur Web et Java.
-* __David Duarte__ - Développeur Java.
 
 ##Changelog
 * V1.13 ("Saepe") - 24 Juin 2016 - ExtazCMS
