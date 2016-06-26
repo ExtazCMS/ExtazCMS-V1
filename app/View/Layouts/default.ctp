@@ -82,9 +82,9 @@ if(isset($_GET['debug'])) {
                         <!-- End Topbar -->
                     </div>
 				<?php if(!empty($banner_url)){ ?>
-					<center><a href="/"><img class="img-responsive" src="<?php echo $banner_url; ?>" alt="Top banner"></a></center><br />	
+					<center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $banner_url; ?>" alt="Top banner"></a></center><br />	
 				<?php } else { ?>
-					<center><a href="/"><img class="img-responsive" src="<?php echo $this->webroot.'banner.png'; ?>" alt="Default banner"></a></center><br />
+					<center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $this->webroot.'banner.png'; ?>" alt="Default banner"></a></center><br />
 				<?php } ?>	
                 </div>
             </div>
