@@ -19,7 +19,7 @@
 	<fieldset>
 		<legend><?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></legend>
 <?php
-		echo "\t<?php\n";
+		echo "\t<?\n";
 		foreach ($fields as $field) {
 			if (strpos($action, 'add') !== false && $field === $primaryKey) {
 				continue;

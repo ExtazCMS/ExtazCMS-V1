@@ -7,10 +7,10 @@
             <div class="header"> <h4 style="margin-top: 0;">F.A.Q</h4></div>
             <div class="ibox-content">
                 <div class="chat-messages">
-                    <? foreach($data as $faq) { ?>
+                    <?php foreach($data as $faq) { ?>
                         <div class="faq_q"><?= $faq["Faq"]["question"]; ?></div>
                         <div class="faq_a"><?= $faq["Faq"]["answer"]; ?></div>
-                    <? } ?>
+                    <?php } ?>
                 </div>
                 <hr>
             </div>

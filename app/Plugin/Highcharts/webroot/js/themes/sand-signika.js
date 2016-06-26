@@ -5,7 +5,7 @@
 
 // Load the fonts
 Highcharts.createElement('link', {
-	href: 'http://fonts.googleapis.com/css?family=Signika:400,700',
+	href: 'https://fonts.googleapis.com/css?family=Signika:400,700',
 	rel: 'stylesheet',
 	type: 'text/css'
 }, null, document.getElementsByTagName('head')[0]);
@@ -97,7 +97,7 @@ Highcharts.theme = {
 
 	// General
 	background2: '#E0E0E8'
-	
+
 };
 
 // Apply the theme

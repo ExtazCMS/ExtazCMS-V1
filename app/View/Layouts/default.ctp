@@ -14,7 +14,7 @@ if(!isset($server_ip)) exit('Erreur: impossible de communiquer avec la base de d
     <title><?php echo $name_server. " &raquo; " .$this->fetch('title'); ?> </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site web du serveur <?= $name_server; ?>, propulsé par ExtazCMS">
+    <meta name="description" content="Site web du serveur <?php echo $name_server; ?>, propulsé par ExtazCMS">
     <meta name="author" content="ExtazCMS">
     <?php
         // Favicon
@@ -84,7 +84,7 @@ if(isset($_GET['debug'])) {
 				<?php if(!empty($banner_url)){ ?>
 					<center><a href="/"><img class="img-responsive" src="<?php echo $banner_url; ?>" alt="Top banner"></a></center><br />	
 				<?php } else { ?>
-					<center><a href="/"><img class="img-responsive" src="/banner.png" alt="Default banner"></a></center><br />
+					<center><a href="/"><img class="img-responsive" src="<?php echo $this->webroot.'banner.png'; ?>" alt="Default banner"></a></center><br />
 				<?php } ?>	
                 </div>
             </div>

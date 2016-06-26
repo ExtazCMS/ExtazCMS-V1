@@ -9,7 +9,7 @@
 				<?php if($connected){
 					if($cgvcgu == 0) { ?>
 						<center>
-							<a href="<?php echo $this->Html->url(['controller' => 'cgv', 'action' => 'ok', $d['User']['id']]); ?>" class="btn-u btn-u-dark btn-u-lg"></i> J'accepte les CGV/CGU</a>
+							<a href="<?php echo $this->Html->url(['controller' => 'cgv', 'action' => 'ok']); ?>" class="btn-u btn-u-dark btn-u-lg"></i> J'accepte les CGV/CGU</a>
 						</center>
 					<?php } else { ?>
 						<center>

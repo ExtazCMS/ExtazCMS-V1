@@ -224,7 +224,7 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?= date("Y"); ?> Clyese Systems - Tous droits réservés</a></small>
+    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Clyese Systems - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();

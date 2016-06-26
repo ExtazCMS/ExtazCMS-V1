@@ -84,10 +84,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="profile-footer">
-                    <button class="btn-u btn-u btn-u-xs" disabled="disabled"><i class="fa fa-user-plus"></i> Ajouter en ami</button> 
-                    <button class="btn-u btn-u-blue btn-u-xs" disabled="disabled"><i class="fa fa-envelope"></i> Envoyer un message</button>
-                </div>
             <?php echo $this->Form->end(); ?>
         </div>
         <?php echo $this->element('sidebar'); ?>

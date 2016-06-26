@@ -16,7 +16,7 @@ $(document).ready(function($){
             if($version == $last_version) {
                     echo "<div class='alert alert-info'>Votre CMS est à jour! Version : {$version}</div>";
                 } else {
-                    echo "<div class='alert alert-danger'>Votre CMS n'est plus à jour! Télécharger la dernière version {$last_version}<br><br><a href='<?php echo $this->Html->url(['controller' => 'update', 'action' => 'index', 'admin' => true]); ?>' class='btn btn-sm btn-danger r'><i class='fa fa-wrench'></i> Mettre à jour</a></div>";
+                    echo "<div class='alert alert-danger'>Votre CMS n'est plus à jour! Télécharger la dernière version {$last_version}<br><br><a href='./admin/update' class='btn btn-sm btn-danger r'><i class='fa fa-wrench'></i> Mettre à jour</a></div>";
                 }
             ?>
             </div>

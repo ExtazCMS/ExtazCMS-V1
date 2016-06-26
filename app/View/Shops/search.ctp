@@ -24,40 +24,40 @@ $(function(){
     foreach($items as $item){
         $item_id = $item['Shop']['id'];
         ?>
-        $("#plus<?= $item_id; ?>").on('click', function(){
-            var quantity<?= $item_id; ?> = $("#quantity<?= $item_id; ?>").text();
-            var server_price<?= $item_id; ?> = $("#server-price<?= $item_id; ?>").attr('data-price');
-            var site_price<?= $item_id; ?> = $("#site-price<?= $item_id; ?>").attr('data-price');
-            if(quantity<?= $item_id; ?> < 250){
-                quantity<?= $item_id; ?>++;
-                var server_price<?= $item_id; ?> = server_price<?= $item_id; ?> * quantity<?= $item_id; ?>;
-                var site_price<?= $item_id; ?> = site_price<?= $item_id; ?> * quantity<?= $item_id; ?>;
-                var server_price<?= $item_id; ?> = numeral(server_price<?= $item_id; ?>).format('0,0');
-                var site_price<?= $item_id; ?> = numeral(site_price<?= $item_id; ?>).format('0,0');
-                $("#server-price<?= $item_id; ?>").text(server_price<?= $item_id; ?>);
-                $("#site-price<?= $item_id; ?>").text(site_price<?= $item_id; ?>);
-                $("#server<?= $item_id; ?>").val(quantity<?= $item_id; ?>);
-                $("#site<?= $item_id; ?>").val(quantity<?= $item_id; ?>);
-                $("#plus<?= $item_id; ?>").blur();
-                $("#quantity<?= $item_id; ?>").text(quantity<?= $item_id; ?>);
+        $("#plus<?php echo $item_id; ?>").on('click', function(){
+            var quantity<?php echo $item_id; ?> = $("#quantity<?php echo $item_id; ?>").text();
+            var server_price<?php echo $item_id; ?> = $("#server-price<?php echo $item_id; ?>").attr('data-price');
+            var site_price<?php echo $item_id; ?> = $("#site-price<?php echo $item_id; ?>").attr('data-price');
+            if(quantity<?php echo $item_id; ?> < 250){
+                quantity<?php echo $item_id; ?>++;
+                var server_price<?php echo $item_id; ?> = server_price<?php echo $item_id; ?> * quantity<?php echo $item_id; ?>;
+                var site_price<?php echo $item_id; ?> = site_price<?php echo $item_id; ?> * quantity<?php echo $item_id; ?>;
+                var server_price<?php echo $item_id; ?> = numeral(server_price<?php echo $item_id; ?>).format('0,0');
+                var site_price<?php echo $item_id; ?> = numeral(site_price<?php echo $item_id; ?>).format('0,0');
+                $("#server-price<?php echo $item_id; ?>").text(server_price<?php echo $item_id; ?>);
+                $("#site-price<?php echo $item_id; ?>").text(site_price<?php echo $item_id; ?>);
+                $("#server<?php echo $item_id; ?>").val(quantity<?php echo $item_id; ?>);
+                $("#site<?php echo $item_id; ?>").val(quantity<?php echo $item_id; ?>);
+                $("#plus<?php echo $item_id; ?>").blur();
+                $("#quantity<?php echo $item_id; ?>").text(quantity<?php echo $item_id; ?>);
             }
         });
-        $("#moins<?= $item_id; ?>").on('click', function(){
-            var quantity<?= $item_id; ?> = $("#quantity<?= $item_id; ?>").text();
-            var server_price<?= $item_id; ?> = $("#server-price<?= $item_id; ?>").attr('data-price');
-            var site_price<?= $item_id; ?> = $("#site-price<?= $item_id; ?>").attr('data-price');
-            if(quantity<?= $item_id; ?> > 1){
-                quantity<?= $item_id; ?>--;
-                var server_price<?= $item_id; ?> = quantity<?= $item_id; ?> * server_price<?= $item_id; ?>;
-                var site_price<?= $item_id; ?> = quantity<?= $item_id; ?> * site_price<?= $item_id; ?>;
-                var server_price<?= $item_id; ?> = numeral(server_price<?= $item_id; ?>).format('0,0');
-                var site_price<?= $item_id; ?> = numeral(site_price<?= $item_id; ?>).format('0,0');
-                $("#server-price<?= $item_id; ?>").text(server_price<?= $item_id; ?>);
-                $("#site-price<?= $item_id; ?>").text(site_price<?= $item_id; ?>);
-                $("#server<?= $item_id; ?>").val(quantity<?= $item_id; ?>);
-                $("#site<?= $item_id; ?>").val(quantity<?= $item_id; ?>);
-                $("#moins<?= $item_id; ?>").blur();
-                $("#quantity<?= $item_id; ?>").text(quantity<?= $item_id; ?>);
+        $("#moins<?php echo $item_id; ?>").on('click', function(){
+            var quantity<?php echo $item_id; ?> = $("#quantity<?php echo $item_id; ?>").text();
+            var server_price<?php echo $item_id; ?> = $("#server-price<?php echo $item_id; ?>").attr('data-price');
+            var site_price<?php echo $item_id; ?> = $("#site-price<?php echo $item_id; ?>").attr('data-price');
+            if(quantity<?php echo $item_id; ?> > 1){
+                quantity<?php echo $item_id; ?>--;
+                var server_price<?php echo $item_id; ?> = quantity<?php echo $item_id; ?> * server_price<?php echo $item_id; ?>;
+                var site_price<?php echo $item_id; ?> = quantity<?php echo $item_id; ?> * site_price<?php echo $item_id; ?>;
+                var server_price<?php echo $item_id; ?> = numeral(server_price<?php echo $item_id; ?>).format('0,0');
+                var site_price<?php echo $item_id; ?> = numeral(site_price<?php echo $item_id; ?>).format('0,0');
+                $("#server-price<?php echo $item_id; ?>").text(server_price<?php echo $item_id; ?>);
+                $("#site-price<?php echo $item_id; ?>").text(site_price<?php echo $item_id; ?>);
+                $("#server<?php echo $item_id; ?>").val(quantity<?php echo $item_id; ?>);
+                $("#site<?php echo $item_id; ?>").val(quantity<?php echo $item_id; ?>);
+                $("#moins<?php echo $item_id; ?>").blur();
+                $("#quantity<?php echo $item_id; ?>").text(quantity<?php echo $item_id; ?>);
             }
         });
         <?php

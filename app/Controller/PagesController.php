@@ -587,7 +587,7 @@ class PagesController extends AppController {
 					$ticket = $this->Support->find('first', ['conditions' => ['Support.id' => $this->request->data['Pages']['id']]]);
 					$ticket_owner = $this->User->find('first', ['conditions' => ['User.username' => $ticket['User']['username']]]);
 					$ticket_owner_email = $ticket_owner['User']['email'];
-					$ticket_owner_allow_email = $ticket_owner['User']['allow_email'];
+					//$ticket_owner_allow_email = $ticket_owner['User']['allow_email'];
 					if($ticket_owner['User']['username'] == $this->Auth->user('username') OR $this->Auth->user('role') > 0){
 						if($ticket['Support']['resolved'] == 0){
 							// Si l'utilisateur accepte de recevoir des emails
