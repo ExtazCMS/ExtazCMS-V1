@@ -36,6 +36,10 @@ $(document).ready(function(){
 							<?php echo $this->Form->input('lc', ['type' => 'hidden', 'name' => 'lc', 'value' => 'FR']); ?>
 							<?php echo $this->Form->input('bn', ['type' => 'hidden', 'name' => 'bn', 'value' => 'PP-BuyNowBF']); ?>
 							<?php echo $this->Form->input('custom', ['type' => 'hidden', 'name' => 'custom', 'value' => $this->Session->read('Auth.User.id')]); ?>
+<<<<<<< HEAD
+							<form class="sky-form">
+=======
+>>>>>>> origin/master
 							<header>
 			                	<h4>
 			                		<i class="fa fa-gift"></i> Happy hour en cours, <?php echo $happy_hour_bonus.'% de '.$site_money.' gratuits'; ?><br>
@@ -49,6 +53,10 @@ $(document).ready(function(){
 			                		</button><br>
 								</section>
 							</fieldset>
+<<<<<<< HEAD
+							</form>
+=======
+>>>>>>> origin/master
 						<?php } else { ?>
 								<div class="alert alert-info">
 									<i class="fa fa-info-circle"></i> Paypal est desactivé <br>
@@ -64,6 +72,7 @@ $(document).ready(function(){
 								</header>
 								<fieldset>
 									<section>
+<<<<<<< HEAD
 										<div class="alert alert-info">
 											<i class="fa fa-info-circle"></i> Starpass est chiant avec les temps d'attente, pensez à bien attendre 1 à 2 minutes entre chaque sms.<br />
 											Nous ne somment pas responsable et ne remboursons pas toutes mauvaises utilisation de ce moyen de paiement.
@@ -75,6 +84,19 @@ $(document).ready(function(){
 											width="660" height="540" frameborder="0"></iframe>
 										<?php } else { ?>
 										<div class="alert alert-info">
+=======
+										<div class="alert alert-info">
+											<i class="fa fa-info-circle"></i> Starpass est chiant avec les temps d'attente, pensez à bien attendre 1 à 2 minutes entre chaque sms.<br />
+											Nous ne somment pas responsable et ne remboursons pas toutes mauvaises utilisation de ce moyen de paiement.
+										</div> 
+										<?php if ($starpass_idd != 0 && $starpass_idp != 0) { ?>
+											<div id="starpass_<?php echo $starpass_idd; ?>"></div>
+											<iframe
+											src="http://script.starpass.fr/iframe/kit_default.php?idd=<?php echo $starpass_idd; ?>&amp;background=fff&amp;verif_en_php=1"
+											width="660" height="540" frameborder="0"></iframe>
+										<?php } else { ?>
+										<div class="alert alert-info">
+>>>>>>> origin/master
 											<i class="fa fa-info-circle"></i> "Vous devez renseigner l'IDP et l'IDD dans
 											la configuration afin d'afficher le formulaire de paiement Starpass"
 										</div>
@@ -83,6 +105,10 @@ $(document).ready(function(){
 								</fieldset>
 							</form>
 						<?php } else { ?>
+<<<<<<< HEAD
+							<br>
+=======
+>>>>>>> origin/master
 							<div class="alert alert-info">
 								<i class="fa fa-info-circle"></i> Starpass est desactivé
 							</div> 
@@ -106,7 +132,12 @@ $(document).ready(function(){
 							<?php echo $this->Form->input('lc', ['type' => 'hidden', 'name' => 'lc', 'value' => 'FR']); ?>
 							<?php echo $this->Form->input('bn', ['type' => 'hidden', 'name' => 'bn', 'value' => 'PP-BuyNowBF']); ?>
 							<?php echo $this->Form->input('custom', ['type' => 'hidden', 'name' => 'custom', 'value' => $this->Session->read('Auth.User.id')]); ?>
+<<<<<<< HEAD
+			                <form class="sky-form">
+							<header>
+=======
 			                <header>
+>>>>>>> origin/master
 			                	<h4>
 				                	Acheter <?php echo $paypal_tokens.' '.$site_money; ?> via PayPal pour seulement <?php echo $paypal_price ?> € <br />
 				                </h4>
@@ -118,6 +149,10 @@ $(document).ready(function(){
 			                		</button><br>
 								</section>
 							</fieldset>
+<<<<<<< HEAD
+							</form>
+=======
+>>>>>>> origin/master
 						<?php } else { ?>
 								<div class="alert alert-info">
 									<i class="fa fa-info-circle"></i> Paypal est desactivé<br>
@@ -150,6 +185,10 @@ $(document).ready(function(){
 								</fieldset>
 							</form>
 						<?php } else { ?>
+<<<<<<< HEAD
+							<br>
+=======
+>>>>>>> origin/master
 							<div class="alert alert-info">
 								<i class="fa fa-info-circle"></i> Starpass est desactivé
 							</div> 
