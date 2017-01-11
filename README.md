@@ -37,4 +37,4 @@
 * 2015-2017 => Astralt, par TristanCode & Lyes (https://extaz-cms.fr)
 * 2015-2015 => MrSaooty (https://extaz-cms.com)
 
-`ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
+`ExtazCMS © 2015-2017 Astralt - Tous droits réservés.`
