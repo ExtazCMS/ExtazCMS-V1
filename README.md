@@ -1,18 +1,21 @@
 ![logo 1](http://extaz-cms.fr/images/logo.png)
 
-![logo 2](http://forum.ironcraft.fr/uploads/monthly_2015_10/logo.png.d3dc9bbe6e06f0f094bcad42af1dd7c0.png)
+![logo 2](https://astralt.com/images/astralt/logo-texte.png)
 
 
 ##Conditions
-* Il est interdit de retirer la mention `propulsé par ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
+* Il est interdit de retirer la mention `propulsé par ExtazCMS © 2015-2017 Astralt - Tous droits réservés.`
 * Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
+* Il est interdit de redistribuer ExtazCMS même modifié, sans l'accord des auteurs de ce derniers.
+* L'équipe d'ExtazCMS se réserve le droit de modifier ces présentes conditions à tout moment.
 
 ##Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
 ##L'équipe
 * __Lyes__         - Dirigeant, Marketing/Communication, Correcteur et Designer.
-* __Mazette__      - Développeur en chef.
+* __TristanCode__  - Développeur en chef.
+* __Mazette__      - Développeur web.
 * __Khran__        - Développeur Web.
 
 ##Changelog
@@ -31,7 +34,7 @@
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
 ##Sources
-* 2015-2016 => Clyese Systems, par TristanCode & Lyes (http://extaz-cms.fr)
-* 2015-2015 => MrSaooty (http://extaz-cms.com)
+* 2015-2017 => Astralt, par TristanCode & Lyes (https://extaz-cms.fr)
+* 2015-2015 => MrSaooty (https://extaz-cms.com)
 
 `ExtazCMS © 2016 Clyese Systems - Tous droits réservés.`
