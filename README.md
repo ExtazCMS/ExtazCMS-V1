@@ -14,8 +14,7 @@
 
 ##L'équipe
 * __Lyes__         - Dirigeant, Marketing/Communication, Correcteur et Designer.
-* __TristanCode__  - Développeur en chef.
-* __Mazette__      - Développeur web.
+* __Mazette__      - Développeur web en chef.
 * __Khran__        - Développeur Web.
 
 ##Changelog
@@ -34,7 +33,7 @@
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
 ##Sources
-* 2015-2017 => Astralt, par TristanCode & Lyes (https://extaz-cms.fr)
+* 2015-2017 => Astralt (https://extaz-cms.fr)
 * 2015-2015 => MrSaooty (https://extaz-cms.com)
 
 `ExtazCMS © 2015-2017 Astralt - Tous droits réservés.`
