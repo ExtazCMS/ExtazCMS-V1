@@ -34,6 +34,5 @@
 
 ##Sources
 * 2015-2017 => Astralt (https://extaz-cms.fr)
-* 2015-2015 => MrSaooty (https://extaz-cms.com)
 
 `ExtazCMS © 2015-2017 Astralt - Tous droits réservés.`
