@@ -279,7 +279,7 @@ class PagesController extends AppController {
     }
 
 	public function admin_chat_messages(){
-		if($this->Auth->user()){
+		if($this->Auth->user('role') > 1){
 			if($this->request->is('ajax')){
 				$data = '';
     			$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
@@ -306,10 +306,13 @@ class PagesController extends AppController {
 				exit();
 			}
 		}
+		else{
+			throw new NotFoundException();
+		}
 	}
 
 	public function admin_send_message(){
-		if($this->Auth->user()) {
+		if($this->Auth->user('role') >1 ) {
 			if($this->request->is('ajax')){
 	    		$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
 				$message = trim(str_replace('/', '', $this->request->data['message']));
@@ -332,6 +335,9 @@ class PagesController extends AppController {
 				exit();
 				
 			}
+		}
+		else{
+			throw new NotFoundException();
 		}
 	}
 
@@ -375,6 +381,9 @@ class PagesController extends AppController {
                 return $this->redirect($this->referer());
             }
         }
+        else{
+			throw new NotFoundException();
+		}
     }
 
 	public function admin_delete_donator($id = null){
@@ -754,6 +763,9 @@ class PagesController extends AppController {
                 return $this->redirect($this->referer());
             }
         }
+	else{
+			throw new NotFoundException();
+		}
     }
 
 	public function team(){
