@@ -22,46 +22,50 @@ Class CodesController extends AppController{
 	}
 
 	public function admin_generate(){
-		if($this->request->is('post')){
-			$creator = $this->Auth->user('username');
-			$ip = $_SERVER['REMOTE_ADDR'];
-			$value = $this->request->data['Codes']['value'];
-			$number = $this->request->data['Codes']['number'];
-			if($number == null){
-				$number = 1;
-			}
-			if($number > 250){
-				$this->Session->setFlash('Vous ne pouvez générer que 250 codes maximum', 'error');
-				return $this->redirect(['controller' => 'codes', 'action' => 'generate', 'admin' => true]);
-			}
-			else{
-				for($i = 1; $i <= $number; $i++){
-					// On génère un code
-					$char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-					$random = str_shuffle($char);
-					$random2 = str_shuffle($char);
-					$random3 = str_shuffle($char);
-					$random4 = str_shuffle($char);
-					$code = substr($random, 0, 4).'-'.substr($random2, 0, 4).'-'.substr($random3, 0, 4).'-'.substr($random4, 0, 4);
-					// On l'enregistre
-					$this->Code->create;
-					$this->Code->saveField('creator', $creator);
-					$this->Code->saveField('ip', $ip);
-					$this->Code->saveField('code', $code);
-					$this->Code->saveField('value', $value);
-					$this->Code->saveField('used', 0);
-					$this->Code->clear();
+		if($this->Auth->user('role' > 1)){
+			if($this->request->is('post')){
+				$creator = $this->Auth->user('username');
+				$ip = $_SERVER['REMOTE_ADDR'];
+				$value = $this->request->data['Codes']['value'];
+				$number = $this->request->data['Codes']['number'];
+				if($number == null){
+					$number = 1;
 				}
-				// On redirige
-				if($number > 1){
-					$this->Session->setFlash('Vos codes ont bien étés générés !', 'toastr_success');
+				if($number > 250){
+					$this->Session->setFlash('Vous ne pouvez générer que 250 codes maximum', 'error');
+					return $this->redirect(['controller' => 'codes', 'action' => 'generate', 'admin' => true]);
 				}
 				else{
-					$this->Session->setFlash('Votre code a bien été généré !', 'toastr_success');
+					for($i = 1; $i <= $number; $i++){
+						// On génère un code
+						$char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+						$random = str_shuffle($char);
+						$random2 = str_shuffle($char);
+						$random3 = str_shuffle($char);
+						$random4 = str_shuffle($char);
+						$code = substr($random, 0, 4).'-'.substr($random2, 0, 4).'-'.substr($random3, 0, 4).'-'.substr($random4, 0, 4);
+						// On l'enregistre
+						$this->Code->create;
+						$this->Code->saveField('creator', $creator);
+						$this->Code->saveField('ip', $ip);
+						$this->Code->saveField('code', $code);
+						$this->Code->saveField('value', $value);
+						$this->Code->saveField('used', 0);
+						$this->Code->clear();
+					}
+					// On redirige
+					if($number > 1){
+						$this->Session->setFlash('Vos codes ont bien étés générés !', 'toastr_success');
+					}
+					else{
+						$this->Session->setFlash('Votre code a bien été généré !', 'toastr_success');
+					}
+					return $this->redirect(['controller' => 'codes', 'action' => 'list', 'admin' => true]);
 				}
-				return $this->redirect(['controller' => 'codes', 'action' => 'list', 'admin' => true]);
+				
 			}
-			
+		else {
+			throw new NotFoundException();			
 		}
 	}
 
