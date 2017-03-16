@@ -38,6 +38,7 @@
     <div class="row">
         <!-- Left Sidebar -->
         <div class="col-md-9">
+        <?php if($ban != 1){ ?>
             <div class="header"> <h4 style="margin-top: 0;">Chat en jeu</h4></div><br>
                 <div class="ibox-content">
                     <div class="chat-update">
@@ -90,6 +91,11 @@
                     </div>
                     <?php } ?>
                 </div>
+        <?php } else { ?>
+            <div class="alert alert-info">
+                <i class="fa fa-info-circle"></i> "Vous avez été banni du site. Vous n'avez plus accès à cette page!"
+            </div>
+        <?php } ?>
         </div>
         <!-- End Left Sidebar -->
         <?php echo $this->element('sidebar'); ?>
