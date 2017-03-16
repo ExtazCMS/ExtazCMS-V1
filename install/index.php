@@ -203,7 +203,7 @@ class DATABASE_CONFIG {
                     <input type="text" name="sql_user" placeholder="Nom de l'utilisateur SQL">
                 </div>
                 <div class="field">
-                    <label>Mot de pass de l'utilsateur SQL</label>
+                    <label>Mot de passe de l'utilsateur SQL</label>
                     <input type="text" name="sql_pass" placeholder="Mot de pass de l'utilsateur SQL">
                 </div>
 				
