@@ -64,6 +64,7 @@ Class CodesController extends AppController{
 				}
 				
 			}
+		}
 		else {
 			throw new NotFoundException();			
 		}
