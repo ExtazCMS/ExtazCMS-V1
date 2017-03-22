@@ -555,7 +555,9 @@ class PagesController extends AppController {
 
 	public function close_my_ticket($id = null){
 		if($this->Auth->user()){
-			if($this->Support->find('first', ['conditions' => ['Support.id' => $id]])){
+            $ticket = $this->Support->find('first', ['conditions' => ['Support.id' => $id]]);
+			$ticket_owner = $ticket['User']['username'];
+			if($this->Support->find('first', ['conditions' => ['Support.id' => $id]]) && $ticket_owner == $this->Auth->user('username') ){
 				$this->Support->id = $id;
 				$this->Support->saveField('resolved', 1);
 				$this->Session->setFlash('Votre ticket a bien été fermé', 'success');
