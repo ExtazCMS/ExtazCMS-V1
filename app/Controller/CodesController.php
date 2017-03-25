@@ -22,7 +22,7 @@ Class CodesController extends AppController{
 	}
 
 	public function admin_generate(){
-		if($this->Auth->user('role' > 1)){
+		if($this->Auth->user('role') > 1){
 			if($this->request->is('post')){
 				$creator = $this->Auth->user('username');
 				$ip = $_SERVER['REMOTE_ADDR'];
