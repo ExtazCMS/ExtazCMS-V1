@@ -39,7 +39,7 @@ $(document).ready(function(){
     <div class="animated fadeInRightBig">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Liste des pages personnalisés</h5>
+                <h5>Liste des pages personnalisées</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>

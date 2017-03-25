@@ -35,7 +35,7 @@
             <div class="col-md-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Ajouter une question et réponse au F.A.Q</h5>
+                        <h5>Ajouter une question et une réponse à la F.A.Q</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -63,7 +63,7 @@
             <div class="col-md-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>List des Questions et Réponses</h5>
+                        <h5>Liste des Questions et Réponses</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>

@@ -49,10 +49,10 @@
                         echo '<a class="btn btn-w-m btn-success btn-sm" href="https://extaz-cms.fr/updates/updates/ExtazCMS_'.$next_version.'.zip"><i class="fa fa-wrench"></i> Télécharger la mise à jour</a></div>';
                     }
                 ?>
-			</div>
-		</div>
+            </div>
+        </div>
         <div class="row">
-			<div class="col-md-12">
+            <div class="col-md-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title"><h5>Changelog</h5>
                         <div class="ibox-tools">
@@ -65,7 +65,15 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <?php echo file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html"); ?>
+                        <?php
+                        if (!file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html")) 
+                        {
+                            echo file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html");
+                        }
+                        else{
+                            echo "Impossibilité d'accéder au serveur.";
+                        } 
+                        ?>
                      </div>
                 </div>
             </div>
