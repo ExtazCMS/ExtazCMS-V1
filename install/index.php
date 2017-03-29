@@ -26,7 +26,7 @@ $alert = new Alert();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Installation de ExtazCMS 1.13</title>
+    <title>Installation de ExtazCMS 1.14</title>
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -66,7 +66,7 @@ $alert = new Alert();
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">
-            ExtazCMS 1.13
+            ExtazCMS 1.14
         </div>
     </div>
 </div>
@@ -148,7 +148,7 @@ $alert = new Alert();
         $sql_user = $_POST["sql_user"];
         $sql_pass = $_POST["sql_pass"];
 
-        if(empty($sql_host) || empty($sql_name) || empty($sql_user) || empty($sql_pass)) {
+        if(empty($sql_host) || empty($sql_name) || empty($sql_user) {
             echo $alert->danger("Tous les champs sont requis!");
         } else {
             try {
@@ -224,7 +224,7 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Clyese Systems - Tous droits réservés</a></small>
+    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Astralt - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();
