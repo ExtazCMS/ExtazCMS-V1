@@ -148,7 +148,7 @@ $alert = new Alert();
         $sql_user = $_POST["sql_user"];
         $sql_pass = $_POST["sql_pass"];
 
-        if(empty($sql_host) || empty($sql_name) || empty($sql_user) {
+        if(empty($sql_host) || empty($sql_name) || empty($sql_user)) {
             echo $alert->danger("Tous les champs sont requis!");
         } else {
             try {
