@@ -611,6 +611,7 @@ class PagesController extends AppController {
 							// 	$Email->subject('['.$this->config['name_server'].'] Support, nouvelle réponse à votre ticket #'.$ticket['Support']['id'].'');
 							// 	$Email->send('Retrouvez cette nouvelle réponse ici : http://'.$_SERVER['HTTP_HOST'].$this->webroot.'tickets/'.$ticket['Support']['id']);
 							// }
+							$message = nl2br(htmlspecialchars($message));
 							$this->supportComments->create;
 							$this->supportComments->saveField('ticket_id', $this->request->data['Pages']['id']);
 							$this->supportComments->saveField('user_id', $this->Auth->user('id'));
