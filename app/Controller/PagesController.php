@@ -615,7 +615,7 @@ class PagesController extends AppController {
 							$this->supportComments->create;
 							$this->supportComments->saveField('ticket_id', $this->request->data['Pages']['id']);
 							$this->supportComments->saveField('user_id', $this->Auth->user('id'));
-							$this->supportComments->saveField('message', $this->request->data['Pages']['message']);
+							$this->supportComments->saveField('message', $message);
 							$this->Session->setFlash('Réponse ajoutée !', 'success');
 							return $this->redirect($this->referer());
 						}
