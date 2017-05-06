@@ -1,9 +1,4 @@
 <?php
-/**
- * Extaz-CMS - install.php
- * Coded by TristanCode
- * Created: 10/13/15 at 10:34 AM
- */
  
 define('APP_DIR', 'app');
 define('DS', DIRECTORY_SEPARATOR);
