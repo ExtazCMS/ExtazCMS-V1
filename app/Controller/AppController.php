@@ -52,6 +52,8 @@ class AppController extends Controller {
 		if(version_compare(PHP_VERSION, '5.4.0') < 0){
     		exit('Vous devez avoir PHP 5.4 minimum pour utiliser ExtazCMS');
 		}
+		die(var_dump(ROOT));
+		if()
 
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))){
 			$this->layout = 'admin';
