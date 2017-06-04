@@ -32,6 +32,12 @@
                                     <?php echo $this->Form->input('url', array('type' => 'url', 'value' => $data['Cpage']['url'], 'class' => 'form-control', 'label' => false)); ?>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <?php 
+                                    echo $this->Form->label('visible', '&nbsp;&nbsp; Rendre visible ?');
+                                    echo $this->Form->checkbox('visible', array('class' => 'pull-left'));
+                                ?>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <hr>

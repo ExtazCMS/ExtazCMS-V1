@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `extaz_cpages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `slug` text NOT NULL,
-  `sidebar` int(11) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL,
   `name` text NOT NULL,
   `content` longtext NOT NULL,
   `redirect` int(11) NOT NULL,

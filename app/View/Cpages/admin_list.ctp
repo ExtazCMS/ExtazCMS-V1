@@ -39,7 +39,7 @@ $(document).ready(function(){
     <div class="animated fadeInRightBig">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Liste des pages personnalisées</h5>
+                <h5>Liste des pages personnalisés</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -59,6 +59,7 @@ $(document).ready(function(){
                             <th><b>Auteur</b></th>
                             <th><b>Type</b></th>
                             <th><b>Titre</b></th>
+                            <th><b>Visible</b></th>
                             <th><b>URL</b></th>
                             <th><b>Date de création</b></th>
                             <th><b>Actions</b></th>
@@ -97,6 +98,18 @@ $(document).ready(function(){
                                 ?>
                             </td>
                             <td><?php echo $d['Cpage']['name']; ?></td>
+                            <td>
+                                <?php
+                                    if($d['Cpage']['visible']){
+                                        echo '<i class="fa fa-check" aria-hidden="true"></i>'
+;
+                                    }
+                                    else{
+                                        echo '<i class="fa fa-times" aria-hidden="true"></i>
+';
+                                    }
+                                ?>
+                            </td>
                             <td>
                                 <?php if($d['Cpage']['redirect'] == 1){ ?>
                                 <span class="label label-black">

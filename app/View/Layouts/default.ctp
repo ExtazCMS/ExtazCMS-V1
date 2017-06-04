@@ -66,14 +66,14 @@ if(isset($_GET['debug'])) {
                                 <div class="topbar-server-ip">
                                     <?php
                                     // Si le port est 25565 alors il est inutile de l'afficher
-									if(!empty($server_ip)){
-										if($server_port != 25565 && $server_port != null){
-											echo '<i class="fa fa-wifi"></i> '.$xml->header->message_1.' : <span class="server-ip">'.$server_ip.':'.$server_port.'</span>';
-										}
-										else{
-											echo '<i class="fa fa-wifi"></i> '.$xml->header->message_1.' : <span class="server-ip">'.$server_ip.'</span>';
-										}
-									}
+                                    if(!empty($server_ip)){
+                                        if($server_port != 25565 && $server_port != null){
+                                            echo '<i class="fa fa-wifi"></i> '.$xml->header->message_1.' : <span class="server-ip">'.$server_ip.':'.$server_port.'</span>';
+                                        }
+                                        else{
+                                            echo '<i class="fa fa-wifi"></i> '.$xml->header->message_1.' : <span class="server-ip">'.$server_ip.'</span>';
+                                        }
+                                    }
                                     ?>
                                 </div>
                                 <!-- End Topbar Navigation -->
@@ -81,11 +81,11 @@ if(isset($_GET['debug'])) {
                         </div>
                         <!-- End Topbar -->
                     </div>
-				<?php if(!empty($banner_url)){ ?>
-					<center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $banner_url; ?>" alt="Top banner"></a></center><br />	
-				<?php } else { ?>
-					<center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $this->webroot.'banner.png'; ?>" alt="Default banner"></a></center><br />
-				<?php } ?>	
+                <?php if(!empty($banner_url)){ ?>
+                    <center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $banner_url; ?>" alt="Top banner"></a></center><br /> 
+                <?php } else { ?>
+                    <center><a href="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>"><img class="img-responsive" src="<?php echo $this->webroot.'banner.png'; ?>" alt="Default banner"></a></center><br />
+                <?php } ?>  
                 </div>
             </div>
             <!-- End Topbar -->
@@ -121,7 +121,10 @@ if(isset($_GET['debug'])) {
                             <?php } ?>
                             <?php if($nb_cpages == 1){ ?>
                             <li class="none">
-                                <?php echo $this->Html->link($cpages[0]['Cpage']['name'], ['controller' => 'cpages', 'action' => 'read', 'slug' => $cpages[0]['Cpage']['slug']]); ?>
+                                <?php 
+                                    
+                                        echo $this->Html->link($cpages[0]['Cpage']['name'], ['controller' => 'cpages', 'action' => 'read', 'slug' => $cpages[0]['Cpage']['slug']]);
+                                    ?>
                             </li>
                             <?php } elseif($nb_cpages != 0 && $nb_cpages > 1) { ?>
                             <li class="dropdown">
@@ -132,9 +135,9 @@ if(isset($_GET['debug'])) {
                                     <?php
                                     foreach($cpages as $cp){
                                         ?>
-                                        <li>
-                                            <?php echo $this->Html->link($cp['Cpage']['name'], ['controller' => 'cpages', 'action' => 'read', 'slug' => $cp['Cpage']['slug']]); ?>
-                                        </li>
+                                            <li>
+                                                <?php echo $this->Html->link($cp['Cpage']['name'], ['controller' => 'cpages', 'action' => 'read', 'slug' => $cp['Cpage']['slug']]); ?>
+                                            </li>
                                         <?php
                                     }
                                     ?>
@@ -167,11 +170,11 @@ if(isset($_GET['debug'])) {
                                     <li>
                                         <?php echo $this->Html->link('Consulter mes tickets', ['controller' => 'pages', 'action' => 'list_tickets']); ?>                             
                                     </li>
-									<?php if($use_contact == 1){ ?>
-										<li class="none">
-											<?php echo $this->Html->link('Contact', ['controller' => 'pages', 'action' => 'contact']); ?>
-										</li>
-									<?php } ?>
+                                    <?php if($use_contact == 1){ ?>
+                                        <li class="none">
+                                            <?php echo $this->Html->link('Contact', ['controller' => 'pages', 'action' => 'contact']); ?>
+                                        </li>
+                                    <?php } ?>
                                 </ul>
                             </li>
                             <?php if($use_faq == 1){ ?>
@@ -226,17 +229,17 @@ if(isset($_GET['debug'])) {
         <?php echo $this->Session->flash(); ?>
         <?php echo $this->fetch('content'); ?>
     
-	<!-- Il est interdit de modifier ou suprimer les ligne de code ci dessous -->
+    <!-- Il est interdit de modifier ou suprimer les ligne de code ci dessous -->
             <div class="copyright">
                 <div class="container">
                     <p class="text-center">
-						
-                       <a href="<?php echo $url_site; ?>"><?php echo $name_server; ?></a> propulsé par <a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Astralt - Tous droits réservés.<br />Lire les <a href='<?php echo $url_site; ?>/cgv'>CGV/CGU</a> du site.
+                        
+                       <a href="<?php echo $url_site; ?>"><?php echo $name_server; ?></a> propulsé par <a href="http://extaz-cms.fr">ExtazCMS</a> © 2016 Clyese Systems - Tous droits réservés.<br />Lire les <a href='<?php echo $url_site; ?>/cgv'>CGV/CGU</a> du site.
                     </p>
                 </div> 
             </div><!--/copyright--> 
         </div>   
-	<!-- Il est interdit de modifier ou suprimer les ligne de code ci dessus -->
+    <!-- Il est interdit de modifier ou suprimer les ligne de code ci dessus -->
         <!--=== End Footer ===-->
     </div><!--/wrapper-->
     <?php
@@ -260,7 +263,7 @@ if(isset($_GET['debug'])) {
     ?>
     <script type="text/javascript">
         jQuery(document).ready(function(){
-          	App.init();
+            App.init();
             App.initSliders();
         });
     </script>
@@ -285,4 +288,4 @@ if(isset($_GET['debug'])) {
         <script src="files/html5shiv.js"></script>    
     <![endif]-->
 </body>
-</html>	
+</html> 

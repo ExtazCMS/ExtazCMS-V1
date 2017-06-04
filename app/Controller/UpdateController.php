@@ -40,7 +40,9 @@ class UpdateController extends AppController {
                             $this->Update->saveField('type', file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_$this->next_version/type.txt"));
                             $this->Update->clear();
 
-							// On déclare la dossier cible qui doit être vidé
+							/* Auncun intérêt pour le moment
+
+                            // On déclare la dossier cible qui doit être vidé
 							$dossier = ROOT . '/app/Plugin/TwigView/tmp/views';
 							$dir_iterator = new RecursiveDirectoryIterator($dossier);
 							$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::CHILD_FIRST);
@@ -48,6 +50,8 @@ class UpdateController extends AppController {
 							foreach($iterator as $fichier){
 								$fichier->isDir() ? rmdir($fichier) : unlink($fichier);
 							}
+                            
+                            */
 
                             $this->Session->setFlash('Mise à jour effectué avec succès !', 'toastr_success');
                         } else {

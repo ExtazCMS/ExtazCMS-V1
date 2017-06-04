@@ -45,6 +45,13 @@ function verif(evt) {
                                 </div>
                             </div>
                             <div class="form-group">
+                                <?php 
+                                    echo $this->Form->label('visible', '&nbsp;&nbsp; Rendre visible ?');
+                                    echo $this->Form->checkbox('visible', array('class' => 'pull-left'));
+                                ?>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="input-group margin-bottom-20">
                                     <span class="input-group-addon"><i class="fa fa-globe"></i></span>
                                     <?php echo $this->Form->input('url', array('type' => 'url', 'placeholder' => 'Localisateur uniforme de ressource (URL)', 'class' => 'form-control', 'label' => false)); ?>
