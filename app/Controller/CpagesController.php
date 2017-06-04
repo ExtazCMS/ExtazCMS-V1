@@ -162,7 +162,7 @@ class CpagesController extends AppController {
 				}
 				// On test si l'utilisateur est connecté en jeu
 				$online_players = $api->call('players.online.names');
-				$player_is_online = in_array($this->Auth->user('username'), "TristanCode");
+				$player_is_online = in_array($this->Auth->user('username'), $online_players);
 				// On génère l'url de connexion
 				$login = Router::url(['controller' => 'users', 'action' => 'login']);
 				// On génère l'ip du serveur
