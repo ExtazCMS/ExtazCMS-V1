@@ -368,20 +368,21 @@ class ShopsController extends AppController {
 										$this->User->id = $this->Auth->user('id');
 										$this->User->saveField('tokens', $new_user_tokens);
 										// On execute la/les commande(s)
-										$command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
-										for($i=0; $i < $quantity; $i++){
-											if(strstr($item['Shop']['command'], '&&&')){
-												$new_command = explode('&&&', $command);
-												foreach($new_command as $command){
-													$command = trim($command);
-													$api->call('server.run_command', [$command]);
-												}
-											}
-											else{
-												$api->call('server.run_command', [$command]);
-											}
+
+									    $command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
+									    if (strstr($item['Shop']['command'], '&&&')) {
+										$new_command = explode('&&&', $command);
+									    }
+									    for($i=0; $i < $quantity; $i++) {
+										if(is_array($new_command)) {
+										    foreach ($new_command as $c) {
+											$api->call('server.run_command', [trim($c)]);
+										    }
+										} else {
+										    $api->call('server.run_command', [$command]);
 										}
-										// On redirige avec un message
+									    }
+									    // On redirige avec un message
 										$this->Session->setFlash('Achat effectué, vous avez depensé '.$price.' '.$this->config['site_money'].'', 'success');
 										return $this->redirect(['controller' => 'shops', 'action' => 'index']);
 									}
@@ -439,19 +440,19 @@ class ShopsController extends AppController {
 											// On fait payer l'utilisateur sur le serveur
 											$api->call('players.name.bank.withdraw', [$this->Auth->user('username'), $price]);
 											// On execute la/les commande(s)
-											$command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
-											for($i=0; $i < $quantity; $i++){
-												if(strstr($item['Shop']['command'], '&&&')){
-													$new_command = explode('&&&', $command);
-													foreach($new_command as $command){
-													$command = trim($command);
-													$api->call('server.run_command', [$command]);
-												}
-												}
-												else{
-													$api->call('server.run_command', [$command]);
-												}
+										    $command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
+										    if (strstr($item['Shop']['command'], '&&&')) {
+											$new_command = explode('&&&', $command);
+										    }
+										    for($i=0; $i < $quantity; $i++) {
+											if(is_array($new_command)) {
+											    foreach ($new_command as $c) {
+												$api->call('server.run_command', [trim($c)]);
+											    }
+											} else {
+											    $api->call('server.run_command', [$command]);
 											}
+										    }
 											// On redirige avec un message
 											$this->Session->setFlash('Achat effectué, vous avez depensé '.$price.' '.$this->config['money_server'].'', 'success');
 											return $this->redirect(['controller' => 'shops', 'action' => 'index']);
@@ -556,19 +557,19 @@ class ShopsController extends AppController {
 									$this->User->id = $this->Auth->user('id');
 									$this->User->saveField('tokens', $new_user_tokens);
 									// On execute la/les commande(s)
-									$command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
-									for($i=0; $i < $quantity; $i++){
-										if(strstr($item['Shop']['command'], '&&&')){
-											$new_command = explode('&&&', $command);
-											foreach($new_command as $command){
-												$command = trim($command);
-												$api->call('server.run_command', [$command]);
-											}
-										}
-										else{
-											$api->call('server.run_command', [$command]);
-										}
+								    $command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
+								    if (strstr($item['Shop']['command'], '&&&')) {
+									$new_command = explode('&&&', $command);
+								    }
+								    for($i=0; $i < $quantity; $i++) {
+									if(is_array($new_command)) {
+									    foreach ($new_command as $c) {
+										$api->call('server.run_command', [trim($c)]);
+									    }
+									} else {
+									    $api->call('server.run_command', [$command]);
 									}
+								    }
 									// On redirige avec un message
 									$this->Session->setFlash('Achat effectué, vous avez depensé '.$price.' '.$this->config['site_money'].'', 'success');
 									return $this->redirect(['controller' => 'shops', 'action' => 'index']);
@@ -627,19 +628,19 @@ class ShopsController extends AppController {
 										// On fait payer l'utilisateur sur le serveur
 										$api->call('players.name.bank.withdraw', [$this->Auth->user('username'), $price]);
 										// On execute la/les commande(s)
-										$command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
-										for($i=0; $i < $quantity; $i++){
-											if(strstr($item['Shop']['command'], '&&&')){
-												$new_command = explode('&&&', $command);
-												foreach($new_command as $command){
-												$command = trim($command);
-												$api->call('server.run_command', [$command]);
-											}
-											}
-											else{
-												$api->call('server.run_command', [$command]);
-											}
+									    $command = str_replace('%player%', $this->Auth->user('username'), $item['Shop']['command']);
+									    if (strstr($item['Shop']['command'], '&&&')) {
+										$new_command = explode('&&&', $command);
+									    }
+									    for($i=0; $i < $quantity; $i++) {
+										if(is_array($new_command)) {
+										    foreach ($new_command as $c) {
+											$api->call('server.run_command', [trim($c)]);
+										    }
+										} else {
+										    $api->call('server.run_command', [$command]);
 										}
+									    }
 										// On redirige avec un message
 										$this->Session->setFlash('Achat effectué, vous avez depensé '.$price.' '.$this->config['money_server'].'', 'success');
 										return $this->redirect(['controller' => 'shops', 'action' => 'index']);
