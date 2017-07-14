@@ -1,8 +1,5 @@
 ![logo 1](http://extaz-cms.fr/images/logo.png)
 
-![logo 2](https://astralt.com/images/astralt/logo-texte.png)
-
-
 ##Conditions
 * Il est interdit de retirer la mention `propulsé par ExtazCMS © 2015-2017 Astralt - Tous droits réservés.`
 * Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
