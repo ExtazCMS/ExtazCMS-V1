@@ -124,7 +124,7 @@
                             {% set online_players = api.call('players.online.names')[0]['success'] %}
                             {% for player in online_players %}
                                 <li style="list-style: none; margin-top: 5px">
-                                    <font color="#555"><i class="fa fa-angle-double-right"></i></font>{% set user_avatar %}http://cravatar.eu/helmavatar/{{ player }}/20.png{% endset %}
+                                    <font color="#555"><i class="fa fa-angle-double-right"></i></font>{% set user_avatar %}https://cravatar.eu/helmavatar/{{ player }}/20.png{% endset %}
                                     {{ _this.Html.image(user_avatar, {'alt': 'Avatar'}) }} {{ player }}
                                 </li>
                             {% endfor %}

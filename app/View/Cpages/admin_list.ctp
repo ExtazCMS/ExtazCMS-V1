@@ -72,7 +72,7 @@ $(document).ready(function(){
                                 <?php
                                 // Avatar
                                 if($d['User']['username'] == null){
-                                    echo $this->Html->image('http://cravatar.eu/helmavatar/steve/12', ['alt' => 'Player head', 'class' => 'img-rounded', 'style' => 'margin-top:-1px;']);
+                                    echo $this->Html->image('https://cravatar.eu/helmavatar/steve/12', ['alt' => 'Player head', 'class' => 'img-rounded', 'style' => 'margin-top:-1px;']);
                                 }
                                 else{
                                     echo $this->Html->image($d['User']['avatar'], ['alt' => 'Avatar', 'height' => 16, 'width' => 16, 'class' => 'avatar']);
