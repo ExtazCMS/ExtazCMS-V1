@@ -6,7 +6,7 @@
         <div class="col-md-9">
             <?php echo $this->Form->create('User', ['action' => 'update_account']); ?>
                 <div class="profile-header">  
-                    <header><?php echo $this->Html->image('http://cravatar.eu/helmavatar/'.$data['User']['username'].'', ['alt' => 'Player head', 'style' => 'margin-right:4px;']); ?> Informations à propos de <?php echo $data['User']['username']; ?></header>
+                    <header><?php echo $this->Html->image('https://cravatar.eu/helmavatar/'.$data['User']['username'].'', ['alt' => 'Player head', 'style' => 'margin-right:4px;']); ?> Informations à propos de <?php echo $data['User']['username']; ?></header>
                 </div>
                 <div class="panel panel-default">
                     <table class="table raleway">

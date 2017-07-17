@@ -23,8 +23,8 @@
         <?php echo $this->Html->css('custom'); ?>
         <?php echo $this->Html->script('admin/jquery-2.1.1'); ?>
         <?php echo $this->Html->script('admin/jquery-ui-1.10.4.min'); ?>
-        <script src="http://code.highcharts.com/highcharts.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <?php echo $this->Html->script('jquery.counterup'); ?>
         <?php echo $this->Html->script('jquery.confirm'); ?>
         <?php echo $this->Html->script('admin/jquery.selectBoxIt'); ?>
@@ -299,7 +299,7 @@
         <!-- Dropzone -->
         <?php echo $this->Html->script('admin/dropzone'); ?>
 
-        <script src="//cdn.ckeditor.com/4.5.1/full/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/4.5.1/full/ckeditor.js"></script>
 
     </body>
 </html>

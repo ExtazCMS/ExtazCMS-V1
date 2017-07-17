@@ -59,7 +59,7 @@ class UsersController extends AppController{
 					if($this->User->validates()){
 						$this->User->create();
 						if($this->User->save($this->request->data)){
-							$avatar = 'http://cravatar.eu/helmavatar/'.$this->request->data['User']['username'];
+							$avatar = 'https://cravatar.eu/helmavatar/'.$this->request->data['User']['username'];
 							$this->User->saveField('avatar', $avatar);
 							$this->User->saveField('ip', $_SERVER['REMOTE_ADDR']);
 							$this->User->saveField('tokens', '0');
