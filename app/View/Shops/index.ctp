@@ -133,9 +133,9 @@ if($connected){
                                 <?php echo $i['Shop']['description']; ?>
                             </p>
                             <div class="quantity">
-                                Quantité : <span class="open-sans" id="quantity<?php echo $i['Shop']['id']; ?>">1</span> <br /><!---
+                                Quantité : <span class="open-sans" id="quantity<?php echo $i['Shop']['id']; ?>">1</span>
                                 <button class="btn-u btn-u-dark btn-u-xs" id="plus<?php echo $i['Shop']['id']; ?>">+</button>
-                                <button class="btn-u btn-u-dark btn-u-xs" id="moins<?php echo $i['Shop']['id']; ?>">-</button> --->
+                                <button class="btn-u btn-u-dark btn-u-xs" id="moins<?php echo $i['Shop']['id']; ?>">-</button><br />
 								Connexion au jeu nécessaire:
 								<?php if($i['Shop']['needonline'] == 1) {
 									echo 'OUI';
