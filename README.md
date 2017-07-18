@@ -9,7 +9,7 @@
 ## Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
-## Changelog
+## Versions
 * V1.14 ("Remedium") - 21 juillet 2017 - ExtazCMS
 * V1.13 ("Saepe") - 24 Juin 2016 - ExtazCMS
 * V1.12 ("Phénix") - 9 Avril 2016 - ExtazCMS
@@ -26,4 +26,4 @@
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
 
-`© ExtazCMS 2015-2017 - Tous droits réservés.`
+`© ExtazCMS 2017 - Tous droits réservés.`
