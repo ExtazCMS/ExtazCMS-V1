@@ -57,7 +57,7 @@ $alert = new Alert();
     </style>
 </head>
 <body>
-<img src="http://img04.deviantart.net/25a2/i/2013/346/6/8/minecraft_sunset_by_axlrosie-d6xpuyr.jpg" id="bg" alt="">
+<img src="background.jpg" id="bg" alt="">
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">
@@ -78,7 +78,7 @@ $alert = new Alert();
         </thead>
             <tbody>
             <tr>
-                <td>Fichier app/Config en CHMOD 777 (Minimum 755)</td>
+                <td>Fichier app/Config en CHMOD 755</td>
                 <?php
                     if(is_writable("../app/Config")) {
                         echo "<td class='positive'>Approuvé</td>";
@@ -89,7 +89,7 @@ $alert = new Alert();
                 ?>
             </tr>
             <tr>
-                <td>Fichier app/tmp en CHMOD 777 (Minimum 755)</td>
+                <td>Fichier app/tmp en CHMOD 755</td>
                 <?php
                     if(is_writable("../app/tmp")) {
                         echo "<td class='positive'>Approuvé</td>";
@@ -174,7 +174,7 @@ class DATABASE_CONFIG {
                 file_put_contents($pathdb, $databaseStructure);
                 $sql = file_get_contents("ExtazCMS.sql");
                 $pdo->query($sql);
-                echo $alert->success("Votre base de données a bien été installée, supprimer le fichier /install/.<br>");
+                echo $alert->success("Votre base de données a bien été installée, supprimez le dossier /install/.<br>");
                 $done = true;
 
             }
@@ -199,7 +199,7 @@ class DATABASE_CONFIG {
                 </div>
                 <div class="field">
                     <label>Mot de pass de l'utilsateur SQL</label>
-                    <input type="text" name="sql_pass" placeholder="Mot de pass de l'utilsateur SQL">
+                    <input type="text" name="sql_pass" placeholder="Mot de passe de l'utilsateur SQL">
                 </div>
 				
                 <button class="ui button" type="submit" name="post1">Installer la BDD.</button>
@@ -210,7 +210,7 @@ class DATABASE_CONFIG {
 		<div id="bdd">
             <form class="ui form" action="<?= $_SERVER["PHP_SELF"]; ?>">	
 				<div class="field">
-				 <label>Votre Base De données est déjà installée</label>
+				 <label>Votre base de données est déjà installée</label>
 				 <a href="/">Me diriger vers mon site.</a>
 				</div>
             </form>
@@ -219,7 +219,7 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Astralt - Tous droits réservés</a></small>
+    <small><a href="https://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();
