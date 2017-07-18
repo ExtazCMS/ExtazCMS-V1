@@ -219,7 +219,7 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="https://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> - Tous droits réservés</a></small>
+    <small><a href="https://extaz-cms.fr">&copy; 2015-<?php echo date("Y"); ?> ExtazCMS - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();
