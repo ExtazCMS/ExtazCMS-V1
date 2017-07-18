@@ -25,5 +25,5 @@
 * V1.2 ("") - 11 Janvier 2015 - ExtazCMS
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
 
-##Sources
+
 `© ExtazCMS 2015-2017 - Tous droits réservés.`
