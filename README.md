@@ -6,6 +6,10 @@
 * Il est interdit de redistribuer ExtazCMS même modifié, sans l'accord des auteurs de ce derniers.
 * L'équipe d'ExtazCMS se réserve le droit de modifier ces présentes conditions à tout moment.
 
+* Lire entièrement les CGU https://extaz-cms.fr/cgu.html
+
+__ATTENTION : en téléchargeant le CMS vous vous engagez à avoir lu et approuvé les Conditions Générales d'Utilisation de ExtazCMS__
+
 ## Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
@@ -24,6 +28,9 @@
 * V1.3 ("") - 23 Janvier 2015 - ExtazCMS
 * V1.2 ("") - 11 Janvier 2015 - ExtazCMS
 * V1.1 ("") -  4 Janvier 2015 - ExtazCMS
+
+## Changelog
+* https://extaz-cms.fr/forum/threads/changelog.215/
 
 
 `© ExtazCMS 2017 - Tous droits réservés.`
