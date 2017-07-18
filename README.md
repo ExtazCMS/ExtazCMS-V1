@@ -1,16 +1,16 @@
 ![logo 1](http://extaz-cms.fr/images/logo.png)
 
-##Conditions
+## Conditions
 * Il est interdit de retirer la mention `propulsé par © ExtazCMS 2015-2017 - Tous droits réservés.`
 * Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
 * Il est interdit de redistribuer ExtazCMS même modifié, sans l'accord des auteurs de ce derniers.
 * L'équipe d'ExtazCMS se réserve le droit de modifier ces présentes conditions à tout moment.
 
-##Licence
+## Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
 
-##Changelog
-* V1.14 ("TITLE") - XX juillet 2017 - ExtazCMS
+## Changelog
+* V1.14 ("Remedium") - XX juillet 2017 - ExtazCMS
 * V1.13 ("Saepe") - 24 Juin 2016 - ExtazCMS
 * V1.12 ("Phénix") - 9 Avril 2016 - ExtazCMS
 * V1.11 ("Addendum") - 1 Decembre 2015 - ExtazCMS
