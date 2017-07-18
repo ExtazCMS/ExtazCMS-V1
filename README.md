@@ -8,7 +8,7 @@
 
 * Lire entièrement les CGU https://extaz-cms.fr/cgu.html
 
-__ATTENTION : en téléchargeant le CMS vous vous engagez à avoir lu et approuvé les Conditions Générales d'Utilisation de ExtazCMS__
+__ATTENTION : en téléchargeant le CMS vous vous engagez à avoir lu et approuvé les Conditions Générales d'Utilisation__
 
 ## Licence
 * Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
