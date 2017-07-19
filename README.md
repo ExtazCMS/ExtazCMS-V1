@@ -3,10 +3,10 @@
 ## Conditions d'utilisation
 * Il est interdit de retirer de votre site, la mention `propulsé par ExtazCMS`
 * Il est interdit de revendre ExtazCMS ou ses thèmes et plugins.
-* Il est interdit de redistribuer ExtazCMS même modifié, sans l'accord des auteurs de ce derniers.
-* L'équipe d'ExtazCMS se réserve le droit de modifier ces présentes conditions à tout moment.
+* Il est interdit de redistribuer ExtazCMS même modifié, sans l'accord écrit des auteurs de ce derniers.
+* L'équipe de ExtazCMS se réserve le droit de modifier ces présentes conditions à tout moment.
 
-* Lire entièrement les CGU https://extaz-cms.fr/cgu.html
+* Lire entièrement les Conditions Générales d'Utilisation : https://extaz-cms.fr/cgu.php
 
 __ATTENTION : en téléchargeant le CMS vous vous engagez à avoir lu et approuvé les Conditions Générales d'Utilisation__
 
