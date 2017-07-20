@@ -2,7 +2,8 @@
 /**
  * Extaz-CMS - admin_index.php
  */
-    $this->assign('title', 'Mettre à jour');
+$this->assign('title', 'Mettre à jour');
+
 ?>
 <script>
     $(document).ready(function(){
@@ -39,15 +40,18 @@
         <div class="row">
             <div class="col-md-6">
                 <?php
-                    if($version == $last_version) {
+		    $comp = version_compare($version, $last_version);
+                    if($comp == 0) {
                         echo "<div class='alert alert-info'>Votre CMS est à jour! Version : {$version}<br></div>";
-                    } else {
-                        echo "<div class='alert alert-danger'>Votre CMS n'est plus à jour! Mettez le à jour {$last_version}<br><br>";
+                    } else if ($comp < 0) { //Si la version est inférieure à la dernière
+                        echo "<div class='alert alert-danger'>Votre CMS n'est plus à jour ({$version})! Mettez le à jour en {$last_version}<br><br>";
                         echo $this->Form->create('Update', ['inputDefaults' => ['error' => false]]);
                         echo '<button class="btn btn-w-m btn-danger btn-sm" type="submit"><i class="fa fa-wrench"></i> Mise à jour auto</button>';
                         echo $this->Form->end();
                         echo '<a class="btn btn-w-m btn-success btn-sm" href="https://extaz-cms.fr/updates/updates/ExtazCMS_'.$next_version.'.zip"><i class="fa fa-wrench"></i> Télécharger la mise à jour</a></div>';
-                    }
+                    } else { //Version supérieure à la dernière, probablement un build en test
+                        echo "<div class='alert alert-info'>Votre CMS est en avance ! Votre version : {$version}, la dernière disponible : {$last_version} <br></div>";
+		    }
                 ?>
             </div>
         </div>
@@ -66,12 +70,13 @@
                     </div>
                     <div class="ibox-content">
                         <?php
-                        if (!file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html")) 
+			$changelog = file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html");
+                        if ($changelog != FALSE) 
                         {
-                            echo file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_{$version}/changelog.html");
+                            echo $changelog;
                         }
                         else{
-                            echo "Impossibilité d'accéder au serveur.";
+                            echo "Impossible de récupérer le changelog.";
                         } 
                         ?>
                      </div>

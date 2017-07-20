@@ -13,13 +13,18 @@ $(document).ready(function($){
             <div class="col-md-6">
             <?php
 
-            if($version == $last_version) {
+	    if ($last_version == null) {
+                echo "<div class='alert alert-danger'>Impossible de joindre le serveur de mise à jour.<br> Si le problème persiste veuillez ouvrir une <a href=\"https://extaz-cms.fr/forum/\">demande d'aide sur notre forum</a> <br><br><a  class='btn btn-sm btn-danger r' onclick='window.location.reload(false)'><i class='fa fa-wrench'></i>Réessayer</a><br></div>";
+            } else {
+		$comp = version_compare($version, $last_version);
+		if($comp == 0) {
                     echo "<div class='alert alert-info'>Votre CMS est à jour ! Version : {$version}</div>";
-                } else if ($last_version == null) {
-                    echo "<div class='alert alert-danger'>Impossible de joindre le serveur de mise à jour.<br> Si le problème persiste veuillez ouvrir une <a href=\"https://extaz-cms.fr/forum/\">demande d'aide sur notre forum</a> <br><br><a  class='btn btn-sm btn-danger r' onclick='window.location.reload(false)'><i class='fa fa-wrench'></i>Réessayer</a><br></div>";
-                } else {
+                } else if ($comp < 0) {
                     echo "<div class='alert alert-danger'>Votre CMS n'est plus à jour! Télécharger la dernière version {$last_version}<br><br><a href='./admin/update' class='btn btn-sm btn-danger r'><i class='fa fa-wrench'></i> Mettre à jour</a></div>";
-                }
+                } else {
+		    echo "<div class='alert alert-info'>Votre CMS est en avance ! Votre version : {$version}, la dernière disponible : {$last_version} <br></div>";
+		}
+	    }
             ?>
             </div>
         </div>
