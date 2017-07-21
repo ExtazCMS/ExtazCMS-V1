@@ -102,9 +102,9 @@ $alert = new Alert();
                 ?>
             </tr>
             <tr>
-                <td>Version PHP > 5.5.0</td>
+                <td>Version PHP > 5.5.0 ET < 7.0.0 </td>
                 <?php
-                    if(version_compare(PHP_VERSION, "5.5.0", ">")) {
+                    if(version_compare(PHP_VERSION, "5.5.0", ">") && version_compare(PHP_VERSION, "7.0.0", "<")) {
                         echo "<td class='positive'>Approuvé</td>";
                     } else {
                         echo "<td class='negative'>Désapprouvé (PHP ".PHP_VERSION.")</td>";
