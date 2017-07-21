@@ -80,10 +80,11 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/Config en CHMOD 755</td>
                 <?php
-                    if(is_writable("../app/Config")) {
+					$permConfig = substr(sprintf('%o', fileperms("../app/Config") ), -3);
+                    if( $permConfig == "755" ) {
                         echo "<td class='positive'>Approuvé</td>";
                     } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                        echo "<td class='negative'>Désapprouvé (CHMOD ".$permConfig.")</td>";
                         $error = true;
                     }
                 ?>
@@ -91,10 +92,11 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/tmp en CHMOD 755</td>
                 <?php
-                    if(is_writable("../app/tmp")) {
+				$permTmp = substr(sprintf('%o', fileperms("../app/tmp") ), -3);
+                    if( $permTmp == "755") {
                         echo "<td class='positive'>Approuvé</td>";
                     } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                        echo "<td class='negative'>Désapprouvé (CHMOD ".$permTmp.")</td>";
                         $error = true;
                     }
                 ?>
@@ -105,7 +107,7 @@ $alert = new Alert();
                     if(version_compare(PHP_VERSION, "5.5.0", ">")) {
                         echo "<td class='positive'>Approuvé</td>";
                     } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                        echo "<td class='negative'>Désapprouvé (PHP ".PHP_VERSION.")</td>";
                         $error = true;
                     }
                 ?>
@@ -126,10 +128,10 @@ $alert = new Alert();
     </table>
     <?php
     if(!$error) {
-	echo "<input type='checkbox' id='accept' class='ui primary checkbox'>J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br>";
-            echo "<button class='ui secondary button' id='loadStep1'>Install</button><br><br>";
+	echo "<input type='checkbox' id='accept' class='ui primary checkbox'> J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br><br>";
+            echo "<button class='ui secondary button' id='loadStep1'>Commencer l'installation</button><br><br>";
         } else {
-            echo "<a href='#' class='ui secondary button disabled'>Install</a><br><br>";
+            echo "<a href='#' class='ui secondary button disabled'>Commencer l'installation</a><br><br>";
         }
 
     $step = 1;
@@ -220,7 +222,7 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="https://extaz-cms.fr">&copy; 2015-<?php echo date("Y"); ?> ExtazCMS - Tous droits réservés</a></small>
+    <small><a href="https://extaz-cms.fr">&copy; ExtazCMS <?php echo date("Y"); ?> - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();
