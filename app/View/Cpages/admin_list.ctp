@@ -59,6 +59,7 @@ $(document).ready(function(){
                             <th><b>Auteur</b></th>
                             <th><b>Type</b></th>
                             <th><b>Titre</b></th>
+                            <th><b>Visible</b></th>
                             <th><b>URL</b></th>
                             <th><b>Date de création</b></th>
                             <th><b>Actions</b></th>
@@ -71,7 +72,7 @@ $(document).ready(function(){
                                 <?php
                                 // Avatar
                                 if($d['User']['username'] == null){
-                                    echo $this->Html->image('http://cravatar.eu/helmavatar/steve/12', ['alt' => 'Player head', 'class' => 'img-rounded', 'style' => 'margin-top:-1px;']);
+                                    echo $this->Html->image('https://cravatar.eu/helmavatar/steve/12', ['alt' => 'Player head', 'class' => 'img-rounded', 'style' => 'margin-top:-1px;']);
                                 }
                                 else{
                                     echo $this->Html->image($d['User']['avatar'], ['alt' => 'Avatar', 'height' => 16, 'width' => 16, 'class' => 'avatar']);
@@ -97,6 +98,18 @@ $(document).ready(function(){
                                 ?>
                             </td>
                             <td><?php echo $d['Cpage']['name']; ?></td>
+                            <td>
+                                <?php
+                                    if($d['Cpage']['visible']){
+                                        echo '<i class="fa fa-check" aria-hidden="true"></i>'
+;
+                                    }
+                                    else{
+                                        echo '<i class="fa fa-times" aria-hidden="true"></i>
+';
+                                    }
+                                ?>
+                            </td>
                             <td>
                                 <?php if($d['Cpage']['redirect'] == 1){ ?>
                                 <span class="label label-black">

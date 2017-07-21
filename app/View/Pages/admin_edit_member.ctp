@@ -22,7 +22,7 @@ $(function() {
     $('#PagesUsername').keyup(function(){
         var username = $('#PagesUsername').val();
         if(username != ''){
-            $('#avatar').attr('src', 'http://cravatar.eu/helmhead/' + username + '/110.png');
+            $('#avatar').attr('src', 'https://cravatar.eu/helmhead/' + username + '/110.png');
         }
     });
     $('#PagesRank').keyup(function(){
@@ -155,7 +155,7 @@ $(function() {
                         <a href="#">
                             <span>  
                                 <center>
-                                    <img src="http://cravatar.eu/helmhead/<?php echo $data['Team']['username']; ?>/110.png" alt="Player head" style="margin-top:5px;" id="avatar">
+                                    <img src="https://cravatar.eu/helmhead/<?php echo $data['Team']['username']; ?>/110.png" alt="Player head" style="margin-top:5px;" id="avatar">
                                 </center>
                             </span>                                              
                         </a>            

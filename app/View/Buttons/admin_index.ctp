@@ -90,7 +90,7 @@ $(function() {
                                     <th><b>Créateur</b></th>
                                     <th><b>Texte</b></th>
                                     <th><b>URL</b></th>
-                                    <th><b>Icone</b></th>
+                                    <th><b>Icône</b></th>
                                     <th><b>Couleur</b></th>
                                     <th><b>Aperçu</b></th>
                                     <th><b>Ordre</b></th>

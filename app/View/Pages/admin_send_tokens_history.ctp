@@ -57,9 +57,9 @@ $(document).ready(function(){
                                 <tr>
                                     <th><b>Expéditeur</b></th>
                                     <th><b>Destinataire</b></th>
-                                    <th><b><?php echo ucfirst($site_money); ?> envoyé</b></th>
+                                    <th><b><?php echo ucfirst($site_money); ?> envoyés</b></th>
                                     <th><b>Taux de perte</b></th>
-                                    <th><b><?php echo ucfirst($site_money); ?> reçu</b></th>
+                                    <th><b><?php echo ucfirst($site_money); ?> reçus</b></th>
                                     <th><b>Date</b></th>
                                     <th><b>Action</b></th>
                                 </tr>

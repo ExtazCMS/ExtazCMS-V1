@@ -44,7 +44,7 @@ Class AvatarsController extends AppController{
 				    $file->close();
 				}
 				// On sauvegarde
-				$avatar = 'http://cravatar.eu/helmavatar/'.$this->username;
+				$avatar = 'https://cravatar.eu/helmavatar/'.$this->username;
 				$this->User->id = $user_id;
 				$this->User->saveField('avatar', $avatar);
 				// Redirection
@@ -71,7 +71,7 @@ Class AvatarsController extends AppController{
 				// On sauvegarde
 				$user = $this->User->find('first', ['conditions' => ['User.id' => $user_id]]);
 				$username = $user['User']['username'];
-				$avatar = 'http://cravatar.eu/helmavatar/'.$username;
+				$avatar = 'https://cravatar.eu/helmavatar/'.$username;
 				$this->User->id = $user_id;
 				$this->User->saveField('avatar', $avatar);
 				// Redirection

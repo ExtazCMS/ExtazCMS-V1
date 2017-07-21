@@ -1,5 +1,5 @@
 <?php $this->assign('title', 'Chat du serveur'); ?>
-<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
 $(document).ready(function(){
 	$(document).on('click', '.player', function(){

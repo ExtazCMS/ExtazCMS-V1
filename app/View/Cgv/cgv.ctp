@@ -23,7 +23,7 @@
 				<?php }
 			} else { ?>
 				<div class="alert alert-info">
-					<i class="fa fa-info-circle"></i> "Les CGV/CGU n'ont pas encore été rédigées!"
+					<i class="fa fa-info-circle"></i> "Les CGV/CGU n'ont pas encore été rédigé!"
 				</div>
 			<?php } ?>
         </div>

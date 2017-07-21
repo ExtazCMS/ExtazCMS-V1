@@ -195,7 +195,7 @@ $(document).ready(function(){
                                 <?php echo $this->Form->create('Informations', ['action' => 'update_options']); ?>
                                     <?php $informations = [
                                         'Activer le slider' => 'use_slider',
-                                        'Activer le FAQ' => 'use_faq',
+                                        'Activer la FAQ' => 'use_faq',
                                         'Utiliser le système de vote' => 'use_votes',
                                         'Afficher la page chat' => 'use_igchat',
                                         'Afficher la page équipe' => 'use_team',
@@ -209,7 +209,7 @@ $(document).ready(function(){
                                         'Votre serveur utilise-t-il un système d\'économie' => 'use_economy',
                                         'Voulez vous autoriser le paiement via la monnaie du serveur dans la boutique' => 'use_server_money',
                                         'Happy hour activée' => 'happy_hour',
-                                        'Maintenance activé' => 'maintenance'
+                                        'Maintenance activée' => 'maintenance'
                                     ];
                                     $nb = 0;
                                     foreach($informations as $k => $v){

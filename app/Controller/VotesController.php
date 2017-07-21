@@ -5,6 +5,12 @@ Class VotesController extends AppController{
 
 	public function index(){
 		if($this->Auth->user()){
+
+            if($this->Auth->user('ban') == 1){
+                $this->Session->setFlash('Les joueurs bannis n\'ont pas accès au système de vote', 'error');
+                return $this->redirect(['controller' => 'posts', 'action' => 'index']);
+            }
+
 			$nb_votes = $this->User->find('first', ['conditions' => ['User.id' => $this->Auth->user('id')]]);
 			$nb_votes = $nb_votes['User']['votes'];
 			$this->set('nb_votes', $nb_votes);

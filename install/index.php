@@ -1,10 +1,4 @@
 <?php
-/**
- * Extaz-CMS - install.php
- * Coded by Astralt (https://astralt.com)
- * Updated: 16/03/2017 22:24 (France)
- */
- 
 define('APP_DIR', 'app');
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__));
@@ -22,15 +16,20 @@ class Alert {
 }
 $alert = new Alert();
 
+// Gestion des permissions des répertoires tmp et Config
+$permissions = [ "755", "777", "757", "775"];
+$permConfig = substr(sprintf('%o', fileperms("../app/Config") ), -3);
+$permTmp = substr(sprintf('%o', fileperms("../app/tmp") ), -3);
+
 ?>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Installation de ExtazCMS 1.13</title>
+    <title>Installation de ExtazCMS 1.14</title>
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
     <style type="text/css">
         body {
@@ -62,11 +61,11 @@ $alert = new Alert();
     </style>
 </head>
 <body>
-<img src="https://img04.deviantart.net/25a2/i/2013/346/6/8/minecraft_sunset_by_axlrosie-d6xpuyr.jpg" id="bg" alt="">
+<img src="background.jpg" id="bg" alt="">
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">
-            ExtazCMS 1.13
+            ExtazCMS 1.14
         </div>
     </div>
 </div>
@@ -85,10 +84,9 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/Config en CHMOD 755</td>
                 <?php
-                    if(is_writable("../app/Config")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                    if( in_array($permConfig,  $permissions) ) echo "<td class='positive'>Approuvé</td>";
+					else {
+                        echo "<td class='negative'>Désapprouvé (CHMOD ".$permConfig.")</td>";
                         $error = true;
                     }
                 ?>
@@ -96,21 +94,19 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/tmp en CHMOD 755</td>
                 <?php
-                    if(is_writable("../app/tmp")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                    if( in_array($permTmp, $permissions) ) echo "<td class='positive'>Approuvé</td>";
+					else {
+                        echo "<td class='negative'>Désapprouvé (CHMOD ".$permTmp.")</td>";
                         $error = true;
                     }
                 ?>
             </tr>
             <tr>
-                <td>Version PHP > 5.5.0</td>
+                 <td>Version PHP &gt; 5.5.0 ET &lt; 7.0.0</td>
                 <?php
-                    if(version_compare(PHP_VERSION, "5.5.0", ">")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
-                        echo "<td class='negative'>Désapprouvé</td>";
+                    if(version_compare(PHP_VERSION, "5.5.0", ">")) echo "<td class='positive'>Approuvé</td>";
+					else {
+                        echo "<td class='negative'>Désapprouvé (PHP ".PHP_VERSION.")</td>";
                         $error = true;
                     }
                 ?>
@@ -119,9 +115,8 @@ $alert = new Alert();
             <tr>
                 <td>MySQL PDO</td>
                 <?php
-                    if(extension_loaded("PDO")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
+                    if(extension_loaded("PDO")) echo "<td class='positive'>Approuvé</td>";
+					else {
                         echo "<td class='negative'>Désapprouvé</td>";
                         $error = true;
                     }
@@ -130,11 +125,11 @@ $alert = new Alert();
         </tbody>
     </table>
     <?php
-        if(!$error) {
-            echo "<button class='ui secondary button' id='loadStep1'>Install</button><br><br>";
-        } else {
-            echo "<a href='#' class='ui secondary button disabled'>Install</a><br><br>";
+    if(!$error) {
+		echo "<input type='checkbox' id='accept' class='ui primary checkbox'> J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br><br>";
+        echo "<button class='ui secondary button' id='loadStep1'>Commencer l'installation</button><br><br>";
         }
+		else echo "<a href='#' class='ui secondary button disabled'>Commencer l'installation</a><br><br>";
 
     $step = 1;
     $done = false;
@@ -148,7 +143,7 @@ $alert = new Alert();
         $sql_user = $_POST["sql_user"];
         $sql_pass = $_POST["sql_pass"];
 
-        if(empty($sql_host) || empty($sql_name) || empty($sql_user) || empty($sql_pass)) {
+        if(empty($sql_host) || empty($sql_name) || empty($sql_user)) {
             echo $alert->danger("Tous les champs sont requis!");
         } else {
             try {
@@ -179,7 +174,7 @@ class DATABASE_CONFIG {
                 file_put_contents($pathdb, $databaseStructure);
                 $sql = file_get_contents("ExtazCMS.sql");
                 $pdo->query($sql);
-                echo $alert->success("Votre base de données a bien été installée, supprimez le dossier install de votre site.<br>");
+                echo $alert->success("Votre base de données a bien été installée, supprimez le dossier /install/.<br>");
                 $done = true;
 
             }
@@ -203,8 +198,8 @@ class DATABASE_CONFIG {
                     <input type="text" name="sql_user" placeholder="Nom de l'utilisateur SQL">
                 </div>
                 <div class="field">
-                    <label>Mot de passe de l'utilsateur SQL</label>
-                    <input type="text" name="sql_pass" placeholder="Mot de pass de l'utilsateur SQL">
+                    <label>Mot de passe de l'utilisateur SQL</label>
+                    <input type="text" name="sql_pass" placeholder="Mot de passe de l'utilisateur SQL">
                 </div>
 				
                 <button class="ui button" type="submit" name="post1">Installer la BDD.</button>
@@ -215,7 +210,7 @@ class DATABASE_CONFIG {
 		<div id="bdd">
             <form class="ui form" action="<?= $_SERVER["PHP_SELF"]; ?>">	
 				<div class="field">
-				 <label>Votre Base de données est déjà installée</label>
+				 <label>Votre base de données est déjà installée</label>
 				 <a href="/">Me diriger vers mon site.</a>
 				</div>
             </form>
@@ -224,15 +219,20 @@ class DATABASE_CONFIG {
 		<?php } ?>
     <?php } ?>
 
-    <small><a href="http://extaz-cms.fr">ExtazCMS &copy; <?php echo date("Y"); ?> Astralt - Tous droits réservés</a></small>
+    <small><a href="https://extaz-cms.fr">&copy; ExtazCMS <?php echo date("Y"); ?> - Tous droits réservés</a></small>
 </div>
 <script type="text/javascript">
     $("#bdd").hide();
 
     $("#loadStep1").on("click", function () {
-        $("#bdd").show();
-        $(this).hide();
-        $.cookie('step1', "ok", {expires: 1, path: '/'});
+        if ($("#accept").is(":checked")) {
+            $("#bdd").show();
+            $(this).hide();
+            $("#accept").attr("disabled", true);
+            $.cookie('step1', "ok", {expires: 1, path: '/'});
+    }else{
+	alert("Vous devez accepter les Conditions Générales d'Utilisation.");
+	}
     });
 
 

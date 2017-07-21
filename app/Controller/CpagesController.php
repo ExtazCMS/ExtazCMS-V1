@@ -20,8 +20,11 @@ class CpagesController extends AppController {
 				$this->Cpage->create;
 				$this->Cpage->saveField('user_id', $this->Auth->user('id'));
 				$this->Cpage->saveField('name', $this->request->data['Cpages']['name']);
-				if(isset($this->request->data['Cpages']['sidebar'])){
-					$this->Cpage->saveField('sidebar', $this->request->data['Cpages']['sidebar']);
+				if(isset($this->request->data['Cpages']['visible'])){
+					$this->Cpage->saveField('visible', $this->request->data['Cpages']['visible']);
+				}
+				else{
+					$this->Cpage->saveField('visible', 0);
 				}
 				$this->Cpage->saveField('slug', $this->request->data['Cpages']['slug']);
 				$this->Cpage->saveField('content', $this->request->data['Cpages']['content']);
@@ -44,7 +47,13 @@ class CpagesController extends AppController {
 				$this->Cpage->create;
 				$this->Cpage->saveField('user_id', $this->Auth->user('id'));
 				$this->Cpage->saveField('name', $name);
-				$this->Cpage->saveField('sidebar', '0');
+				if(isset($this->request->data['Cpages']['visible'])){
+					$this->Cpage->saveField('visible', $this->request->data['Cpages']['visible']);
+				}
+				else{
+					$this->Cpage->saveField('visible', 0);
+				}
+				
 				$this->Cpage->saveField('slug', $slug);
 				$this->Cpage->saveField('content', '');
 				$this->Cpage->saveField('redirect', '1');
@@ -65,8 +74,8 @@ class CpagesController extends AppController {
 				if($this->request->is('post')){
 					$this->Cpage->id = $id;
 					$this->Cpage->saveField('name', $this->request->data['Cpages']['name']);
-					if(isset($this->request->data['Cpages']['sidebar'])){
-						$this->Cpage->saveField('sidebar', $this->request->data['Cpages']['sidebar']);
+					if(isset($this->request->data['Cpages']['visible'])){
+						$this->Cpage->saveField('visible', $this->request->data['Cpages']['visible']);
 					}
 					$this->Cpage->saveField('slug', $this->request->data['Cpages']['slug']);
 					$this->Cpage->saveField('content', $this->request->data['Cpages']['content']);
@@ -92,6 +101,9 @@ class CpagesController extends AppController {
 					$this->Cpage->id = $id;
 					$this->Cpage->saveField('name', $this->request->data['Cpages']['name']);
 					$this->Cpage->saveField('url', $this->request->data['Cpages']['url']);
+					if(isset($this->request->data['Cpages']['visible'])){
+						$this->Cpage->saveField('visible', $this->request->data['Cpages']['visible']);
+					}
 					$this->Session->setFlash('Page éditée !', 'toastr_success');
 					return $this->redirect(['controller' => 'cpages', 'action' => 'list']);
 				}

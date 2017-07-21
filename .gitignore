@@ -1,3 +1,7 @@
-app/tmp/*
-app/tmp/cache
-app/tmp/logs
+app/tmp/cache/models/myapp_cake_*
+app/tmp/cache/persistent/myapp_cake_*
+app/tmp/logs/error.log
+app/Config/database.php
+app/Plugin/TwigView/tmp/*
+extaz_access.log
+extaz_error.log

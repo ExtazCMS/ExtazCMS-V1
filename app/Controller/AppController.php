@@ -53,6 +53,17 @@ class AppController extends Controller {
     		exit('Vous devez avoir PHP 5.4 minimum pour utiliser ExtazCMS');
 		}
 
+		if(is_dir(ROOT.'\install')){
+			$dossier = ROOT . '\install';
+			$dir_iterator = new RecursiveDirectoryIterator($dossier);
+			$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::CHILD_FIRST);
+							// On supprime chaque dossier et chaque fichier	du dossier cible
+			foreach($iterator as $fichier){
+				$fichier->isDir() ? rmdir($fichier) : unlink($fichier);
+			}
+			rmdir(ROOT.'\install');
+		}
+
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))){
 			$this->layout = 'admin';
 		}
@@ -67,6 +78,7 @@ class AppController extends Controller {
 		$version = file_get_contents(ROOT . "/version.txt");
 		$next_version = file_get_contents("https://extaz-cms.fr/updates/updates/ExtazCMS_$version/nversion.txt");
 		$last_version = file_get_contents("https://extaz-cms.fr/updates/version.txt");
+		
 		$this->version = $version;
 		$this->next_version = $next_version;
 		$this->last_version = $last_version;

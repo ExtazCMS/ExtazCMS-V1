@@ -279,7 +279,7 @@ class PagesController extends AppController {
     }
 
 	public function admin_chat_messages(){
-		if($this->Auth->user()){
+		if($this->Auth->user('role') > 1){
 			if($this->request->is('ajax')){
 				$data = '';
     			$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
@@ -306,10 +306,13 @@ class PagesController extends AppController {
 				exit();
 			}
 		}
+		else{
+			throw new NotFoundException();
+		}
 	}
 
 	public function admin_send_message(){
-		if($this->Auth->user()) {
+		if($this->Auth->user('role') >1 ) {
 			if($this->request->is('ajax')){
 	    		$api = new JSONAPI($this->config['jsonapi_ip'], $this->config['jsonapi_port'], $this->config['jsonapi_username'], $this->config['jsonapi_password'], $this->config['jsonapi_salt']);
 				$message = trim(str_replace('/', '', $this->request->data['message']));
@@ -332,6 +335,9 @@ class PagesController extends AppController {
 				exit();
 				
 			}
+		}
+		else{
+			throw new NotFoundException();
 		}
 	}
 
@@ -375,6 +381,9 @@ class PagesController extends AppController {
                 return $this->redirect($this->referer());
             }
         }
+        else{
+			throw new NotFoundException();
+		}
     }
 
 	public function admin_delete_donator($id = null){
@@ -546,7 +555,9 @@ class PagesController extends AppController {
 
 	public function close_my_ticket($id = null){
 		if($this->Auth->user()){
-			if($this->Support->find('first', ['conditions' => ['Support.id' => $id]])){
+            $ticket = $this->Support->find('first', ['conditions' => ['Support.id' => $id]]);
+			$ticket_owner = $ticket['User']['username'];
+			if($this->Support->find('first', ['conditions' => ['Support.id' => $id]]) && $ticket_owner == $this->Auth->user('username') ){
 				$this->Support->id = $id;
 				$this->Support->saveField('resolved', 1);
 				$this->Session->setFlash('Votre ticket a bien été fermé', 'success');
@@ -600,10 +611,11 @@ class PagesController extends AppController {
 							// 	$Email->subject('['.$this->config['name_server'].'] Support, nouvelle réponse à votre ticket #'.$ticket['Support']['id'].'');
 							// 	$Email->send('Retrouvez cette nouvelle réponse ici : http://'.$_SERVER['HTTP_HOST'].$this->webroot.'tickets/'.$ticket['Support']['id']);
 							// }
+							$message = nl2br(htmlspecialchars($message));
 							$this->supportComments->create;
 							$this->supportComments->saveField('ticket_id', $this->request->data['Pages']['id']);
 							$this->supportComments->saveField('user_id', $this->Auth->user('id'));
-							$this->supportComments->saveField('message', $this->request->data['Pages']['message']);
+							$this->supportComments->saveField('message', $message);
 							$this->Session->setFlash('Réponse ajoutée !', 'success');
 							return $this->redirect($this->referer());
 						}
@@ -754,6 +766,9 @@ class PagesController extends AppController {
                 return $this->redirect($this->referer());
             }
         }
+	else{
+			throw new NotFoundException();
+		}
     }
 
 	public function team(){

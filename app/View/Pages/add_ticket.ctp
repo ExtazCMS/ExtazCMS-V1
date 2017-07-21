@@ -27,13 +27,13 @@ $(function() {
                 </div>
                 <fieldset>
                     <section>
-                        <?php echo "Vous allez envoyer cette requête au support en tant que <u>$username</u>."; ?>
+                        <?php echo "Votre ticket sera indiquée à votre nom : <u>$username</u>."; ?>
                     </section>
                 </fieldset>
                 <fieldset>
                     <section>
                         <select name="data[Pages][type]" id="PagesType" class="form-control input-sm">
-                            <option value="none">De quelle type est votre requête ?</option>
+                            <option value="none">De quel type est votre requête ?</option>
                             <option value="question">Question</option>
                             <option value="report">Signalement d'un joueur</option>
                             <option value="other">Autre</option>

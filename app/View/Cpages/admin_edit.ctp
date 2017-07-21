@@ -54,11 +54,10 @@ $(document).ready(function(){
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select name="data[Cpages][sidebar]" id="CpagesSidebar" class="form-control">
-                                    <option value="">Afficher la sidebar ?</option>
-                                    <option value="1">Oui</option>
-                                    <option value="0">Non</option>
-                                </select>
+                                <?php 
+                                    echo $this->Form->label('visible', '&nbsp;&nbsp; Rendre visible ?');
+                                    echo $this->Form->checkbox('visible', array('class' => 'pull-left'));
+                                ?>
                             </div>
                             <div class="form-group">
                                 <div id="chargement"><?php echo $this->Html->image('loader.gif', array('alt' => 'chargement')); ?> Chargement de l'éditeur de texte en cours, veuillez patienter</div>
