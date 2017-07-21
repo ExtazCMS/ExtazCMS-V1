@@ -1,7 +1,6 @@
-app/tmp/*
-app/tmp/cache
-app/tmp/logs
+app/tmp/cache/*
+app/tmp/logs/*
 app/Config/database.php
-app/Plugin/TwigView/tmp/
+app/Plugin/TwigView/tmp/*
 extaz_access.log
 extaz_error.log
