@@ -25,7 +25,7 @@ $alert = new Alert();
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
     <style type="text/css">
         body {
@@ -102,7 +102,7 @@ $alert = new Alert();
                 ?>
             </tr>
             <tr>
-                <td>Version PHP > 5.5.0 ET < 7.0.0 </td>
+                <td>Version PHP &gt; 5.5.0 ET &lt; 7.0.0</td>
                 <?php
                     if(version_compare(PHP_VERSION, "5.5.0", ">") && version_compare(PHP_VERSION, "7.0.0", "<")) {
                         echo "<td class='positive'>Approuvé</td>";
