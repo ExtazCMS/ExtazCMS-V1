@@ -125,7 +125,8 @@ $alert = new Alert();
         </tbody>
     </table>
     <?php
-        if(!$error) {
+    if(!$error) {
+	echo "<input type='checkbox' id='accept' class='ui primary checkbox'>J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br>";
             echo "<button class='ui secondary button' id='loadStep1'>Install</button><br><br>";
         } else {
             echo "<a href='#' class='ui secondary button disabled'>Install</a><br><br>";
@@ -225,9 +226,14 @@ class DATABASE_CONFIG {
     $("#bdd").hide();
 
     $("#loadStep1").on("click", function () {
-        $("#bdd").show();
-        $(this).hide();
-        $.cookie('step1', "ok", {expires: 1, path: '/'});
+        if ($("#accept").is(":checked")) {
+            $("#bdd").show();
+            $(this).hide();
+            $("#accept").attr("disabled", true);
+            $.cookie('step1', "ok", {expires: 1, path: '/'});
+    }else{
+	alert("Vous devez accepter les Conditions Générales d'Utilisation.");
+	}
     });
 
 
