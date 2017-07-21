@@ -17,6 +17,11 @@ class Alert {
 }
 $alert = new Alert();
 
+// Gestion des permissions des répertoires tmp et Config
+$permissions = [ "755", "777", "757", "775"];
+$permConfig = substr(sprintf('%o', fileperms("../app/Config") ), -3);
+$permTmp = substr(sprintf('%o', fileperms("../app/tmp") ), -3);
+
 ?>
 <html>
 <head>
@@ -80,10 +85,8 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/Config en CHMOD 755</td>
                 <?php
-					$permConfig = substr(sprintf('%o', fileperms("../app/Config") ), -3);
-                    if( $permConfig == "755" ) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
+                    if( in_array($permConfig,  $permissions) ) echo "<td class='positive'>Approuvé</td>";
+					else {
                         echo "<td class='negative'>Désapprouvé (CHMOD ".$permConfig.")</td>";
                         $error = true;
                     }
@@ -92,21 +95,18 @@ $alert = new Alert();
             <tr>
                 <td>Fichier app/tmp en CHMOD 755</td>
                 <?php
-				$permTmp = substr(sprintf('%o', fileperms("../app/tmp") ), -3);
-                    if( $permTmp == "755") {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
+                    if( in_array($permTmp, $permissions) ) echo "<td class='positive'>Approuvé</td>";
+					else {
                         echo "<td class='negative'>Désapprouvé (CHMOD ".$permTmp.")</td>";
                         $error = true;
                     }
                 ?>
             </tr>
             <tr>
-                <td>Version PHP &gt; 5.5.0 ET &lt; 7.0.0</td>
+                 <td>Version PHP &gt; 5.5.0 ET &lt; 7.0.0</td>
                 <?php
-                    if(version_compare(PHP_VERSION, "5.5.0", ">") && version_compare(PHP_VERSION, "7.0.0", "<")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
+                    if(version_compare(PHP_VERSION, "5.5.0", ">")) echo "<td class='positive'>Approuvé</td>";
+					else {
                         echo "<td class='negative'>Désapprouvé (PHP ".PHP_VERSION.")</td>";
                         $error = true;
                     }
@@ -116,9 +116,8 @@ $alert = new Alert();
             <tr>
                 <td>MySQL PDO</td>
                 <?php
-                    if(extension_loaded("PDO")) {
-                        echo "<td class='positive'>Approuvé</td>";
-                    } else {
+                    if(extension_loaded("PDO")) echo "<td class='positive'>Approuvé</td>";
+					else {
                         echo "<td class='negative'>Désapprouvé</td>";
                         $error = true;
                     }
@@ -128,11 +127,10 @@ $alert = new Alert();
     </table>
     <?php
     if(!$error) {
-	echo "<input type='checkbox' id='accept' class='ui primary checkbox'> J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br><br>";
-            echo "<button class='ui secondary button' id='loadStep1'>Commencer l'installation</button><br><br>";
-        } else {
-            echo "<a href='#' class='ui secondary button disabled'>Commencer l'installation</a><br><br>";
+		echo "<input type='checkbox' id='accept' class='ui primary checkbox'> J'accepte les <a href='https://extaz-cms.fr/cgu.php' targe='_blank'>Conditions Générales d'Utilisation</a>.<br><br>";
+        echo "<button class='ui secondary button' id='loadStep1'>Commencer l'installation</button><br><br>";
         }
+		else echo "<a href='#' class='ui secondary button disabled'>Commencer l'installation</a><br><br>";
 
     $step = 1;
     $done = false;
