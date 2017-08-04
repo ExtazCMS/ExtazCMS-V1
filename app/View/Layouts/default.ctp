@@ -234,7 +234,7 @@ if(isset($_GET['debug'])) {
                 <div class="container">
                     <p class="text-center">
                         
-                      <a href="<?php echo $url_site; ?>"><?php echo $name_server; ?></a> propulsé par <a href="https://extaz-cms.fr">ExtazCMS<br />Lire les <a href='<?php echo $url_site; ?>/cgv'>CGV/CGU</a> du site
+                      <a href="<?php echo $url_site; ?>"><?php echo $name_server; ?></a> propulsé par <a href="https://extaz-cms.fr">ExtazCMS</a><br />Lire les <a href='<?php echo $url_site; ?>/cgv'>CGV/CGU</a> du site
                     </p>
                 </div> 
             </div><!--/copyright--> 
