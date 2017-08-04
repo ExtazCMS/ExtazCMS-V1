@@ -4,7 +4,7 @@
     <div class="row magazine-page">
         <!-- Begin Content -->
         <?php
-        if($data['Cpage']['sidebar'] == 1){
+        if($data['Cpage']['visible'] == 1){
         	echo '<div class="col-md-9">';
         }
         else{
@@ -14,7 +14,7 @@
             <?php echo $content; ?>
         </div>
         <!-- End Content -->
-        <?php if($data['Cpage']['sidebar'] == 1) echo $this->element('sidebar'); ?>
+        <?php if($data['Cpage']['visible'] == 1) echo $this->element('sidebar'); ?>
     </div>
 </div><!--/container-->     
 <!-- End Content Part -->
