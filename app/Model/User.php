@@ -8,14 +8,18 @@ class User extends AppModel{
 	public $name = 'User';
     public $validate = array(
         'username' => array(
-            'alphaNumeric' => array(
-                'rule'     => 'isUnique',
+	    'isAlNum' => array(
+		'rule' => array('custom', '/^[a-zA-Z-9_]+$/'),
                 'required' => true,
+		'message' => 'Les caractères autorisés sont "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"'
+	    ),
+            'isUnique' => array(
+                'rule'     => 'isUnique',
                 'message'  => 'Ce pseudo à déjà été choisi'
             ),
             'between' => array(
-                'rule'    => array('between', 3, 15),
-                'message' => 'Entre 3 et 15 caractères'
+                'rule'    => array('between', 3, 16),
+                'message' => 'Entre 3 et 16 caractères'
             )
         ),
         'email' => array(
@@ -45,5 +49,5 @@ class User extends AppModel{
 	        );
 	    }
 	    return true;
-	}
+    }
 }
