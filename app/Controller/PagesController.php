@@ -594,45 +594,46 @@ class PagesController extends AppController {
 	public function answer_ticket($id = null){
 		if($this->Auth->user()){
 			if($this->request->is('post')){
-			$message = nl2br(htmlspecialchars($this->request->data['Pages']['message']));
-			if(!empty($message)){
-				if(!empty($this->request->data['Pages']['message'])){
-					$ticket = $this->Support->find('first', ['conditions' => ['Support.id' => $this->request->data['Pages']['id']]]);
-					$ticket_owner = $this->User->find('first', ['conditions' => ['User.username' => $ticket['User']['username']]]);
-					$ticket_owner_email = $ticket_owner['User']['email'];
-					//$ticket_owner_allow_email = $ticket_owner['User']['allow_email'];
-					if($ticket_owner['User']['username'] == $this->Auth->user('username') OR $this->Auth->user('role') > 0){
-						if($ticket['Support']['resolved'] == 0){
-							// Si l'utilisateur accepte de recevoir des emails
-							// if($ticket_owner_allow_email == 1){
-							// 	$name_server = $this->config['name_server'];
-							// 	$name_server = strtolower(preg_replace('/\s/', '', $name_server));
-							// 	$Email = new CakeEmail();
-							// 	$Email->from(array('support@'.$name_server.'.com' => $name_server));
-							// 	$Email->to($ticket_owner_email);
-							// 	$Email->subject('['.$this->config['name_server'].'] Support, nouvelle réponse à votre ticket #'.$ticket['Support']['id'].'');
-							// 	$Email->send('Retrouvez cette nouvelle réponse ici : http://'.$_SERVER['HTTP_HOST'].$this->webroot.'tickets/'.$ticket['Support']['id']);
-							// }
-							$this->supportComments->create;
-							$this->supportComments->saveField('ticket_id', $this->request->data['Pages']['id']);
-							$this->supportComments->saveField('user_id', $this->Auth->user('id'));
-							$this->supportComments->saveField('message', $message);
-							$this->Session->setFlash('Réponse ajoutée !', 'success');
-							return $this->redirect($this->referer());
+				$message = nl2br(htmlspecialchars($this->request->data['Pages']['message']));
+				if(!empty($message)){
+					if(!empty($this->request->data['Pages']['message'])){
+						$ticket = $this->Support->find('first', ['conditions' => ['Support.id' => $this->request->data['Pages']['id']]]);
+						$ticket_owner = $this->User->find('first', ['conditions' => ['User.username' => $ticket['User']['username']]]);
+						$ticket_owner_email = $ticket_owner['User']['email'];
+						//$ticket_owner_allow_email = $ticket_owner['User']['allow_email'];
+						if($ticket_owner['User']['username'] == $this->Auth->user('username') OR $this->Auth->user('role') > 0){
+							if($ticket['Support']['resolved'] == 0){
+								// Si l'utilisateur accepte de recevoir des emails
+								// if($ticket_owner_allow_email == 1){
+								// 	$name_server = $this->config['name_server'];
+								// 	$name_server = strtolower(preg_replace('/\s/', '', $name_server));
+								// 	$Email = new CakeEmail();
+								// 	$Email->from(array('support@'.$name_server.'.com' => $name_server));
+								// 	$Email->to($ticket_owner_email);
+								// 	$Email->subject('['.$this->config['name_server'].'] Support, nouvelle réponse à votre ticket #'.$ticket['Support']['id'].'');
+								// 	$Email->send('Retrouvez cette nouvelle réponse ici : http://'.$_SERVER['HTTP_HOST'].$this->webroot.'tickets/'.$ticket['Support']['id']);
+								// }
+								$this->supportComments->create;
+								$this->supportComments->saveField('ticket_id', $this->request->data['Pages']['id']);
+								$this->supportComments->saveField('user_id', $this->Auth->user('id'));
+								$this->supportComments->saveField('message', $message);
+								$this->Session->setFlash('Réponse ajoutée !', 'success');
+								return $this->redirect($this->referer());
+							}
+							else{
+								$this->Session->setFlash('Ce ticket est fermé...', 'error');
+								return $this->redirect($this->referer());
+							}
 						}
 						else{
-							$this->Session->setFlash('Ce ticket est fermé...', 'error');
+							$this->Session->setFlash('Action impossible !', 'error');
 							return $this->redirect($this->referer());
 						}
 					}
 					else{
-						$this->Session->setFlash('Action impossible !', 'error');
+						$this->Session->setFlash('Vous devez écrire un message', 'error');
 						return $this->redirect($this->referer());
 					}
-				}
-				else{
-					$this->Session->setFlash('Vous devez écrire un message', 'error');
-					return $this->redirect($this->referer());
 				}
 			}
 		}
