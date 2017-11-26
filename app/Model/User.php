@@ -9,7 +9,7 @@ class User extends AppModel{
     public $validate = array(
         'username' => array(
 	    'isAlNum' => array(
-		'rule' => array('custom', '/^[a-zA-Z-9_]+$/'),
+		'rule' => array('custom', '/^[a-zA-Z0-9_]+$/'),
                 'required' => true,
 		'message' => 'Les caractères autorisés sont "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"'
 	    ),
